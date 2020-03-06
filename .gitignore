@@ -18,6 +18,9 @@
 .env.test.local
 .env.production.local
 .env
+screenshot.png
+instructions.md
+settings.js
 
 npm-debug.log*
 yarn-debug.log*

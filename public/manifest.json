@@ -1,11 +1,26 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "myLocations",
+  "name": "Manage my locations",
   "icons": [
     {
       "src": "favicon.ico",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
+    },
+    {
+      "src": "flying_seagull_200133.jpg",
+      "type": "image/jpg",
+      "sizes": "200x133"
+    },
+    {
+      "src": "flying_seagull_300200.jpg",
+      "type": "image/jpg",
+      "sizes": "300x200"
+    },
+    {
+      "src": "flying_seagull_552368.jpg",
+      "type": "image/jpg",
+      "sizes": "552x368"
     },
     {
       "src": "logo192.png",

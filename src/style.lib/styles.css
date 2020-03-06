@@ -1,0 +1,319 @@
+@import url("https://fonts.googleapis.com/css?family=Expletus+Sans|Raleway|Griffy|Yanone+Kaffeesatz:400,700");
+
+html,
+body {
+  height: 100%;
+}
+html {
+  font-size: 10px;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: papayawhip;
+  background: -moz-linear-gradient(
+    top,
+    #f5f5dc 0%,
+    #d2b48c 100%
+  ); /* FF3.6-15 */
+  background: -webkit-linear-gradient(
+    top,
+    #f5f5dc 0%,
+    #d2b48c 100%
+  ); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(
+    to bottom,
+    #f5f5dc 0%,
+    #d2b48c 100%
+  ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /*border:aqua dashed 3px; */
+  /*color:papayawhip*/
+}
+li {
+  list-style-type: none;
+}
+/*--------------------*/
+.app {
+  background: Cornsilk;
+  padding: 10.5rem 1.5rem 1.5rem;
+  border-radius: 0.4rem;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0.4rem 1.5rem DimGrey;
+  position: relative;
+  margin-top: 7rem;
+  min-width: 60rem;
+}
+.header {
+  background: lightsalmon;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  border-radius: 0.4rem 0.4rem 0 0;
+  height: 9rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.filter {
+  height: 3.5rem;
+  width: 24rem;
+  outline: none;
+  border-radius: 0.5rem;
+  border: white 2px solid;
+  transition: border 0.5s;
+  padding: 1rem;
+}
+.filter:focus {
+  border: tomato 2px solid;
+}
+.filter_title {
+  font-family: "Expletus Sans";
+  text-align: left;
+  font-size: 2rem;
+  font-weight: 400;
+  color: darkred;
+}
+.headline {
+  font-size: 5rem;
+  font-weight: normal;
+  font-family: "Griffy", cursive;
+  text-align: center;
+  color: slategray;
+}
+.paragraph {
+  font-size: 3.8rem;
+  font-weight: 400;
+  font-family: "Yanone Kaffeesatz", sans-serif;
+  text-align: center;
+  color: slategray;
+}
+.white-text {
+  color: mintcream;
+}
+.top-bar {
+  background: slategray;
+  width: 100%;
+  height: 70px;
+  padding: 20px;
+  color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.top-bar h1 {
+  font-size: 3rem;
+  font-weight: normal;
+  font-family: "Griffy", cursive;
+  color: papayawhip;
+}
+.logo {
+  height: 5rem;
+  animation: spin 2s linear infinite;
+}
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.list-title {
+  padding: 1.4rem;
+  font-family: "Expletus Sans";
+  font-size: 3.2rem;
+  font-weight: 400;
+  text-align: center;
+  color: slategray;
+}
+.cards-list {
+  background: oldlace;
+  height: 75vh;
+  border-radius: 0.4rem;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  box-shadow: 0 0.2rem 0.8rem DimGrey;
+}
+.card-item:nth-child(even) {
+  background: honeydew;
+}
+.card-item:nth-child(odd) {
+  background: white;
+}
+.card {
+  padding: 2rem 2.8rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+.card:hover {
+  background: paleturquoise;
+}
+.card:hover .thumb {
+  box-shadow: 0 0.4rem 1.5rem DimGrey;
+  margin-bottom: 3rem;
+  padding-bottom: 1rem;
+}
+.card:active {
+  background: skyblue;
+  color: white;
+}
+.card:active .paragraph {
+  color: white;
+}
+.card:active .thumb {
+  box-shadow: 0 0.4rem 1.5rem DimGrey;
+}
+.texts-box {
+  padding-left: 2.8rem;
+}
+.card-title {
+  font-family: "Expletus Sans";
+  text-align: left;
+  font-size: 2.8rem;
+}
+.card-msg {
+  font-family: "Raleway";
+  font-size: 1.4rem;
+  max-width: 35rem;
+}
+.thumb {
+  height: 10rem;
+  width: 10rem;
+  /*border: #004141 solid 4px;*/
+  border-radius: 50%;
+  /*padding: 10px;*/
+  background-color: darksalmon;
+  transition: box-shadow 150ms, margin 150ms, padding 150ms;
+}
+
+.content-box {
+  /*border:red solid 2px;*/
+  border-radius: 5px;
+  display: flex;
+}
+.profile-box {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  padding-right: 15px;
+  align-items: center;
+  /*flex:1;*/
+}
+.grad-line {
+  display: block;
+  width: 100%;
+  border: none;
+  height: 1px;
+  background: -webkit-gradient(
+    radial,
+    50% 50%,
+    0,
+    50% 50%,
+    200,
+    from(midnightblue),
+    to(Cornsilk)
+  );
+}
+.profile-image-box {
+  /*flex:1;*/
+  background: peachpuff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  width: 30rem;
+  height: 30rem;
+}
+.profile-image-box img {
+  border-radius: 50%;
+}
+.profile-details-box {
+  padding: 10px;
+  font-family: "Expletus Sans";
+  text-align: left;
+  color: slategray;
+  font-weight: 400;
+}
+.profile-title {
+  font-size: 3.5rem;
+  font-weight: inherit;
+  text-align: center;
+}
+.profile-detail {
+  font-size: 2.2rem;
+  font-weight: inherit;
+  color: darkslateblue;
+}
+.profile-description {
+  font-family: "Raleway";
+  font-size: 1.8rem;
+  max-width: 40rem;
+}
+/*Generic CSS Classes*/
+.cap {
+  text-transform: capitalize;
+}
+.mb20 {
+  margin-bottom: 2rem;
+}
+.mt20 {
+  margin-top: 2rem;
+}
+.fz35 {
+  font-size: 3.5rem;
+}
+.fz30 {
+  font-size: 3rem;
+}
+.fz25 {
+  font-size: 2.5rem;
+}
+
+.hbox {
+  display: flex;
+}
+.vbox {
+  display: flex;
+  flex-direction: column;
+}
+.space-between,
+.sb {
+  justify-content: space-between;
+}
+.space-around,
+.sa {
+  justify-content: space-around;
+}
+.align-items-center,
+.ai-center,
+.aic {
+  align-items: center;
+}
+.align-items-start,
+.ai-start,
+.ais {
+  align-items: flex-start;
+}
+.grow-1,
+.g1 {
+  flex-grow: 1;
+}
+.text-left,
+.tl {
+  text-align: left;
+}
+.dev {
+  border: fuchsia 2px dashed;
+}
