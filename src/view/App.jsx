@@ -119,7 +119,13 @@ const App = () => {
     <Router history={history}>
       <MuiThemeProvider theme={MainTheme}>
 
-        <AppBox>
+        <AppBox
+          aria-label="App Div"
+          id="App_Div"
+          name="App_Div"
+          //role="article"
+          role="navigation"
+        >
           {/* <TopBar>
             <Menu />
           </TopBar> */}

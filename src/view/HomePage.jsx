@@ -18,9 +18,23 @@ console.log("logo", logo);
 
 const HomePage = () => {
   return (
-    <Box>
-      <Title>Welcome location seekers!</Title>
-      <Image src={logo}
+    <Box
+      aria-label="Home Page Box"
+      id="Home_Page_Box"
+      name="Home_Page_Box"
+    >
+      <Title
+        aria-label="Home Page Title"
+        id="Home_Page_Title"
+        name="Home_Page_Title"
+      >
+        Welcome location seekers!</Title>
+      <Image
+        aria-label="Home Page Image"
+        id="Home_Page_Image"
+        name="Home_Page_Image"
+
+        src={logo}
         srcset={src_set}
         alt="Loading..." />
 
