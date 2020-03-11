@@ -593,39 +593,40 @@ const MainBox = styled('div')({
   //maxWidth: 'fit-content(100vw)',
   // minWidth: '100rem',
 
-  '@media (min-width:1280px)': {
+  '@media (minWidth:1280px)': {
     // width: 'auto',
     minWidth: '100rem',
   },
 
-  '@media (min-width:960px) and (max-width: 1279px) ': {//780px
+  '@media (maxWidth: 1279px) ': {//780px
     width: '80%',
     minWidth: '80vw',
   },
-  '@media (min-width: 600px) and (max-width: 959px)': { //779px
+  /* '@media (minWidth: 600px) and (maxWidth: 959px)': { //779px
     width: '65%',
     minWidth: '65vw',
   },
-  '@media (min-width: 361px) and (max-width: 599px)': {
+  '@media (minWidth: 361px) and (maxWidth: 599px)': {
 
     width: '60%',
     minWidth: '60vw',
-  },
-  '@media (max-width: 360px)': {
+  }, */
+  '@media (maxWidth: 360px)': {
     /* width: 'auto',
     minWidth: '30rem',
   },
-  '@media (max-width: 330px)': { */
+  '@media (maxWidth: 330px)': { */
     // width: '100%', 
-    width: 'auto',
+    /* width: 'auto',
     minWidth: '30rem',
+
   },
-  '@media (max-width: 320px)': {
+  '@media (maxWidth: 320px)': { */
     // width: '100%', 
     width: 'auto',
     minWidth: '25rem',
   },
-  '@media (max-width: 250px)': {
+  '@media (maxWidth: 250px)': {
     width: 'auto',
     minWidth: '25rem',
   },
@@ -673,6 +674,9 @@ const ContentBox = styled('div')({
 
   // width: 'auto',
   maxWidth: '80vw',
+
+
+
   /*
     '@media (min-width:1280px)': {
       // width: 'auto',
@@ -738,7 +742,8 @@ const TableStyle = {
   //overflow: 'auto', 
   overflow: 'none',
 
-  '@media (max-width: 320px)': {
+
+  '@media (maxWidth: 320px)': {
     display: 'flex',
     width: 'fit-content(60vw)',
     minWidth: '60vw',

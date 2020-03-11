@@ -173,39 +173,67 @@ const App = () => {
 
 export default App;
 
+/* 
+ dev                Width   Height
+ ----------------------------------
+ Galaxy S5            360     640
+ LG Optimus L70       384     640
+ Pixel 2              411     731
+ Pixel 2 XL           411     823
+ iPhone 4             320     480
+ iPhone 5/SE          320     568
+ iPhone 6/7/8 plus    414     736
+ iPhone X             375     812
+ iPad                 768     1024
+ iPad Pro             1024    1366
+ Moto 360 watch       218     281 
 
-
+*/
 const AppBox = styled('div')({
-  height: 'fit-content(100%)',
-  //height: '100%',
-  width: '100%',
-  maxWidth: '100vw',
-  minWidth: '60rem',
+  // height: 'fit-content(100%)',
+  /*
+  height: '100%',
+  maxHeight: '80vh',
+  minHeight: '30rem',
+*/
+  height: '100%',
+  width: '80%',
+  minWidth: '100vw',
+  //maxWidth: '100%',
+  maxWidth: '35rem',
 
-  '@media (min-width:1280px)': {
-    // width: 'auto',
-    minWidth: '100rem',
-  },
+  /*height: 'auto', /*if more info comes on the page, it will stretch down*/
 
-  '@media (min-width:960px) and (max-width: 1279px) ': {//780px
-    width: '80%',
-    minWidth: '100rem',
-  },
-  '@media (min-width: 600px) and (max-width: 959px)': { //779px
-    width: '80%',
-    minWidth: '80vw',
 
-  },
-  '@media (min-width: 401px) and (max-width: 599px)': {
-    width: '50%',
-    inWidth: '50vw',
-  },
-  '@media (max-width: 400px)': {
-    width: '50%',
-    maxWidth: '50vw',
-    minWidth: '50vw',
-  },
-
+  /*
+    '@media (minWidth:1280px)': {
+      // width: 'auto',
+      minWidth: '100rem',
+    },
+  
+    '@media (minWidth:960px) and (maxWidth: 1279px) ': {//780px
+      width: '80%',
+      minWidth: '100rem',
+    },
+    '@media (minWidth: 600px) and (maxWidth: 959px)': { //779px
+      width: '80%',
+      minWidth: '80vw',
+  
+    },
+    '@media (minWidth: 401px) and (maxWidth: 599px)': {
+      width: '50%',
+      minWidth: '50vw',
+    },
+    '@media (maxWidth: 400px)': {
+      //height: '30%',
+      width: '30rem',
+      maxWidth: '30vw',
+      minWidth: '30rem',
+      // width: '50%',
+      // maxWidth: '50rem',
+      // minWidth: '50vw',
+    },
+  */
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'center',
@@ -213,16 +241,21 @@ const AppBox = styled('div')({
 
   margin: 'auto',
   //top right bottom left
-  padding: '2rem 0rem 3rem 5rem',
+  // padding: '2rem 0rem 3rem 5rem',
   //padding: '3rem 7.5rem',
   //padding: '2rem 10rem 5rem 10rem', 
   //padding: '10.5rem 1.5rem 1.5rem',
-
-  '@media (max-width: 780px)': {
-    padding: '0 0 0 10rem',
-  },
-  '@media (max-width: 400px)': {
-    padding: '2rem 0 0 0',
-  },
+  /*
+    '@media (maxWidth: 780px)': {
+      //top right bottom left
+      //padding: '20rem 0 0 0',
+      padding: '0 0 0 10rem',
+    },
+    '@media (maxWidth: 400px)': {
+      //top right bottom left
+      padding: '2rem 0 0 0',
+  
+},
+*/
 
 });

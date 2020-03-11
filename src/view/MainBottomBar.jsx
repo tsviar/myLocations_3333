@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import styled from "styled-components";
+//import styled from "styled-components";
 import { makeStyles, withStyles } from '@material-ui/core/styles';
 
 import BottomNavigation from '@material-ui/core/BottomNavigation';
@@ -24,8 +24,9 @@ const useStyles = makeStyles({
     // padding: 20,
 
     width: '100%',
-    minWidth: '100%',
+    minWidth: '100vw',
     maxWidth: '100%',
+    //maxWidth: '35rem',
 
     height: 40,
     fontSize: "120rem",
@@ -50,6 +51,7 @@ const useStyles = makeStyles({
 });
 
 const MainBottomBar = () => {
+
   const classes = useStyles();
   const [value, setValue] = React.useState('recents');
 
@@ -93,20 +95,7 @@ const MainBottomBar = () => {
 
 export default withStyles(useStyles)(MainBottomBar);
 
-//Extending React Link
-const StyledLink = styled(Link)`
-  color: mintcream;
-`;
 
-const Nav = styled.ul`
-  display: flex;
-  list-style-type: none;
-  font-family: "Yanone Kaffeesatz";
-  font-weight: 400;
-  font-size: 2.8rem;
-  width: 30rem;
-  justify-content: space-between;
-`;
 /*
       style={{
         display: "flex",

@@ -47,6 +47,7 @@ const GlobalStyles = createGlobalStyle`
     li {
       list-style-type: none;
     }
+
 `;
 
 export default GlobalStyles;

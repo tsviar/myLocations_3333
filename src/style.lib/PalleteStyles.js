@@ -91,8 +91,11 @@ const main_palete_theme = {
 
     home_page: {
       text_color: 'coral',
+      text_shadow: 'rgba(71, 0, 37, 0.2)',
       background_start: 'gold',
       background_end: 'coral',
+      img_BGND_start: '#f5f5dc',
+      img_BGND_end: 'thistle',
     },
 
 

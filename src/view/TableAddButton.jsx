@@ -60,7 +60,7 @@ const AddButtonDiv = styled('h4')({
     flexGrow: 1,
     flexShrink: 1,
 
-    '@media (max-width: 650px)': {
+    '@media (maxWidth: 650px)': {
         display: 'flex',
         flexGrow: 1,
         flexShrink: 2,
@@ -76,7 +76,7 @@ const TableAddButtonStyle =
     flexGrow: 1,
     flexShrink: 1,
 
-    '@media (max-width: 650px)': {
+    '@media (maxWidth: 650px)': {
         display: 'flex',
         flexGrow: 1,
         flexShrink: 2,
@@ -91,7 +91,7 @@ const TableAddLocationIconStyle = {
     flexGrow: 1,
     flexShrink: 1,
 
-    '@media (max-width: 650px)': {
+    '@media (maxWidth: 650px)': {
         fontSize: '1px',
         display: 'flex',
         flexGrow: 1,
