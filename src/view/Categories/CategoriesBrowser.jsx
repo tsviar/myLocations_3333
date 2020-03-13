@@ -32,6 +32,13 @@ import marker from '@ajar/marker';
 import main_palete_theme from '../../style.lib/PalleteStyles';
 // import Image from '../../style.lib/images/table_background_1.jpg';
 import Image from '../../style.lib/images/table_background_3.jpg';
+import ImageSmall from '../../style.lib/images/table_background_small.jpg';
+import ImageMed from '../../style.lib/images/table_background_med.jpg';
+import ImageLarge from '../../style.lib/images/table_background_large.jpg';
+import ImageHigh from '../../style.lib/images/table_background_high.jpg';
+import ImageHighSmall from '../../style.lib/images/table_background_high_small.jpg';
+import ImageHighMed from '../../style.lib/images/table_background_high_med.jpg';
+import ImageHighLarge from '../../style.lib/images/table_background_high_large.jpg';
 
 import localization_theme from "../../style.lib/localization";
 
@@ -585,148 +592,340 @@ export default CategoriesBrowser;
 
 
 const MainBox = styled('div')({
-  height: 'fit-content',
-  //width: '100%',
-  //width: 'fit-content(100%)',
-  width: 'auto',
-  maxWidth: '100vw',
-  //maxWidth: 'fit-content(100vw)',
-  // minWidth: '100rem',
+  display: 'flex',
+  flexDirection: 'column',
+  justifyContent: 'center',
+  alignItems: 'center',
 
-  '@media (minWidth:1280px)': {
-    // width: 'auto',
-    minWidth: '100rem',
-  },
+  background: `${main_palete_theme.palette.surface_background.regular_medium} center / cover no-repeat url(${Image}) `,
 
-  '@media (maxWidth: 1279px) ': {//780px
-    width: '80%',
-    minWidth: '80vw',
-  },
-  /* '@media (minWidth: 600px) and (maxWidth: 959px)': { //779px
-    width: '65%',
-    minWidth: '65vw',
-  },
-  '@media (minWidth: 361px) and (maxWidth: 599px)': {
 
-    width: '60%',
-    minWidth: '60vw',
-  }, */
-  '@media (maxWidth: 360px)': {
-    /* width: 'auto',
-    minWidth: '30rem',
-  },
-  '@media (maxWidth: 330px)': { */
-    // width: '100%', 
-    /* width: 'auto',
-    minWidth: '30rem',
 
-  },
-  '@media (maxWidth: 320px)': { */
-    // width: '100%', 
-    width: 'auto',
-    minWidth: '25rem',
-  },
-  '@media (maxWidth: 250px)': {
-    width: 'auto',
-    minWidth: '25rem',
-  },
+  // background: `${main_palete_theme.palette.surface_background.regular_medium}  center / 100% no-repeat url(${Image}) `,
+
+  //background: `${main_palete_theme.palette.surface_background.regular_medium}  center / cover no-repeat url(${Image}) `,
 
   borderRadius: '0.4rem',
   boxShadow: '0 0.4rem 1.5rem DimGrey',
 
-  margin: 'auto',
-  // marginTop: '3rem',
 
-  //padding: '7.0rem 1.5rem 1.5rem',
-  padding: '1.5rem 1.5rem 1.5rem',
-  paddingTop: 'auto',
+  // marginBottom: 40,
+  //top right bottom left
+  margin: '0px 0px 40px 0px',
+  // margin: 'auto',
+  //padding: 'auto',
 
   //fontSize: '1.5rem',
 
-  // background: `${main_palete_theme.palette.surface_background.regular_medium}  center / 100% no-repeat url(${Image}) `,
+  // Mobile 1st
 
-  // background: `${main_palete_theme.palette.surface_background.regular_medium}  center / cover no-repeat url(${Image}) `,
+  //  What is the max width for mobile? 480px
+  //  Most mobile phones have a device-width of 480px or lower, including the popular iPhone 4 (with 
+  //  device- width: 320px), despite it technically having a 640 x 960 
 
-  background: `${main_palete_theme.palette.surface_background.regular_medium} center / cover no-repeat url(${Image}) `,
+  height: 'auto',
+  //  height: '100%',
+
+  // maxHeight: '10rem',
+  //minHeight: '10vh',  
+  maxHeight: '10vh',
+  minHeight: '26rem',
+
+  /*
+    height: '100%',
+    maxHeight: '60vh',
+    minHeight: '55rem',
+  */
+
+  width: 'auto',
+  maxWidth: '100vw',
+  minWidth: '94vw',
+
+  //width: 'auto',
+  //  maxWidth: '100vw',
+  //  minWidth: '100vw',
+
+
+  // tablet and up
+  //--------------------------
+  /*
+    '@media (min-width: 1024px) and (orientation: portrait)': {
+      height: '100%',
+      maxHeight: '100vh',
+      minHeight: '100rem',
+  
+      width: 'auto',
+      //  maxWidth: '90vw',
+      maxWidth: '100vw',
+      minWidth: '100rem',
+  
+      background: `${main_palete_theme.palette.surface_background.regular_medium} center / cover no-repeat url(${ImageHighLarge}) `,
+    },
+  
+    '@media (min-width: 1024px) and (orientation: landscape)': {
+      height: '100%',
+      maxHeight: '100vh',
+      minHeight: '100rem',
+  
+      width: 'auto',
+      maxWidth: '100vw',
+      minWidth: '80rem',
+  
+      background: `${main_palete_theme.palette.surface_background.regular_medium} center / cover no-repeat url(${ImageLarge}) `,
+    },
+  */
+
+
+
+
+  '@media (min-width: 360px) and (orientation: portrait)': {
+    height: 'auto',
+    maxHeight: '90vh',
+    minHeight: '60rem',
+
+    width: 'auto',
+    maxWidth: '100vw',
+    minWidth: '30rem',
+    // maxWidth: '60rem',
+    //minWidth: '98vw',
+
+    background: `${main_palete_theme.palette.surface_background.regular_medium} center / cover no-repeat url(${ImageHighSmall}) `,
+  },
+
+  '@media (min-width: 360px) and (orientation: landscape)': {
+    height: 'auto',
+    maxHeight: '20vh',
+    minHeight: '20rem',
+
+    width: '100%',
+    maxWidth: '30vw',
+    minWidth: '30rem',
+
+    background: `${main_palete_theme.palette.surface_background.regular_medium} center / cover no-repeat url(${ImageSmall}) `,
+  },
+
+
+  '@media (min-width: 480px) and (orientation: portrait)': {
+    height: '100%',
+    maxHeight: '90vh',
+    minHeight: '86rem',
+
+    width: 'auto',
+    maxWidth: '100vw',
+    minWidth: '66rem',
+    // maxWidth: '60rem',
+    //minWidth: '98vw',
+
+    background: `${main_palete_theme.palette.surface_background.regular_medium} center / cover no-repeat url(${ImageHighLarge}) `,
+  },
+
+  '@media (min-width: 480px) and (orientation: landscape)': {
+    height: 'auto',
+    maxHeight: '90vh',
+    minHeight: '66rem',
+
+    width: 'auto',
+    //maxWidth: '100vw',
+    minWidth: '86rem',
+
+    background: `${main_palete_theme.palette.surface_background.regular_medium} center / cover no-repeat url(${ImageLarge}) `,
+  },
+
+
+
+  '@media (min-width: 640px) and (orientation: landscape)': {
+    height: 'auto',
+    maxHeight: '90vh',
+    minHeight: '34rem',
+
+    width: 'auto',
+    maxWidth: '90vw',
+    minWidth: '66rem',
+
+    background: `${main_palete_theme.palette.surface_background.regular_medium} center / cover no-repeat url(${ImageSmall}) `,
+  },
+
+
+  '@media (min-width: 800px) and (orientation: portrait)': {
+    height: 'auto',
+    maxHeight: '100vh',
+    minHeight: '106rem',
+
+    width: 'auto',
+    maxWidth: '90vw',
+    minWidth: '68rem',
+
+    background: `${main_palete_theme.palette.surface_background.regular_medium} center / cover no-repeat url(${ImageHighMed}) `,
+  },
+
+  '@media (min-width: 800px) and (orientation: landscape)': {
+    height: '100%',
+    maxHeight: '100vh',
+    minHeight: '100rem',
+
+    width: 'auto',
+    maxWidth: '100vw',
+    minWidth: '100rem',
+
+    background: `${main_palete_theme.palette.surface_background.regular_medium} center / cover no-repeat url(${ImageMed}) `,
+  },
+
+
+  '@media (min-width: 1024px) and (orientation: portrait)': {
+    height: 'auto',
+    maxHeight: '100vh',
+    minHeight: '112rem',
+
+    width: 'auto',
+    maxWidth: '100vw',
+    minWidth: '86rem',
+    // maxWidth: '60rem',
+    //minWidth: '98vw',
+
+    background: `${main_palete_theme.palette.surface_background.regular_medium} center / cover no-repeat url(${ImageHighLarge}) `,
+  },
+
+  '@media (min-width: 1024px) and (orientation: landscape)': {
+    height: '100%',
+    maxHeight: '90vh',
+    minHeight: '86rem',
+
+    width: '100%',
+    maxWidth: '100vw',
+    minWidth: '96rem',
+
+    background: `${main_palete_theme.palette.surface_background.regular_medium} center / cover no-repeat url(${ImageLarge}) `,
+  },
+
 
   //background: 'Cornsilk',
   // backgroundImage: `url(${Image})`,
   // backgroundSize: 'cover',
   //backgroundPosition: 'strech', //'center',
   //backgroundRepeat: `no-repeat`,
-  //width: `calc(100vw + 48px)`,
 
 
-  // borderRadius: '0.4rem',
-  display: 'flex',
-  flexDirection: 'column',
-
-  // padding: '8.5rem 1.5rem 1.5rem','
-  // margin-top: '10rem',' 
-  // font-size: '3rem',' 
 });
 
 
 const ContentBox = styled('div')({
 
-  height: 'fit-content(80em)',
-  maxHeight: '60rem',
-
-  // width: 'auto',
-  maxWidth: '80vw',
-
-
-
-  /*
-    '@media (min-width:1280px)': {
-      // width: 'auto',
-      minWidth: '100rem',
-    },
-  
-    '@media (min-width:961px) and (max-width: 1279px) ': {//781px
-      width: '80%',
-      minWidth: '80vw',
-    },
-    '@media (min-width: 601px) and (max-width: 960px)': { //790px
-      width: '65%',
-      minWidth: '65vw',
-    },
-    '@media (min-width: 401px) and (max-width: 600px)': {
-      width: '50%',
-      minWidth: '50vw',
-      overflowX: 'auto',
-    },
-    '@media (max-width: 400px)': {
-      width: '50%',
-      minWidth: '50vw',
-      overflowX: 'auto',
-    },
-  */
-  position: 'relative',
-  //position: 'sticky',
-  //top: '20px',
-  //border:red solid 2px;
-
-  // borderRadius: '0.4rem',
-  //boxShadow: '0 0.4rem 1.5rem DimGrey',
-  //backgroundImage: `url(${Image})`,
-  margin: 'auto',
-  padding: 'auto',
-
-
   display: 'flex',
   alignItems: 'center',
   ///alignItems: 'space-between',   
   ///alignItems: 'flex-start', 
-  justifyContent: 'space-around',
+  justifyContent: 'center',
   //justifyContent: 'flex-start',
+
+  margin: 'auto',
+  padding: 'auto',
+  //top right bottom left
+  //padding: '0 0 2 0',
+
+
+
+  '@media (min-width: 640px) and (orientation: landscape)': {
+    height: '100%',
+    // height: 'auto',
+    // maxHeight: '90vh',
+    // minHeight: '8rem',
+
+    width: '100%',
+    //  width: 'auto',
+    //  maxWidth: '90vw',
+    // minWidth: '16rem',
+
+
+    //marginBottom: 20,
+    // paddingBottom: 20,
+
+  },
+
+
+
+  /*
+  // '@media (max-device-width:411px) and (orientation: landscape)': {
+  '@media (orientation: landscape) ': {
+
+    // mobile landscape
+    height: 'auto',
+    // maxHeight: '8rem',
+    // minHeight: '8vh',
+
+    width: 'auto',
+    //   maxWidth: '1rem',
+    //  minWidth: '1vw',
+
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  */
+  /*
+    '@media (minDeviceWidthh:360px) and (orientation: landscape) ': {
+      height: '10rem',
+      //maxHeight: '1rem',
+      minHeight: '1rem',
+      //top right bottom left
+      margin: '0px',
+      margin: '0px 0px 100px 0px',
+      
+    },
+  
+  */
+  /*
+    //height: 'fit-content(80em)',
+    //maxHeight: '60rem',
+    height: '100%',
+    maxHeight: '80vh',
+    minHeight: '60rem',
+  
+    width: 'auto',
+    maxWidth: '100vw',
+    minWidth: '100rem',
+    //maxWidth: '80vw',
+  */
+  /*
+    '@media (min-width:1280px)': {
+      height: '100%',
+  
+      //width: 'auto',
+      width: '100%',
+      //maxWidth: '100vw',
+      maxWidth: '100rem',
+      minWidth: '100rem',
+      // minWidth: '100vw',
+    },
+    /*  
+       '@media (min-width:961px) and (max-width: 1279px) ': {//781px
+         width: '80%',
+         minWidth: '80vw',
+       },
+       '@media (min-width: 601px) and (max-width: 960px)': { //790px
+         width: '65%',
+         minWidth: '65vw',
+       },
+       '@media (min-width: 401px) and (max-width: 600px)': {
+         width: '50%',
+         minWidth: '50vw',
+         overflowX: 'auto',
+       },
+       '@media (max-width: 400px)': {
+         width: '50%',
+         minWidth: '50vw',
+         overflowX: 'auto',
+       },
+     */
+
 
 });
 
 
 
 const TableStyle = {
-  height: 'fit-content(100%)',
+  //  height: 'fit-content(100%)',
+  height: '100%',
 
   //width: '50%',
   //width: '100vw',
@@ -742,12 +941,36 @@ const TableStyle = {
   //overflow: 'auto', 
   overflow: 'none',
 
+  display: 'flex',
+  flexDirection: 'column',
+  justifyContent: 'center',
 
+
+
+  '@media (min-width: 640px) and (orientation: landscape)': {
+    height: '20%',
+    // height: 'auto',
+    // maxHeight: '90vh',
+    // minHeight: '8rem',
+
+    width: '20%',
+    //  width: 'auto',
+    //  maxWidth: '90vw',
+    // minWidth: '16rem',
+
+
+    marginBottom: 20,
+    paddingBottom: 20,
+
+  },
+
+  /*
   '@media (maxWidth: 320px)': {
     display: 'flex',
     width: 'fit-content(60vw)',
     minWidth: '60vw',
   },
+  */
 }
 
 
@@ -766,6 +989,7 @@ const MTableToolbarStyle = {
   justifyContent: 'center',
   //justifyContent: 'space-around',
   //flexWrap: 'auto',
+
 }
 
 const TableTitleDivStyle = {
@@ -778,7 +1002,7 @@ const TableTitleDivStyle = {
   marginRight: 10,
   paddingRight: 10,
 
-  '@media (max-width: 320px)': {
+  '@media (maxWidth: 320px)': {
     display: 'none',
     width: 0,
     margin: 0,
@@ -801,7 +1025,7 @@ const TableTitleStyled = styled('h4')({
   flexGrow: 1.5,
   flexShrink: 1,
 
-  '@media (max-width: 650px)': {
+  '@media (maxWidth: 650px)': {
     //fontSize: '1.1rem',
     marginRight: '20',
     //paddingRight: '20',
@@ -810,7 +1034,8 @@ const TableTitleStyled = styled('h4')({
 
   },
 
-  '@media (max-width: 320px)': {
+
+  '@media (maxWidth: 320px)': {
     display: 'none',
     width: 0,
     margin: 0,
@@ -830,14 +1055,14 @@ const TableSearchFieldStyle =
   flexGrow: 2,
   flexShrink: 1,
 
-  '@media (max-width: 650px)': {
+  '@media (maxWidth: 650px)': {
     //width: '3em',
     display: 'flex',
     flexGrow: 1,
     flexShrink: 2,
   },
 
-  '@media (max-width: 320px)': {
+  '@media (maxWidth: 320px)': {
     display: 'flex',
     flexGrow: 5,
     flexShrink: 1,
@@ -852,7 +1077,7 @@ const AddButtonDiv = styled('h4')({
   flexGrow: 1,
   flexShrink: 1,
 
-  '@media (max-width: 650px)': {
+  '@media (maxWidth: 650px)': {
     display: 'flex',
     flexGrow: 1,
     flexShrink: 2,
@@ -868,7 +1093,7 @@ const TableAddButtonStyle =
   flexGrow: 1,
   flexShrink: 1,
 
-  '@media (max-width: 650px)': {
+  '@media (maxWidth: 650px)': {
     display: 'flex',
     flexGrow: 1,
     flexShrink: 2,
@@ -883,7 +1108,7 @@ const TableAddLocationIconStyle = {
   flexGrow: 1,
   flexShrink: 1,
 
-  '@media (max-width: 650px)': {
+  '@media (maxWidth: 650px)': {
     fontSize: '1px',
     display: 'flex',
     flexGrow: 1,
@@ -900,6 +1125,7 @@ const TableHeaderStyle =
   // backgroundColor: '#039be5',
   color: `${main_palete_theme.palette.top_menu.text_color}`, //'#FFF',
   fontSize: `1.2rem`,
+
 
 }
 

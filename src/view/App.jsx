@@ -199,6 +199,7 @@ const AppBox = styled('div')({
   height: '100%',
   width: '80%',
   minWidth: '100vw',
+
   //maxWidth: '100%',
   maxWidth: '35rem',
 
@@ -206,25 +207,25 @@ const AppBox = styled('div')({
 
 
   /*
-    '@media (minWidth:1280px)': {
+    '@media (min-width:1280px)': {
       // width: 'auto',
       minWidth: '100rem',
     },
   
-    '@media (minWidth:960px) and (maxWidth: 1279px) ': {//780px
+    '@media (min-width:960px) and (maxWidth: 1279px) ': {//780px
       width: '80%',
       minWidth: '100rem',
     },
-    '@media (minWidth: 600px) and (maxWidth: 959px)': { //779px
+    '@media (min-width: 600px) and (maxWidth: 959px)': { //779px
       width: '80%',
       minWidth: '80vw',
   
     },
-    '@media (minWidth: 401px) and (maxWidth: 599px)': {
+    '@media (min-width: 401px) and (maxWidth: 599px)': {
       width: '50%',
       minWidth: '50vw',
     },
-    '@media (maxWidth: 400px)': {
+    '@media (max-width: 400px)': {
       //height: '30%',
       width: '30rem',
       maxWidth: '30vw',
@@ -239,19 +240,23 @@ const AppBox = styled('div')({
   justifyContent: 'center',
   alignItems: 'center',
 
-  margin: 'auto',
+  //margin: 'auto',
+  margin: 0,
+  //padding: 'auto',
+  padding: 0,
+
   //top right bottom left
   // padding: '2rem 0rem 3rem 5rem',
   //padding: '3rem 7.5rem',
   //padding: '2rem 10rem 5rem 10rem', 
   //padding: '10.5rem 1.5rem 1.5rem',
   /*
-    '@media (maxWidth: 780px)': {
+    '@media (max-width: 780px)': {
       //top right bottom left
       //padding: '20rem 0 0 0',
       padding: '0 0 0 10rem',
     },
-    '@media (maxWidth: 400px)': {
+    '@media (max-width: 400px)': {
       //top right bottom left
       padding: '2rem 0 0 0',
   
