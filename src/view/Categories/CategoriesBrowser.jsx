@@ -597,14 +597,6 @@ const MainBox = styled('div')({
   justifyContent: 'center',
   alignItems: 'center',
 
-  background: `${main_palete_theme.palette.surface_background.regular_medium} center / cover no-repeat url(${Image}) `,
-
-
-
-  // background: `${main_palete_theme.palette.surface_background.regular_medium}  center / 100% no-repeat url(${Image}) `,
-
-  //background: `${main_palete_theme.palette.surface_background.regular_medium}  center / cover no-repeat url(${Image}) `,
-
   borderRadius: '0.4rem',
   boxShadow: '0 0.4rem 1.5rem DimGrey',
 
@@ -623,180 +615,66 @@ const MainBox = styled('div')({
   //  Most mobile phones have a device-width of 480px or lower, including the popular iPhone 4 (with 
   //  device- width: 320px), despite it technically having a 640 x 960 
 
-  height: 'auto',
-  //  height: '100%',
+  //height: 'auto',
+  height: '100%',
+  maxHeight: '100rem',
+  minHeight: '100vh',
 
-  // maxHeight: '10rem',
-  //minHeight: '10vh',  
-  maxHeight: '10vh',
-  minHeight: '26rem',
-
-  /*
-    height: '100%',
-    maxHeight: '60vh',
-    minHeight: '55rem',
-  */
-
-  width: 'auto',
-  maxWidth: '100vw',
-  minWidth: '94vw',
-
+  width: '100%',
   //width: 'auto',
-  //  maxWidth: '100vw',
-  //  minWidth: '100vw',
+  maxWidth: '100vw',
+  minWidth: '100vw',
 
 
   // tablet and up
   //--------------------------
-  /*
-    '@media (min-width: 1024px) and (orientation: portrait)': {
-      height: '100%',
-      maxHeight: '100vh',
-      minHeight: '100rem',
-  
-      width: 'auto',
-      //  maxWidth: '90vw',
-      maxWidth: '100vw',
-      minWidth: '100rem',
-  
-      background: `${main_palete_theme.palette.surface_background.regular_medium} center / cover no-repeat url(${ImageHighLarge}) `,
-    },
-  
-    '@media (min-width: 1024px) and (orientation: landscape)': {
-      height: '100%',
-      maxHeight: '100vh',
-      minHeight: '100rem',
-  
-      width: 'auto',
-      maxWidth: '100vw',
-      minWidth: '80rem',
-  
-      background: `${main_palete_theme.palette.surface_background.regular_medium} center / cover no-repeat url(${ImageLarge}) `,
-    },
-  */
 
+  //background: `${main_palete_theme.palette.surface_background.regular_medium} center / cover no-repeat url(${Image}) `,
 
-
-
-  '@media (min-width: 360px) and (orientation: portrait)': {
-    height: 'auto',
-    maxHeight: '90vh',
-    minHeight: '60rem',
-
-    width: 'auto',
-    maxWidth: '100vw',
-    minWidth: '30rem',
-    // maxWidth: '60rem',
-    //minWidth: '98vw',
-
-    background: `${main_palete_theme.palette.surface_background.regular_medium} center / cover no-repeat url(${ImageHighSmall}) `,
-  },
-
-  '@media (min-width: 360px) and (orientation: landscape)': {
-    height: 'auto',
-    maxHeight: '20vh',
-    minHeight: '20rem',
-
-    width: '100%',
-    maxWidth: '30vw',
-    minWidth: '30rem',
-
-    background: `${main_palete_theme.palette.surface_background.regular_medium} center / cover no-repeat url(${ImageSmall}) `,
-  },
-
-
-  '@media (min-width: 480px) and (orientation: portrait)': {
-    height: '100%',
-    maxHeight: '90vh',
-    minHeight: '86rem',
-
-    width: 'auto',
-    maxWidth: '100vw',
-    minWidth: '66rem',
-    // maxWidth: '60rem',
-    //minWidth: '98vw',
-
-    background: `${main_palete_theme.palette.surface_background.regular_medium} center / cover no-repeat url(${ImageHighLarge}) `,
-  },
-
-  '@media (min-width: 480px) and (orientation: landscape)': {
-    height: 'auto',
-    maxHeight: '90vh',
-    minHeight: '66rem',
-
-    width: 'auto',
-    //maxWidth: '100vw',
-    minWidth: '86rem',
-
+  '@media (orientation: landscape)': {
     background: `${main_palete_theme.palette.surface_background.regular_medium} center / cover no-repeat url(${ImageLarge}) `,
   },
 
-
-
-  '@media (min-width: 640px) and (orientation: landscape)': {
-    height: 'auto',
-    maxHeight: '90vh',
-    minHeight: '34rem',
-
-    width: 'auto',
-    maxWidth: '90vw',
-    minWidth: '66rem',
-
-    background: `${main_palete_theme.palette.surface_background.regular_medium} center / cover no-repeat url(${ImageSmall}) `,
+  '@media (min-device-width:801px) and (orientation: portrait)': {
+    background: `${main_palete_theme.palette.surface_background.regular_medium} center / cover no-repeat url(${ImageHighLarge}) `,
   },
-
-
-  '@media (min-width: 800px) and (orientation: portrait)': {
-    height: 'auto',
-    maxHeight: '100vh',
-    minHeight: '106rem',
-
-    width: 'auto',
-    maxWidth: '90vw',
-    minWidth: '68rem',
-
+  '@media (max-device-width:800px) and (orientation: portrait)': {
     background: `${main_palete_theme.palette.surface_background.regular_medium} center / cover no-repeat url(${ImageHighMed}) `,
   },
 
-  '@media (min-width: 800px) and (orientation: landscape)': {
+  //IPhone 6/7/8 / 8Plus / Iphone X / Glaxy S5
+  '@media (max-device-width:375px) and (orientation: portrait)': {
+    background: `${main_palete_theme.palette.surface_background.regular_medium} center / cover no-repeat url(${ImageHighSmall}) `,
+
+    //top right bottom left
+    margin: '30px 0px 10px 0px',
+    // padding: '1px 10px 50px 10px',
+    padding: '30px 10px 40px 10px',
+  },
+
+  //IPhone 5/SE IPhone 4
+  '@media (max-device-width:320px) and (orientation: portrait)': {
+    background: `${main_palete_theme.palette.surface_background.regular_medium} center /scale-down no-repeat url(${ImageHighSmall}) `,
+
+    //top right bottom left
+    margin: '100px 0px 10px 75px',
+    padding: '180px 10px 50px 75px',
+
+    // height: 'auto',
     height: '100%',
-    maxHeight: '100vh',
-    minHeight: '100rem',
+    maxHeight: '250rem',
+    minHeight: '130vh',
 
+    //width: '100%',
     width: 'auto',
-    maxWidth: '100vw',
-    minWidth: '100rem',
+    maxWidth: '150vw',
+    minWidth: '100vw',
 
-    background: `${main_palete_theme.palette.surface_background.regular_medium} center / cover no-repeat url(${ImageMed}) `,
   },
 
+  // background: `${main_palete_theme.palette.surface_background.regular_medium}  center / 100% no-repeat url(${Image}) `,
 
-  '@media (min-width: 1024px) and (orientation: portrait)': {
-    height: 'auto',
-    maxHeight: '100vh',
-    minHeight: '112rem',
-
-    width: 'auto',
-    maxWidth: '100vw',
-    minWidth: '86rem',
-    // maxWidth: '60rem',
-    //minWidth: '98vw',
-
-    background: `${main_palete_theme.palette.surface_background.regular_medium} center / cover no-repeat url(${ImageHighLarge}) `,
-  },
-
-  '@media (min-width: 1024px) and (orientation: landscape)': {
-    height: '100%',
-    maxHeight: '90vh',
-    minHeight: '86rem',
-
-    width: '100%',
-    maxWidth: '100vw',
-    minWidth: '96rem',
-
-    background: `${main_palete_theme.palette.surface_background.regular_medium} center / cover no-repeat url(${ImageLarge}) `,
-  },
-
+  //background: `${main_palete_theme.palette.surface_background.regular_medium}  center / cover no-repeat url(${Image}) `,
 
   //background: 'Cornsilk',
   // backgroundImage: `url(${Image})`,
@@ -817,106 +695,10 @@ const ContentBox = styled('div')({
   justifyContent: 'center',
   //justifyContent: 'flex-start',
 
-  margin: 'auto',
-  padding: 'auto',
+  //  margin: 'auto',
+  //padding: 'auto',
   //top right bottom left
   //padding: '0 0 2 0',
-
-
-
-  '@media (min-width: 640px) and (orientation: landscape)': {
-    height: '100%',
-    // height: 'auto',
-    // maxHeight: '90vh',
-    // minHeight: '8rem',
-
-    width: '100%',
-    //  width: 'auto',
-    //  maxWidth: '90vw',
-    // minWidth: '16rem',
-
-
-    //marginBottom: 20,
-    // paddingBottom: 20,
-
-  },
-
-
-
-  /*
-  // '@media (max-device-width:411px) and (orientation: landscape)': {
-  '@media (orientation: landscape) ': {
-
-    // mobile landscape
-    height: 'auto',
-    // maxHeight: '8rem',
-    // minHeight: '8vh',
-
-    width: 'auto',
-    //   maxWidth: '1rem',
-    //  minWidth: '1vw',
-
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  */
-  /*
-    '@media (minDeviceWidthh:360px) and (orientation: landscape) ': {
-      height: '10rem',
-      //maxHeight: '1rem',
-      minHeight: '1rem',
-      //top right bottom left
-      margin: '0px',
-      margin: '0px 0px 100px 0px',
-      
-    },
-  
-  */
-  /*
-    //height: 'fit-content(80em)',
-    //maxHeight: '60rem',
-    height: '100%',
-    maxHeight: '80vh',
-    minHeight: '60rem',
-  
-    width: 'auto',
-    maxWidth: '100vw',
-    minWidth: '100rem',
-    //maxWidth: '80vw',
-  */
-  /*
-    '@media (min-width:1280px)': {
-      height: '100%',
-  
-      //width: 'auto',
-      width: '100%',
-      //maxWidth: '100vw',
-      maxWidth: '100rem',
-      minWidth: '100rem',
-      // minWidth: '100vw',
-    },
-    /*  
-       '@media (min-width:961px) and (max-width: 1279px) ': {//781px
-         width: '80%',
-         minWidth: '80vw',
-       },
-       '@media (min-width: 601px) and (max-width: 960px)': { //790px
-         width: '65%',
-         minWidth: '65vw',
-       },
-       '@media (min-width: 401px) and (max-width: 600px)': {
-         width: '50%',
-         minWidth: '50vw',
-         overflowX: 'auto',
-       },
-       '@media (max-width: 400px)': {
-         width: '50%',
-         minWidth: '50vw',
-         overflowX: 'auto',
-       },
-     */
 
 
 });
@@ -924,53 +706,23 @@ const ContentBox = styled('div')({
 
 
 const TableStyle = {
-  //  height: 'fit-content(100%)',
-  height: '100%',
-
-  //width: '50%',
-  //width: '100vw',
-  // width: 'auto',
-  //width: '80em',
-  //maxWidth: '50rem',
-  //maxWidth: '80vw',
-  //minWidth: '30em',
 
   margin: 'auto',
   padding: 'auto',
-
-  //overflow: 'auto', 
-  overflow: 'none',
 
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'center',
 
+  //overflow: 'auto', 
+  overflow: 'none',
 
+  width: 'auto',
+  maxWidth: 'inherit',
 
-  '@media (min-width: 640px) and (orientation: landscape)': {
-    height: '20%',
-    // height: 'auto',
-    // maxHeight: '90vh',
-    // minHeight: '8rem',
+  height: '100%',
+  maxHeight: 'inherit',
 
-    width: '20%',
-    //  width: 'auto',
-    //  maxWidth: '90vw',
-    // minWidth: '16rem',
-
-
-    marginBottom: 20,
-    paddingBottom: 20,
-
-  },
-
-  /*
-  '@media (maxWidth: 320px)': {
-    display: 'flex',
-    width: 'fit-content(60vw)',
-    minWidth: '60vw',
-  },
-  */
 }
 
 
@@ -1136,3 +888,13 @@ const TableRowStyle = {
   fontFamily: 'Expletus Sans',
   fontSize: `3rem`,//'1.4rem',
 }
+
+/*
+object-fit can be set with one of these five values:
+
+fill: this is the default value which stretches the image to fit the content box, regardless of its aspect-ratio.
+contain: increases or decreases the size of the image to fill the box whilst preserving its aspect-ratio.
+cover: the image will fill the height and width of its box, once again maintaining its aspect ratio but often cropping the image in the process.
+none: image will ignore the height and width of the parent and retain its original size.
+scale-down: the image will compare the difference between none and contain in order to find the smallest concrete object size.
+*/
