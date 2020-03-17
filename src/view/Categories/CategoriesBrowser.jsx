@@ -505,11 +505,13 @@ const CategoriesBrowser = () => {
 
                 sorting: true,
 
-                headerStyle: TableHeaderStyle,
+                pageSizeOptions: [5, 10], // more then that look awefull...
 
                 searchFieldStyle: TableSearchFieldStyle,
 
-                pageSizeOptions: [5, 10], // more then that look awefull...
+                headerStyle: TableHeaderStyle,
+
+                cellStyle: TableCellStyle,
 
                 rowStyle: rowData => ({
                   backgroundColor:
@@ -635,6 +637,20 @@ const MainBox = styled('div')({
     background: `${main_palete_theme.palette.surface_background.regular_medium} center / cover no-repeat url(${ImageLarge}) `,
   },
 
+  // Pixel 2
+  '@media (max-device-width:823px) and (orientation: landscape)': {
+    background: `${main_palete_theme.palette.surface_background.regular_medium} center / scale-down no-repeat url(${ImageHighLarge}) `,
+
+    //top right bottom left
+    margin: '20rem 0px 0rem 0px',
+    // padding: '1px 10px 50px 10px',
+    padding: '15rem 0px 5rem 0rem',
+
+    height: '100%',
+    minHeight: '150vh',
+    mixWidth: '100vw',
+  },
+
   '@media (min-device-width:801px) and (orientation: portrait)': {
     background: `${main_palete_theme.palette.surface_background.regular_medium} center / cover no-repeat url(${ImageHighLarge}) `,
   },
@@ -642,7 +658,22 @@ const MainBox = styled('div')({
     background: `${main_palete_theme.palette.surface_background.regular_medium} center / cover no-repeat url(${ImageHighMed}) `,
   },
 
-  //IPhone 6/7/8 / 8Plus / Iphone X / Glaxy S5
+  //IPhone 6/7/8 / 8Plus / Iphone X / LG Optimus L70
+  '@media (max-device-width:384px) and (orientation: portrait)': {
+    background: `${main_palete_theme.palette.surface_background.regular_medium} center / cover no-repeat url(${ImageHighSmall}) `,
+
+    //top right bottom left
+    margin: '30px 0px 10px 10px',
+    // padding: '1px 10px 50px 10px',
+    padding: '30px 10px 30px 10px',
+
+    height: 'auto',
+    width: 'auto',
+    maxWidth: '110vw',
+    minWidth: '100vw',
+  },
+
+  //IPhone 6/7/8 / 8Plus / Iphone X 
   '@media (max-device-width:375px) and (orientation: portrait)': {
     background: `${main_palete_theme.palette.surface_background.regular_medium} center / cover no-repeat url(${ImageHighSmall}) `,
 
@@ -650,8 +681,49 @@ const MainBox = styled('div')({
     margin: '30px 0px 10px 0px',
     // padding: '1px 10px 50px 10px',
     padding: '30px 10px 40px 10px',
+
+    height: 'auto',
+    width: 'auto',
+    maxWidth: '110vw',
+    minWidth: '100vw',
   },
 
+  // Glaxy S5
+  '@media (max-device-width:360px) and (orientation: portrait)': {
+    background: `${main_palete_theme.palette.surface_background.regular_medium} center / cover no-repeat url(${ImageHighMed}) `,
+
+    //top right bottom left
+    margin: '20px 0px 20px 30px',
+    // padding: '1px 10px 50px 10px',
+    padding: '90px 20px 40px 75px',
+
+    height: 'auto',
+    //height: '110%',
+    maxHeight: '190vh',
+    minHeight: '100vh',
+
+    //width: '100%',
+    width: 'auto',
+    maxWidth: '150vw',
+    minWidth: '110vw',
+
+  },
+
+  // Glaxy S5
+  '@media (max-device-width:640px) and (orientation: landscape)': {
+    background: `${main_palete_theme.palette.surface_background.regular_medium} center / fill no-repeat url(${ImageLarge}) `,
+
+    //top right bottom left
+    margin: '25rem 0px 10px 25px',
+    // padding: '1px 10px 50px 10px',
+    padding: '20rem 0px 35px 10rem',
+
+    height: '100%',
+    minHeight: '130vh',
+    width: 'auto',
+    maxWidth: '120rem',
+    minWidth: '140vw',
+  },
   //IPhone 5/SE IPhone 4
   '@media (max-device-width:320px) and (orientation: portrait)': {
     background: `${main_palete_theme.palette.surface_background.regular_medium} center /scale-down no-repeat url(${ImageHighSmall}) `,
@@ -669,7 +741,6 @@ const MainBox = styled('div')({
     width: 'auto',
     maxWidth: '150vw',
     minWidth: '100vw',
-
   },
 
   // background: `${main_palete_theme.palette.surface_background.regular_medium}  center / 100% no-repeat url(${Image}) `,
@@ -695,10 +766,11 @@ const ContentBox = styled('div')({
   justifyContent: 'center',
   //justifyContent: 'flex-start',
 
-  //  margin: 'auto',
-  //padding: 'auto',
+  margin: 'auto',
+  padding: 'auto',
   //top right bottom left
   //padding: '0 0 2 0',
+
 
 
 });
@@ -723,6 +795,8 @@ const TableStyle = {
   height: '100%',
   maxHeight: 'inherit',
 
+
+
 }
 
 
@@ -736,11 +810,11 @@ const MTableToolbarStyle = {
   fontSize: `1.2rem`,
 
   display: 'flex',
-  //  flexDirection: 'column',
+  //flexDirection: 'column',
   alignItems: 'space-around',
   justifyContent: 'center',
   //justifyContent: 'space-around',
-  //flexWrap: 'auto',
+  flexWrap: 'wrap',
 
 }
 
@@ -878,7 +952,8 @@ const TableHeaderStyle =
   color: `${main_palete_theme.palette.top_menu.text_color}`, //'#FFF',
   fontSize: `1.2rem`,
 
-
+  width: 20,
+  maxWidth: 20,
 }
 
 const TableRowStyle = {
@@ -889,6 +964,10 @@ const TableRowStyle = {
   fontSize: `3rem`,//'1.4rem',
 }
 
+const TableCellStyle = {
+  width: 20,
+  maxWidth: 20,
+}
 /*
 object-fit can be set with one of these five values:
 
