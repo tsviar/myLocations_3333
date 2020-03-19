@@ -611,34 +611,44 @@ const MainBox = styled('div')({
 
   //fontSize: '1.5rem',
 
-  // Mobile 1st
+  // Desktop 1st
 
   //  What is the max width for mobile? 480px
   //  Most mobile phones have a device-width of 480px or lower, including the popular iPhone 4 (with 
   //  device- width: 320px), despite it technically having a 640 x 960 
 
+  // tablet and up
+  //--------------------------
+
   //height: 'auto',
   height: '100%',
-  maxHeight: '100rem',
+  //maxHeight: '100rem',
   minHeight: '100vh',
 
   width: '100%',
   //width: 'auto',
-  maxWidth: '100vw',
+  //maxWidth: '100vw',
   minWidth: '100vw',
 
+  //top right bottom left
+  margin: '20rem 10px 10px 10px',
+  // padding: '1px 10px 50px 10px',
+  padding: '30rem 10rem 5rem 10rem',
 
-  // tablet and up
-  //--------------------------
 
   //background: `${main_palete_theme.palette.surface_background.regular_medium} center / cover no-repeat url(${Image}) `,
 
   '@media (orientation: landscape)': {
     background: `${main_palete_theme.palette.surface_background.regular_medium} center / cover no-repeat url(${ImageLarge}) `,
+
+    //top right bottom left
+    margin: '20rem 10px 10px 10px',
+    // padding: '1px 10px 50px 10px',
+    padding: '30rem 10rem 5rem 11rem',
   },
 
   // Pixel 2
-  '@media (max-device-width:823px) and (orientation: landscape)': {
+  '@media (orientation: landscape) and (max-device-width:823px)': {
     background: `${main_palete_theme.palette.surface_background.regular_medium} center / scale-down no-repeat url(${ImageHighLarge}) `,
 
     //top right bottom left
@@ -651,66 +661,8 @@ const MainBox = styled('div')({
     mixWidth: '100vw',
   },
 
-  '@media (min-device-width:801px) and (orientation: portrait)': {
-    background: `${main_palete_theme.palette.surface_background.regular_medium} center / cover no-repeat url(${ImageHighLarge}) `,
-  },
-  '@media (max-device-width:800px) and (orientation: portrait)': {
-    background: `${main_palete_theme.palette.surface_background.regular_medium} center / cover no-repeat url(${ImageHighMed}) `,
-  },
-
-  //IPhone 6/7/8 / 8Plus / Iphone X / LG Optimus L70
-  '@media (max-device-width:384px) and (orientation: portrait)': {
-    background: `${main_palete_theme.palette.surface_background.regular_medium} center / cover no-repeat url(${ImageHighSmall}) `,
-
-    //top right bottom left
-    margin: '30px 0px 10px 10px',
-    // padding: '1px 10px 50px 10px',
-    padding: '30px 10px 30px 10px',
-
-    height: 'auto',
-    width: 'auto',
-    maxWidth: '110vw',
-    minWidth: '100vw',
-  },
-
-  //IPhone 6/7/8 / 8Plus / Iphone X 
-  '@media (max-device-width:375px) and (orientation: portrait)': {
-    background: `${main_palete_theme.palette.surface_background.regular_medium} center / cover no-repeat url(${ImageHighSmall}) `,
-
-    //top right bottom left
-    margin: '30px 0px 10px 0px',
-    // padding: '1px 10px 50px 10px',
-    padding: '30px 10px 40px 10px',
-
-    height: 'auto',
-    width: 'auto',
-    maxWidth: '110vw',
-    minWidth: '100vw',
-  },
-
   // Glaxy S5
-  '@media (max-device-width:360px) and (orientation: portrait)': {
-    background: `${main_palete_theme.palette.surface_background.regular_medium} center / cover no-repeat url(${ImageHighMed}) `,
-
-    //top right bottom left
-    margin: '20px 0px 20px 30px',
-    // padding: '1px 10px 50px 10px',
-    padding: '90px 20px 40px 75px',
-
-    height: 'auto',
-    //height: '110%',
-    maxHeight: '190vh',
-    minHeight: '100vh',
-
-    //width: '100%',
-    width: 'auto',
-    maxWidth: '150vw',
-    minWidth: '110vw',
-
-  },
-
-  // Glaxy S5
-  '@media (max-device-width:640px) and (orientation: landscape)': {
+  '@media (orientation: landscape) and (max-device-width:640px)': {
     background: `${main_palete_theme.palette.surface_background.regular_medium} center / fill no-repeat url(${ImageLarge}) `,
 
     //top right bottom left
@@ -724,24 +676,148 @@ const MainBox = styled('div')({
     maxWidth: '120rem',
     minWidth: '140vw',
   },
-  //IPhone 5/SE IPhone 4
-  '@media (max-device-width:320px) and (orientation: portrait)': {
-    background: `${main_palete_theme.palette.surface_background.regular_medium} center /scale-down no-repeat url(${ImageHighSmall}) `,
+
+  // IPhone4
+  '@media (orientation: landscape) and (max-device-width:480px)': {
+    background: `${main_palete_theme.palette.surface_background.regular_medium} center / scale-down no-repeat url(${ImageLarge}) `,
 
     //top right bottom left
-    margin: '100px 0px 10px 75px',
-    padding: '180px 10px 50px 75px',
+    margin: '25rem 0px 10px 0px',
+    // padding: '1px 10px 50px 10px',
+    padding: '20rem 4rem 3rem 7rem',
 
-    // height: 'auto',
     height: '100%',
-    maxHeight: '250rem',
-    minHeight: '130vh',
+    minHeight: '100vh',
 
-    //width: '100%',
-    width: 'auto',
-    maxWidth: '150vw',
+    width: '100%',
+    //width: 'auto',
+    //maxWidth: '100rem',
     minWidth: '100vw',
   },
+
+  '@media (orientation: portrait) and (max-device-width:3000px)': {
+    background: `${main_palete_theme.palette.surface_background.regular_medium} center / cover no-repeat url(${ImageHighLarge}) `,
+  },
+
+  //Pixel 2 , 2 XL (411px)
+  '@media (orientation: portrait) and (max-device-width:800px)': {
+    background: `${main_palete_theme.palette.surface_background.regular_medium} center / cover no-repeat url(${ImageHighMed}) `,
+    marginTop: '10px',
+    marginBottom: '5px',
+    paddingTop: '15rem',
+    paddingBottom: '6rem',
+
+  },
+
+
+  /*
+    //LG Optimus L70
+    '@media (orientation: portrait) and (device-height: 640px) and (max-device-width:384px)': {
+      background: `${main_palete_theme.palette.surface_background.regular_medium} center / cover no-repeat url(${ImageHighSmall}) `,
+  
+      //top right bottom left
+      margin: '3rem 2px 10px 2px',
+      // padding: '1px 10px 50px 10px',
+      padding: '10rem 1rem 3rem 1.5rem',
+  
+      height: 'auto',
+      width: '100%',
+      maxWidth: '60rem',
+      minWidth: '100vw',
+    },
+  */
+  //IPhone 6/7/8 / 8Plus / Iphone X / LG Optimus L70
+  //  '@media (orientation: portrait) and (max-device-width:384px)': {
+  '@media (orientation: portrait) and (max-device-width:414px)': {
+    background: `${main_palete_theme.palette.surface_background.regular_medium} center / cover no-repeat url(${ImageHighSmall}) `,
+
+    //top right bottom left
+    margin: '3px 1px 10px 1px',
+    // padding: '1px 10px 50px 10px',
+    padding: '10rem 7rem 3rem 7rem',
+
+    height: '100%',
+    width: '80%',
+    maxWidth: '10rem',
+    minWidth: '100vw',
+    /*
+    background: `${main_palete_theme.palette.surface_background.regular_medium} center / fill no-repeat url(${ImageHighSmall}) `,
+
+    //top right bottom left
+    margin: '3rem 2px 10px 2px',
+    // padding: '1px 10px 50px 10px',
+    padding: '10rem 4rem 3rem 5.5rem',
+
+    height: 'auto',
+    width: '90%',
+    maxWidth: '50rem',
+    minWidth: '105vw',
+     */
+  },
+
+
+
+  //IPhone 6/7/8 / 8Plus / Iphone X 
+  '@media (orientation: portrait) and (max-device-width:375px)': {
+    background: `${main_palete_theme.palette.surface_background.regular_medium} center / cover no-repeat url(${ImageHighSmall}) `,
+
+    //top right bottom left
+    margin: '3px 1px 10px 1px',
+    // padding: '1px 10px 50px 10px',
+    padding: '20rem 10rem 4rem 10rem',
+
+    height: '100%',
+    width: '10%',
+    //maxWidth: '10rem',
+    //minWidth: '110vw',
+  },
+
+
+  // Glaxy S5
+  '@media (orientation: portrait) and (max-device-width:360px)': {
+    background: `${main_palete_theme.palette.surface_background.regular_medium} center / cover no-repeat url(${ImageHighSmall}) `,
+
+    //top right bottom left
+    margin: '3rem 1px 20px 1px',
+    // padding: '1px 10px 50px 10px',
+    padding: '13rem 5rem 4rem 12rem',
+
+    //height: 'auto',
+    height: '100%',
+    //maxHeight: '190vh',
+    minHeight: '104vh',
+
+    width: '100%',
+    // width: 'auto',
+    maxWidth: '150rem',
+    minWidth: '135vw',
+
+  },
+
+  //IPhone 5/SE IPhone 4
+  '@media (orientation: portrait) and (max-device-width:320px)': {
+    // background: `${main_palete_theme.palette.surface_background.regular_medium} center /cover no-repeat url(${ImageHighSmall}) `,
+
+    //top right bottom left
+    //margin: '10rem 0px 10px 7.5rem',
+    //padding: '18rem 1rem 50px 3rem',
+    margin: '10px 1px 10px 2px',
+    padding: '28rem 12rem 4rem 23rem',
+
+    //height: 'auto',
+    height: '100%',
+    //  maxHeight: '250rem',
+    //minHeight: '130vh',
+
+    width: '150%',
+    //width: 'auto',
+    //maxWidth: '150rem',
+    //minWidth: '100vw',
+
+  },
+
+  //moto 360 (max-device-width:218px) not supported
+
 
   // background: `${main_palete_theme.palette.surface_background.regular_medium}  center / 100% no-repeat url(${Image}) `,
 
