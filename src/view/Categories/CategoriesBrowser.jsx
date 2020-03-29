@@ -602,13 +602,6 @@ const MainBox = styled('div')({
   borderRadius: '0.4rem',
   boxShadow: '0 0.4rem 1.5rem DimGrey',
 
-
-  // marginBottom: 40,
-  //top right bottom left
-  margin: '0px 0px 40px 0px',
-  // margin: 'auto',
-  //padding: 'auto',
-
   //fontSize: '1.5rem',
 
   // Desktop 1st
@@ -631,9 +624,15 @@ const MainBox = styled('div')({
   minWidth: '100vw',
 
   //top right bottom left
-  margin: '20rem 10px 10px 10px',
+  margin: '20px 10px 20px 10px',
   // padding: '1px 10px 50px 10px',
-  padding: '30rem 10rem 5rem 10rem',
+  padding: '30rem 10rem 30rem 10rem',
+
+  // marginBottom: 40,
+  //top right bottom left
+  // margin: '0px 0px 40px 0px',
+  // margin: 'auto',
+  //padding: 'auto',
 
 
   //background: `${main_palete_theme.palette.surface_background.regular_medium} center / cover no-repeat url(${Image}) `,
@@ -642,9 +641,9 @@ const MainBox = styled('div')({
     background: `${main_palete_theme.palette.surface_background.regular_medium} center / cover no-repeat url(${ImageLarge}) `,
 
     //top right bottom left
-    margin: '20rem 10px 10px 10px',
+    margin: '20px 10px 20px 10px',
     // padding: '1px 10px 50px 10px',
-    padding: '30rem 10rem 5rem 11rem',
+    padding: '30rem 10rem 30rem 11rem',
   },
 
   // Pixel 2
