@@ -1,4 +1,4 @@
-import React, {  forwardRef,} from "react";
+import React, { forwardRef, } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import main_palete_theme from '../../style.lib/PalleteStyles';
@@ -7,70 +7,127 @@ import { palette, spacing } from '@material-ui/system';
 
 import {
   AddLocationRounded,
-  AddBox ,
-  ArrowDownward ,
-  Check  ,
-  ChevronLeft ,
-  ChevronRight ,
-  Clear ,
-  DeleteOutline ,
-  Edit ,
-  FilterList,
-  FirstPage ,
-  LastPage ,
-  Remove ,
-  SaveAlt ,
-  Search,
-  ViewColumn,
+  AddLocation,
+  AddLocationSharp,
+  //AddBox,
+  //AddCircleOutline,
+
+  // AddCircle,
+  // AddCircleOutline,
+  // ArrowDownward,
+  // Check,
+  // ChevronLeft,
+  // ChevronRight,
+  // Clear,
+  DeleteOutline,
+  Edit,
+  Info,
+  // FilterList,
+  // FirstPage,
+  // LastPage,
+  // Remove,
+  // SaveAlt,
+  // Search,
+  // ViewColumn,
 } from '@material-ui/icons/';
 
 
 
 const LocationsMenu = () => {
-  
-  const tableIcons = {
-    Add: forwardRef((props, ref) => <AddLocationRounded {...props} ref={ref} />),
-    Check: forwardRef((props, ref) => <Check {...props} ref={ref} />),
-    Clear: forwardRef((props, ref) => <Clear {...props} ref={ref} />),
-    Delete: forwardRef((props, ref) => <DeleteOutline {...props} ref={ref} />),
-    DetailPanel: forwardRef((props, ref) => <ChevronRight {...props} ref={ref} />),
-    Edit: forwardRef((props, ref) => <Edit {...props} ref={ref} />),
-    Export: forwardRef((props, ref) => <SaveAlt {...props} ref={ref} />),
-    Filter: forwardRef((props, ref) => <FilterList {...props} ref={ref} />),
-    FirstPage: forwardRef((props, ref) => <FirstPage {...props} ref={ref} />),
-    LastPage: forwardRef((props, ref) => <LastPage {...props} ref={ref} />),
-    NextPage: forwardRef((props, ref) => <ChevronRight {...props} ref={ref} />),
-    PreviousPage: forwardRef((props, ref) => <ChevronLeft {...props} ref={ref} />),
-    ResetSearch: forwardRef((props, ref) => <Clear {...props} ref={ref} />),
-    Search: forwardRef((props, ref) => <Search {...props} ref={ref} />),
-    SortArrow: forwardRef((props, ref) => <ArrowDownward {...props} ref={ref} />),
-    ThirdStateCheck: forwardRef((props, ref) => <Remove {...props} ref={ref} />),
-    ViewColumn: forwardRef((props, ref) => <ViewColumn {...props} ref={ref} />)
-  };
 
-return(
-  <Nav>
-    <li>
-      <StyledLink to="/locations"> <ChevronRight/> View</StyledLink>
-    </li>   
-     <li>
-      <StyledLink to="/locations/add"> <AddLocationRounded/> Add</StyledLink>
-    </li>
-    <li>
-      <StyledLink to="/locations/edit"> <Edit/> Edit</StyledLink>
-    </li>
-    <li>
-      <StyledLink to="/locations/remove"> <DeleteOutline/> Remove</StyledLink>
-    </li>
+  return (
+    <Nav>
+      <li>
+        <StyledLink to="/locations">
+          <IconDiv><Info /></IconDiv> <TextDiv>View</TextDiv>
+        </StyledLink>
+      </li>
+      <li>
+        <StyledLink to="/locations/add">
+          <IconDiv><AddLocationSharp /></IconDiv><TextDiv>Add</TextDiv>
+        </StyledLink>
+      </li>
+      <li>
+        <StyledLink to="/locations/edit">
+          <IconDiv><Edit /></IconDiv> <TextDiv>Edit</TextDiv>
+        </StyledLink>
+      </li>
+      <li>
+        <StyledLink to="/locations/remove">
+          <IconDiv><DeleteOutline /></IconDiv> <TextDiv>Remove</TextDiv>
+        </StyledLink>
+      </li>
 
-  </Nav>
-);
+    </Nav>
+  );
 }
 
 export default LocationsMenu;
 
+
+
+const Nav = styled.ul`
+  ${spacing} 
+  list-style-type: none;
+
+  /* Partial list of types 
+    list-style-type: disc;
+    list-style-type: circle;
+    list-style-type: square;
+    list-style-type: decimal;
+    list-style-type: georgian;
+    list-style-type: trad-chinese-informal;
+    list-style-type: kannada;
+*/
+
+/* <string> value */
+/*list-style-type: '-';*/
+
+
+  /* letter-spacing: 1px; */
+
+  /* font-size: 1.3rem;  */
+  /* font-size: 2.8rem; */
+  /* font-size: 1.2rem;  */
+
+  /* font-weight: normal; */
+  /* font-weight: 400; */
+  /* font-weight: 500; */
+
+  /* font-family: "Griffy", cursive; */
+  /* font-family: "Yanone Kaffeesatz"; */
+  /* font-family: "Expletus Sans"; */
+
+  width: inherit;
+  
+  margin: auto;
+  padding: 0.5rem;
+  padding-left: 0;
+
+  display: flex; 
+  justify-content: flex-start;
+  align-items: center;
+
+
+      /* minWidth: 80vw; */
+    /* width: 25rem; */
+    /* width: 18rem; */
+    /* width: 15rem; */
+  
+  @media all and (min-width:360px) {   
+    minWidth: 100%;
+
+    padding: 1rem;    
+
+    justify-content: space-evenly;
+
+  };
+
+`;
+
 //Extending React Link
 const StyledLink = styled(Link)`
+
  ${spacing} 
   /* color: #263238;  */
   /* color: mintcream; */
@@ -91,33 +148,46 @@ const StyledLink = styled(Link)`
   /* font-weight: 500; */
 
   letter-spacing: 1px;
-  
+
+  margin: auto;
+  margin-left: 0;
+  margin-right: 1rem;
+
+  padding: 5rem;
+  padding-left: 1rem;
+  padding-right: 0;
+   
   display: flex;  
-  justify-content: space-between;
+  justify-content: space-evenly;
+  line-height: 20.0rem;  
+  
+
+  @media all and (min-width:343px) {  
+    
+    margin: auto;    
+     /* margin-left: 0;
+     margin-right: 0; */
+
+     padding: 0.25rem;
+
+     /* padding-left: 0;
+     padding-right: 0; */
+     
+  };
+
 `;
 
-const Nav = styled.ul`
-  ${spacing} 
-  list-style-type: none;
+const IconDiv = styled.div`
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+`;
 
-  /* letter-spacing: 1px; */
+const TextDiv = styled.div`
+ color: inherit;
 
-  /* font-size: 1.3rem;  */
-  /* font-size: 2.8rem; */
-  /* font-size: 1.2rem;  */
+  @media(max-width:342px) {
+    display: none;
+  };
 
-  /* font-weight: normal; */
-  /* font-weight: 400; */
-  /* font-weight: 500; */
-
-  /* font-family: "Griffy", cursive; */
-  /* font-family: "Yanone Kaffeesatz"; */
-  /* font-family: "Expletus Sans"; */
-
-  width: 25rem;
-  /* width: 18rem; */
-  /* width: 15rem; */
-
-  display: flex;  
-  justify-content: space-between;
 `;

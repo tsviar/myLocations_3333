@@ -648,8 +648,8 @@ const ViewLocation = ({ match, history }) => {
       <FormBox>
         {/* <form style={{ width: "50%" }} onSubmit={handleSubmit} > */}
         <LocationForm onSubmit={handleSubmit} >
-          {/* <MainBoxLabel>Selected Location</MainBoxLabel> */}
-          <h1>Selected Location</h1>
+          <MainBoxLabel>Selected Location</MainBoxLabel>
+          {/* <h1>Selected Location</h1> */}
 
           <FormControl required margin="normal" fullWidth>
             <InputLabel htmlFor="name">Name</InputLabel>
@@ -796,11 +796,11 @@ export default ViewLocation;
 const toolTipText = `Select an existing category from the list`;
 
 const useStyles = makeStyles(theme => ({
-  container: {
-    display: 'flex',
-    flexWrap: 'wrap',
-    maxWidth: "sm",
-  },
+  // container: {
+  //  display: 'flex',
+  //    flexWrap: 'wrap',
+  //  maxWidth: "sm",
+  // },
   tooltip: {
     fontSize: 10,
     lineHeight: 16,
@@ -833,7 +833,7 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-
+/*
 const ModalBox = styled('div')({
   position: "absolute",
   background: "#fff",
@@ -842,27 +842,37 @@ const ModalBox = styled('div')({
   right: "10%",
   padding: 15,
 });
-
+*/
 
 const MainBox = styled('div')({
 
-  // height: '60vh',
-  height: 'fit-content',
+  //height: 'inherit',
+  //height: 'fit-content',
+  height: '100%',
+
+  // height: '60vh', 
   // maxHeight: '60rem',
   // minHeight: '60vh',
 
-  width: 'fit-content',
+  // width: 'inherit',
+  // width: 'fit-content',
+  width: 'fit-content(50vw)',
+  minWidth: 'inherit',
+  maxWidth: 'inherit',
+
+  //width: 'fit-content',
+  // minWidth: '32rem', //'35rem',
+  //maxWidth: '40vw', //'35rem',
+
   //   width: '35%',
-  minWidth: '32rem', //'35rem',
-  maxWidth: '40vw', //'35rem',
   // minWidth: '30rem', //'35rem',
   // maxWidth: '30rem', //'35rem',
 
   // margin: 0,
   margin: 'auto',
-  marginLeft: 30,
-  padding: 10,
-  paddingLeft: 10,
+  //marginRight: 30,
+  // padding: 10,
+  // paddingRight: 30,
 
   // borderRadius: '0.4rem',
   // borderRadius: '0.8rem',
@@ -871,14 +881,20 @@ const MainBox = styled('div')({
   // boxShadow: '0 0.2rem 0.8rem DimGrey',
 
   display: 'flex',
-  flexDirection: 'column',
-  alignItems: 'center',   //'flex-start', 
-  justifyContent: 'center',   //'flex-start', 
+  //flexDirection: 'column',
+  // alignItems: 'center',   //'flex-start', 
+  justifyContent: 'center',
+  // justifyContent: 'center',  
+  // // alignItems: 'strech',
+  // alignItems: 'flex-start',
+
+
 });
 
-const MainBoxLabel = styled('h1')({
+const MainBoxLabel = styled('h2')({
   height: 'fit-content',
   display: 'flex',
+  // flexBasis: '100%',
   margin: 'auto',
   // margin: 0,
   padding: 0,
@@ -886,12 +902,14 @@ const MainBoxLabel = styled('h1')({
 
 const FormBox = styled(Box)({
   display: "flex",
+  //flexBasis: '100%',
+  //flexDirection: 'column',
   justifyContent: "center",
 
   //margin: 20,
   margin: 'auto',
-  marginLeft: 20,
-  paddingLeft: 10,
+  // marginLeft: 20,
+  // paddingLeft: 10,
 
   height: 'fit-content',
   // height: '50vh',
@@ -950,7 +968,7 @@ const CoordinatesInnerBox = styled(Box)({
   flexFlow: 'wrap',
   // flexDirection: ["row", 'row', 'column'],
   flexDirection: 'column',
-  justifyContent: 'space-even',
+  justifyContent: 'space-evenly',
 
   //marginTop: 12,
   marginLeft: 20,
@@ -1000,8 +1018,8 @@ const SubmitBox = styled('p')({
 const ErrorText = styled('h5')({
   display: 'flex',
   flexWrap: 'wrap',
-
   justifyContent: 'left',
+
   margin: 'auto',
   padding: 'auto',
   marginTop: 3,

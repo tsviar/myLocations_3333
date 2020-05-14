@@ -684,8 +684,8 @@ const AddLocation = () => {
       <FormBox>
         {/* <form style={{ width: "50%" }} onSubmit={handleSubmit} > */}
         <LocationForm onSubmit={handleSubmit} >
-          {/* <MainBoxLabel>Add Location</MainBoxLabel> */}
-          <h1>Add Location</h1>
+          <MainBoxLabel>Add Location</MainBoxLabel>
+          {/* <h2>Add Location</h2> */}
 
           <FormControl required margin="normal" fullWidth>
             <InputLabel htmlFor="name">Name</InputLabel>
@@ -912,6 +912,26 @@ const useStyles = makeStyles(theme => ({
 
 
 const MainBox = styled('div')({
+
+  //height: 'inherit',
+  //height: 'fit-content',
+  height: '100%',
+
+  // height: '60vh', 
+  // maxHeight: '60rem',
+  // minHeight: '60vh',
+
+  // width: 'inherit',
+  // width: 'fit-content',
+  width: 'fit-content(50vw)',
+  minWidth: 'inherit',
+  maxWidth: 'inherit',
+
+  //width: 'fit-content',
+  // minWidth: '32rem', //'35rem',
+  //maxWidth: '40vw', //'35rem',
+
+  /*
   height: 'fit-content',
   //  height: '60vh',
   // height: '70vh',
@@ -926,12 +946,13 @@ const MainBox = styled('div')({
   maxWidth: '40vw', //'35rem',
   // minWidth: '30rem', //'35rem',
   // maxWidth: '30rem', //'35rem',
+*/
 
   margin: 'auto',
-  // margin: 0,
-  marginLeft: 30,
-  padding: 10,
-  paddingLeft: 10,
+  // // margin: 0,
+  // marginLeft: 5,
+  // padding: 5,
+  // paddingLeft: 10,
 
   // borderRadius: '0.4rem',
   // borderRadius: '0.8rem',
@@ -940,12 +961,16 @@ const MainBox = styled('div')({
   // boxShadow: '0 0.2rem 0.8rem DimGrey',
 
   display: 'flex',
-  flexDirection: 'column',
-  alignItems: 'center',   //'flex-start', 
-  justifyContent: 'center',   //'flex-start', 
+  // flexDirection: 'column',
+  alignItems: 'flex-start',
+  // alignItems: 'center',
+
+  //justifyContent: 'center',
+  justifyContent: 'flex-start',
+
 });
 
-const MainBoxLabel = styled('h1')({
+const MainBoxLabel = styled('h2')({
   height: 'fit-content',
   display: 'flex',
   margin: 'auto',
@@ -959,25 +984,32 @@ const FormBox = styled(Box)({
   justifyContent: "center",
 
   // margin: 20,
-  // padding: 20,
+  /// padding: 20,
   margin: 'auto',
-  marginLeft: 20,
-  paddingLeft: 10,
+  // marginLeft: 1,
+  //paddingLeft: 1,
 
   height: 'fit-content',
+  width: '100%',
 });
 
 
 const LocationForm = styled('form')({
   display: 'flex',
   flexDirection: 'column',
+  justifyContent: 'stretch',
 
   margin: 'auto',
+  //padding: 20,
+  padding: '2rem',
   paddingBottom: 5, //20
   // marginTop: '1rem', //10,
   // paddingTop: '1rem', //10,
-  width: 'fit-content',
-  // width: "50%",
+
+  height: 'fit-content',
+  minHeight: '50vh',
+  //width: 'fit-content',
+  width: "100%",
 
 });
 
@@ -1015,7 +1047,7 @@ const CoordinatesInnerBox = styled(Box)({
   flexFlow: 'wrap',
   // flexDirection: ["row", 'row', 'column'],
   flexDirection: 'column',
-  justifyContent: 'space-even',
+  justifyContent: 'space-evenly',
 
   //marginTop: 12,
   marginLeft: 20,
@@ -1041,7 +1073,7 @@ const CoordinatesInput = styled(Input)({
   paddingTop: 25,
   // paddingTop: 5,
   paddingleft: 25,
-  // paddingRight: 25,
+  //paddingRight: 25,
   //flexGrow:0,
   // flexBasis:['40%', '40%', '100%'],
   //width:[1/2, 1/2, 1],
@@ -1065,8 +1097,8 @@ const SubmitBox = styled('p')({
 const ErrorText = styled('h5')({
   display: 'flex',
   flexWrap: 'wrap',
-
   justifyContent: 'left',
+
   margin: 'auto',
   padding: 'auto',
   marginTop: 3,

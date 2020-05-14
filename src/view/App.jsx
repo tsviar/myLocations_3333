@@ -197,11 +197,11 @@ const AppBox = styled('div')({
   minHeight: '30rem',
 */
   height: '100%',
-  width: '80%',
-  minWidth: '100vw',
+  width: '100%',
+  minWidth: '90vw',
 
   //maxWidth: '100%',
-  maxWidth: '35rem',
+  // maxWidth: '35rem',
 
   /*height: 'auto', /*if more info comes on the page, it will stretch down*/
 

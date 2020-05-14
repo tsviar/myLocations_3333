@@ -137,6 +137,15 @@ const main_palete_theme = {
   },
 };
 
+/*
+const values = {
+  xs: 0,
+  sm: 600,
+  md: 960,
+  lg: 1280,
+  xl: 1920,
+};
+*/
 
 // According to:
 // https://material-ui.com/customization/palette/#example

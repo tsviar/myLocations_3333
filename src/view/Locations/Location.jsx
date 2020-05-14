@@ -5,9 +5,9 @@ import main_palete_theme from '../../style.lib/PalleteStyles';
 
 // import styled from "styled-components";
 import { makeStyles, styled } from '@material-ui/core/styles';
-import marker from '@ajar/marker'; 
+import marker from '@ajar/marker';
 
-const Location= ({ id, name, address, lat, lng, category }) => {
+const Location = ({ id, name, address, lat, lng, category }) => {
   // console.log('name:',name)
   //	console.log('props:',props)
   // coordinates = {
@@ -20,9 +20,9 @@ const Location= ({ id, name, address, lat, lng, category }) => {
       <TextsBox>
         <Title>{name}</Title>
         <Title2> Category: {category} </Title2>
-        <MsgText>{address} </MsgText>        
-        <MsgText><em>( lat ) </em> {lat} </MsgText>
-        <MsgText><em>( lng ) </em> {lng} </MsgText>
+        <MsgText>{address} </MsgText>
+        {/* <MsgText><em>( lat ) </em> {lat} </MsgText> */}
+        {/* <MsgText><em>( lng ) </em> {lng} </MsgText> */}
 
       </TextsBox>
     </Box>
@@ -33,17 +33,19 @@ export default Location;
 
 
 const Box = styled('div')({
-  padding: '2rem 0.8rem', //t+b, r+l
+  //padding: '2rem 0.8rem', //t+b, r+l
+  padding: '1rem 0.8rem', //t+b, r+l
   // padding: '2rem 2.8rem',
   cursor: 'pointer',
-  display: 'flex',
-  alignItems: 'center',
+
+  //display: 'flex',
+  // alignItems: 'center',
 
   '&:hover': {
     // background: 'paleturquoise',
     background: `${main_palete_theme.palette.table_row_style.selected}`,
   },
-  '&:active': {   
+  '&:active': {
     // background: 'skyblue',
     background: `${main_palete_theme.palette.table_row_style.selected}`,
     color: 'white',
@@ -54,9 +56,9 @@ const Box = styled('div')({
 const TextsBox = styled('div')({
   display: 'flex',
   flexDirection: 'column',
-  justifyContent:'left',
+  justifyContent: 'left',
   alignItems: 'space-between',
-  paddingLeft: '2.8rem',
+  //paddingLeft: '2.8rem',
 });
 
 const Title = styled('h1')({
@@ -71,14 +73,25 @@ const Title2 = styled('h3')({
   textAlign: 'left',
   // font-size: '2.8rem', 
   fontSize: '1.1rem',
+
+  // '@media (orientation: portrait) and (max-device-width:414px)': {
+  //   display: 'none',
+
+  // },
 });
 
 const MsgText = styled('p')({
   color: 'darkslateblue',
-  textAlign: 'left', 
+  textAlign: 'left',
   fontFamily: 'Raleway',
   fontSize: '1.0rem',
   // font-size: '1.4rem',
-   maxWidth: 'fit-content', //'45rem',
+  maxWidth: 'fit-content', //'45rem',
+
+  //Pixel 2 , 2 XL (411px)
+  // '@media (max-device-width:800px)': {
+  //   display: 'none',
+  // },
+
 });
 

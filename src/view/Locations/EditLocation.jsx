@@ -544,7 +544,7 @@ const EditLocation = () => {
       <FormBox>
         {/* <form style={{ width: "50%" }} onSubmit={handleSubmit} > */}
         <LocationForm onSubmit={handleSubmit} >
-          <h1>Edit Location</h1>
+          <MainBoxLabel>Edit Location</MainBoxLabel>
 
           <FormControl required margin="normal" fullWidth>
             <InputLabel htmlFor="name">Name</InputLabel>
@@ -750,7 +750,8 @@ const useStyles = makeStyles(theme => ({
     display: 'flex',
     flexDirection: 'column',
     margin: 'auto',
-    width: 'fit-content',
+    //width: 'fit-content',
+    width: '100%',
   },
   formControl: {
     marginTop: theme.spacing(2),
@@ -764,37 +765,38 @@ const useStyles = makeStyles(theme => ({
 
 const MainBox = styled('div')({
 
-  // height: '60vh',
-  height: 'fit-content',
+  //height: 'inherit',
+  //height: 'fit-content',
+  height: '100%',
+
+  // height: '60vh', 
   // maxHeight: '60rem',
   // minHeight: '60vh',
 
-  width: 'fit-content',
-  //   width: '35%',
-  minWidth: '32rem', //'35rem',
-  maxWidth: '40vw', //'35rem',
-  // minWidth: '30rem', //'35rem',
-  // maxWidth: '30rem', //'35rem',
+  // width: 'inherit',
+  width: 'fit-content(50vw)',
+  //width: 'fit-content',
 
-  // margin: 0,
+  minWidth: 'inherit',
+  maxWidth: 'inherit',
+
+  //width: 'fit-content',
+  // minWidth: '32rem', //'35rem',
+  //maxWidth: '40vw', //'35rem',
+
+
+  /// margin: 0,
   margin: 'auto',
-  marginLeft: 30,
-  padding: 10,
-  paddingLeft: 10,
-
-  // borderRadius: '0.4rem',
-  // borderRadius: '0.8rem',
-  // overflowX: 'hidden',
-  // overflowY: 'scroll',
-  // boxShadow: '0 0.2rem 0.8rem DimGrey',
+  padding: 0,
 
   display: 'flex',
-  flexDirection: 'column',
+  // flexDirection: 'column',
   alignItems: 'center',   //'flex-start', 
-  justifyContent: 'center',   //'flex-start', 
+  //justifyContent: 'center',
+  justifyContent: 'flex-start',
 });
 
-const MainBoxLabel = styled('h1')({
+const MainBoxLabel = styled('h2')({
   height: 'fit-content',
   display: 'flex',
   margin: 'auto',
@@ -808,8 +810,8 @@ const FormBox = styled(Box)({
 
   //margin: 20,
   margin: 'auto',
-  marginLeft: 20,
-  paddingLeft: 10,
+  // marginLeft: 20,
+  // paddingLeft: 10,
 
   height: 'fit-content',
   // height: '50vh',
@@ -825,8 +827,11 @@ const FormBox = styled(Box)({
 const LocationForm = styled('form')({
   display: 'flex',
   flexDirection: 'column',
+
   margin: 'auto',
   width: 'fit-content',
+
+
   // width: "50%",
 
 });
@@ -865,7 +870,7 @@ const CoordinatesInnerBox = styled(Box)({
   flexFlow: 'wrap',
   // flexDirection: ["row", 'row', 'column'],
   flexDirection: 'column',
-  justifyContent: 'space-even',
+  justifyContent: 'space-evenly',
 
   //marginTop: 12,
   marginLeft: 20,
@@ -891,7 +896,7 @@ const CoordinatesInput = styled(Input)({
   paddingTop: 25,
   // paddingTop: 5,
   paddingleft: 25,
-  paddingRight: 25,
+  //paddingRight: 25,
   //flexGrow:0,
   // flexBasis:['40%', '40%', '100%'],
   //width:[1/2, 1/2, 1],
@@ -906,16 +911,20 @@ const CoordinatesInputLabel = styled(InputLabel)({
 
 const SubmitBox = styled('p')({
   display: 'flex',
-  // justifyContent:"center",
   justifyContent: "space-between",
-  marginTop: 30,
+  marginTop: 15, //30
   //marginLeft: 50,
   paddingTop: 15,
+
 });
 
 const ErrorText = styled('h5')({
   display: 'flex',
-  justifyContent: "left",
+  flexWrap: 'wrap',
+  justifyContent: 'left',
+
+  margin: 'auto',
+  padding: 'auto',
   marginTop: 3,
   //marginLeft: 50,
   paddingTop: 5,
@@ -924,6 +933,7 @@ const ErrorText = styled('h5')({
   //color: 'red',
 
   textAlign: 'left',
+  wordWrap: 'break-word',
 });
 
 

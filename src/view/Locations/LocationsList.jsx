@@ -8,16 +8,16 @@ import main_palete_theme from '../../style.lib/PalleteStyles';
 
 // import styled from "styled-components";
 import { makeStyles, styled } from '@material-ui/core/styles';
-import marker from '@ajar/marker'; 
+import marker from '@ajar/marker';
 
 
 //const List = ({ list_data, updateSelectedCard }) => {
 const LocationsList = () => {
   // const { filtered_list, update_selected_card } = useContext(StateDataManager);
-  const { 
+  const {
     selected_location, update_selected_location,
-    original_Locations_list, 
-    filtered_Locations_list, 
+    original_Locations_list,
+    filtered_Locations_list,
     update_Locations_filtered_list,
     locations_sort_order,
   } = useContext(StateDataManager);
@@ -30,8 +30,8 @@ const LocationsList = () => {
 
   return (
     <Box>
-       {/* <ul> {create_list_ui(original_Locations_list, update_selected_location)} </ul> */}
-       <ul> {create_list_ui(filtered_Locations_list, update_selected_location)} </ul>
+      {/* <ul> {create_list_ui(original_Locations_list, update_selected_location)} </ul> */}
+      <ul> {create_list_ui(filtered_Locations_list, update_selected_location)} </ul>
     </Box>
   );
 };
@@ -46,7 +46,7 @@ const LocationsList = () => {
 //It has to be on the DOM element, the li!!!
 
 const create_list_ui = (items, update_selected_location) =>
-   items.map(item => (
+  items.map(item => (
     <CardItem key={item.id} onClick={() => update_selected_location(item)}>
       <Location {...item} />
     </CardItem>
@@ -91,20 +91,24 @@ export default List;
 const Box = styled('div')({
   //background: `${main_palete_theme.palette.table_row_style.regular}`,
   // background: `${main_palete_theme.palette.surface_background.regular}`,
-  background:  `${main_palete_theme.palette.table_row_style.very_light}`,
+  background: `${main_palete_theme.palette.table_row_style.very_light}`,
 
-  height: '70vh',
+  height: 'inherit',
+  //height: '70vh',
   // height: 85vh', 
-  // minWidth: '60rem',
- // maxWidth: '56vw',
- // width: '56%',
-   
-  minWidth: '30rem', //'30rem'
-  maxWidth: '40vw', //'40vw'
-  width: '35%',      //'35%'
+  /// minWidth: '60rem',
+  /// maxWidth: '56vw',
+  /// width: '56%',
+
+  //width: 'fit-content(80vw)',
+  //minWidth: '30rem', //'30rem'
+  // maxWidth: '40vw', //'40vw'
+  // width: '35%',      //'35%'
 
   // marginLeft: '20',
   //paddingLeft: '20',
+  margin: 0,
+  padding: 0,
 
   borderRadius: '0.4rem',
   overflowX: 'hidden',
@@ -113,15 +117,23 @@ const Box = styled('div')({
 });
 
 const CardItem = styled('li')({
-  
+
   "&:nth-child(even)": {
-   background: `${main_palete_theme.palette.table_row_style.regular}`,
-   //background: `${main_palete_theme.palette.table_row_style.regular_light}`,
+    background: `${main_palete_theme.palette.table_row_style.regular}`,
+    //background: `${main_palete_theme.palette.table_row_style.regular_light}`,
   },
   "&:nth-child(odd)": {
     // background: `${main_palete_theme.palette.surface_background.regular}`,
     // background: `${main_palete_theme.palette.surface_background.regular_light}`,
-     background:  `${main_palete_theme.palette.table_row_style.very_light}`,
+    background: `${main_palete_theme.palette.table_row_style.very_light}`,
+  },
+
+  margin: '1px',
+  padding: '0.1rem 0 0.1rem 1rem',
+
+  '@media all and (min-width: 700px)': {
+    margin: 'auto',
+    padding: '0.1rem 0 0.1rem 0.1rem',
   }
 });
 

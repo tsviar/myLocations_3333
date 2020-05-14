@@ -7,8 +7,8 @@ import main_palete_theme from '../../style.lib/PalleteStyles';
 
 // import { makeStyles, styled , keyframes} from '@material-ui/core/styles';
 import { palette, spacing } from '@material-ui/system';
-import NoSsr from '@material-ui/core/NoSsr';
-import marker from '@ajar/marker'; 
+//import NoSsr from '@material-ui/core/NoSsr';
+//import marker from '@ajar/marker'; 
 
 
 // the children is the <Menu /> in App.js inside the  <TopBar> </TopBar>
@@ -16,12 +16,12 @@ import marker from '@ajar/marker';
 // DO NOT ENVELOPE WITH A  <router></router> 
 // THAT WILL OPEN A NEW ROUTER AND ALL 
 // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-const LocationsTopBar = ({ children }) => (  
-    <Box>
-      <Text>{children}</Text>
-      <Logo src="/icons/logo.svg" alt="logo" />
-    </Box>
- 
+const LocationsTopBar = ({ children }) => (
+  <Box>
+    <Text>{children}</Text>
+    <Logo src="/icons/logo.svg" alt="logo" />
+  </Box>
+
 );
 
 export default LocationsTopBar;
@@ -30,13 +30,38 @@ export default LocationsTopBar;
 //  Styling
 //================================================
 
-const values = {
-  xs: 0,
-  sm: 600,
-  md: 960,
-  lg: 1280,
-  xl: 1920,
-};
+
+const Box = styled.div`
+  /* ${palette}*/
+  ${spacing} 
+    background:  ${main_palete_theme.palette.top_menu.main};  
+  /* background: #00e676; */ 
+  /* slategray; */
+
+  /* width: 100%; */
+  height: 40px; 
+  
+  /* 70px; */
+  /* width: 70rem; */
+  width: inherit;
+
+  padding: 20px;
+ 
+  /* position: fixed;
+  top: 2;
+  left: 12; */
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+`;
+
+
+const Text = styled.h1`
+  cursor: pointer;
+  user-select: none;
+  position: relative;
+`;
 
 const spin = keyframes`
   from {
@@ -52,34 +77,13 @@ const Logo = styled.img`
   ${spacing}
   height: 5rem;
   animation: ${spin} 2s linear infinite;
-  
+
+  @media(max-width:460px) {
+    display: none;
+  };
 `;
 
-const Box = styled.div`
-  /* ${palette}*/
-  ${spacing} 
-    background:  ${main_palete_theme.palette.top_menu.main};  
-  /* background: #00e676; */ 
-  /* slategray; */
 
-  /* width: 100%; */
-  height: 40px; 
-  /* 70px; */
-  padding: 20px;
- 
-  /* position: fixed;
-  top: 2;
-  left: 12; */
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-`;
-
-const Text = styled.h1`
-  cursor: pointer;
-  user-select: none;
-  position: relative;
-`;
 
 //https://material-ui.com/system/basics/
 
@@ -139,7 +143,7 @@ const Box = styled.div`
 `;
 
 const Text = styled.h1`
-  // font-size: 3rem; 
+  // font-size: 3rem;
   font-size: 1px;
   font-weight: normal;
   font-family: "Griffy", cursive;

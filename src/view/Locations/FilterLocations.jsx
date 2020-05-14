@@ -21,6 +21,7 @@ import {
   CategoryRounded,
   Search,
   FilterList,
+  FilterNone,
   //Sort,
   //SortByAlphaTwoTone,
 } from '@material-ui/icons/';
@@ -290,7 +291,7 @@ const FilterLocations = () => {
         }}
       >
         <SearchBar >
-          <Search style={{ fontSize: 30, }} />
+          <Search style={SearchIconStyle} />
           {/* <FilterList style={{fontSize: 30,}} /> */}
           <Input onChange={updateFilteredList} />
           {/* <TableSortLabel
@@ -312,6 +313,7 @@ const FilterLocations = () => {
             style={{
               background: 'inherit',
               color: `${main_palete_theme.palette.header.text_color}`,
+              margin: 'auto 0.5rem auto auto ',
             }}
 
             variant="contained"
@@ -336,6 +338,7 @@ const FilterLocations = () => {
             style={{
               background: 'inherit',
               color: `${main_palete_theme.palette.header.text_color}`,
+              margin: 'auto  auto auto auto ',
             }}
             variant="contained"
             // className={classes.button}
@@ -406,35 +409,129 @@ const Header = styled('div')({
   top: 0,
   left: 0,
   right: 0,
+
   margin: 'auto',
-  padding: 'auto',
+  //marginLeft: '0.5px',
+  //padding: 'auto',
+  padding: 0,
+  //paddingLeft: '1px',
+
   borderRadius: '0.4rem 0.4rem 0 0',
+
   height: '5rem',
-  /* height: '9rem', */
+
+  width: '100%',
+  // width: 'fit-content',
+  minWidth: '100vw',
+
+  // // under 220px there is no use...
+  // '@media all and (min-width:320px)': {
+  //   width: '100%',
+  //   minWidth: '100vw',
+  // },
+
+  // '@media all and (min-width:411px)': {
+  //   width: '100%',
+  //   minWidth: '100vw',
+  // },
+
+  // '@media all and (min-width: 550px)': {
+  //   //width: 'inherit',
+  //   width: '100%',
+  //   minWidth: '100vw',
+
+  // },
+
   display: 'flex',
-  justifyContent: 'space-around',
   alignItems: 'center',
+  //justifyContent: 'flex-start',
+  // justifyContent: 'space-evenly',
+  justifyContent: 'center',
+
+  '@media all and (min-width: 411px)': {
+    //justifyContent: 'space-around',
+    justifyContent: 'space-evenly',
+  },
 });
 
 const Title = styled('h4')({
+  display: 'none',
+
   fontFamily: "Expletus Sans",
   textAlign: 'left',
   /* fontSize: '2rem', */
   fontSize: '1.3rem',
   fontWeight: 400,
+
+  //minWidth: '18vw',
+  flexBasis: '5%',
+  marginRight: '1rem',
+
+  '@media all and (min-width:320px)': {
+    display: 'flex',
+    //minWidth: '18vw',
+    flexBasis: '5%',
+    marginRight: '1rem',
+  },
+
+  '@media all and (min-width:411px)': {
+    //padding: 'auto 1px auto 10px',
+    // 
+    flexBasis: '18%',
+    marginRight: 0,
+  },
+
+
   //color: `${main_palete_theme.palette.header.text_color}`,
   //color:  '#FFF', //'darkred',
 });
 
+const SearchBar = styled('div')({
+  display: 'flex',
+  justifyContent: 'flex-start',
+  alignItems: 'center',
+  flexBasis: '60%',
+
+  margin: 0,
+  paddingLeft: 0,
+  paddingRight: '2rem',
+
+  '@media all and (min-width:320px)': {
+    justifyContent: 'space-around',
+    //minWidth: '20vw',
+    flexBasis: '45%',
+    marginRight: '0.5rem',
+    paddingRight: 0,
+  },
+
+  '@media all and (min-width:411px)': {
+    // padding: 'auto 1px auto 10px',
+    marginRight: 0,
+  },
+
+
+});
+
+const SearchIconStyle = {
+  fontSize: 30,
+  marginLeft: 0,
+  paddingLeft: 0,
+  justifyContent: 'flex-start',
+};
+
 const Input = styled('input')({
   height: '1.75rem',
-  /* height: 3.5rem, */
-  width: '24rem',
+  // height: 3.5rem, 
+  //minWidth: '24rem',
+  // minWidth: '25vw',
+  //width: '90%',
+  width: '100%',
   outline: 'none',
   borderRadius: '0.5rem',
   border: 'white 2px solid',
   transition: 'border 0.5s',
-  padding: '1rem',
+  //padding: '1rem 4rem 1rem 1rem',
+  padding: '0.8rem 0.2rem 0.8rem 0.2rem',
 
   '&:focus': {
     border: `${main_palete_theme.palette.secondary.main} 2px solid`,
@@ -443,29 +540,30 @@ const Input = styled('input')({
 
 const ActionsBar = styled('div')({
   backgroundColor: `${main_palete_theme.palette.header.main}`,
-  // backgroundColor: '#01579b',
-  // backgroundColor: '#039be5',
-  //background: 'lightsalmon',
-  // backgroundColor: '#039be5',   
-
   color: `${main_palete_theme.palette.header.text_color}`,
-  //color: '#FFF',
 
   borderRadius: '0.4rem 0.4rem 0 0',
   height: '5rem',
-  width: '16rem',
-  /* height: '1.75rem', */
-  /* height: '9rem', */
+  //width: '16rem',
+  minWidth: '20vw',
+  //width: '20%',
+
+  flexBasis: '16%',
+  marginLeft: '0.5rem',
+
+
+  '@media all and (min-width:411px)': {
+    // padding: 'auto 1px auto 10px',
+    marginRight: 0,
+  },
+
+  // height: '1.75rem', 
+  // height: '9rem', 
   display: 'flex',
   justifyContent: 'space-around',
   alignItems: 'center',
 });
 
-const SearchBar = styled('div')({
-  display: 'flex',
-  justifyContent: 'space-around',
-  alignItems: 'center',
-});
 
 const ToolbarTooltip = withStyles({
   tooltip: {
