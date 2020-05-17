@@ -432,9 +432,9 @@ const MainContentBox = styled('div')({
   minWidth: '15vw',
 
   margin: 'auto',
-  marginTop: '56rem',
+  marginTop: '62rem',
   marginBottom: '3rem',
-  padding: '1px',
+  //padding: '1px',
 
 
   //margin: '13rem 1px 1rem 1px',
@@ -454,20 +454,21 @@ const MainContentBox = styled('div')({
   //gridTemplateColumns: 'repeat(auto-fill, minmax(192px, 1fr))',
 
   '@media all and (min-width: 270px)': {
-    marginTop: '55rem',
-    marginBottom: '3rem',
+    marginTop: '58rem',
+    // marginBottom: '3rem',
   },
 
   '@media all and (min-width: 375px)': {
-    marginTop: '51rem',
-    marginBottom: '3rem',
+    marginTop: '55rem',
+    // marginBottom: '3rem',
 
   },
 
   '@media all and (min-width: 411px)': {
     //marginTop: '53rem',
-    marginTop: '12rem',
-    marginBottom: '3rem',
+    marginTop: '20rem',
+    marginBottom: '5rem',
+    // paddingBottom: "1rem",
 
     gridTemplateColumns: '1fr 1fr',
     gridTemplateRows: '0.5fr 0.1fr 1fr 1fr',
@@ -480,7 +481,8 @@ const MainContentBox = styled('div')({
 
   '@media all and (min-width: 550px)': {
     marginLeft: 0,
-    marginTop: '16rem',
+    marginTop: '21rem',
+    paddingBottom: "2rem",
 
     gridTemplateColumns: '1fr 1fr',
     gridTemplateRows: '0.5fr 0.1fr 1fr 1fr',
@@ -493,9 +495,10 @@ const MainContentBox = styled('div')({
 
   '@media all and (min-width: 700px)': {
     //margin: 'auto',
-    marginTop: 0,
+    // marginTop: 0,
+    marginTop: '6rem',
     // paddingTop: '1rem',
-    // paddingBottom: "4rem",
+    marginBottom: "3rem",
     //gridTemplateColumns: '2fr 1fr 1fr',
     gridTemplateColumns: '1.5fr 2.5fr 2.5fr',
     gridTemplateRows: '0.1fr 0.7fr 0.1fr 0.1fr',
@@ -752,14 +755,14 @@ const ListBox = styled('div')({
 
   '@media all and (min-width: 375px)': {
     //height: '16vh',
-    minHeight: '20vh',
+    minHeight: '19vh',
     //width: '100vw',
     minWidth: 'fit-content(80vw)',
 
   },
   '@media all and (min-width: 414px)': {
     //height: '16vh',
-    minHeight: '22vh',
+    minHeight: '20vh',
     //width: '100vw',
     minWidth: 'fit-content(80vw)',
 
@@ -774,7 +777,7 @@ const ListBox = styled('div')({
 
   '@media all and (min-width: 700px)': {
     height: '100%',
-    minHeight: '70vh',
+    minHeight: '80vh',
     minWidth: '100%',
 
   },
@@ -870,6 +873,8 @@ const LocationBox = styled('div')({
 
   gridArea: 'LocationBox',
   marginLeft: '0.1rem',
+
+
   // paddingLeft: '3px',
 
   //flexBasis: '40%',

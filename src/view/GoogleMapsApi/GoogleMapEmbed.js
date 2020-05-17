@@ -566,23 +566,23 @@ const ContainerElementBox = styled('div')({
   '@media all and (min-width: 411px)': {
     minWidth: '49vw',
 
-    padding: '1rem 0 0 0.8rem',
+    padding: '10rem 0 0 2rem',
   },
 
-  '@media all and (min-width: 550px)': {
-    minWidth: '49vw',
+  // '@media all and (min-width: 550px)': {
+  //   minWidth: '49vw',
 
-    margin: 'auto',
-    padding: '10rem 0 0 1rem',
+  //   margin: 'auto',
+  //   padding: '10rem 0 0 2rem',
 
-  },
+  // },
 
 
   '@media all and (min-width: 700px)': {
     minWidth: '39vw',
 
     margin: 'auto',
-    padding: '6rem 0 0 1rem',
+    padding: '10rem 0 0 1rem',
 
   },
 

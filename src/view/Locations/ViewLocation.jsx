@@ -796,6 +796,282 @@ export default ViewLocation;
 const toolTipText = `Select an existing category from the list`;
 
 const useStyles = makeStyles(theme => ({
+  container: {
+    display: 'flex',
+    flexWrap: 'wrap',
+    maxWidth: "sm",
+  },
+  tooltip: {
+    fontSize: 15, //10,
+    lineHeight: 25, //16,
+    //height: 23, //17,
+    // marginTop: 2,
+    color: 'blue',
+  },
+  textField: {
+    marginLeft: theme.spacing(1),
+    marginRight: theme.spacing(1),
+  },
+  dense: {
+    marginTop: theme.spacing(2),
+  },
+  menu: {
+    width: 200,
+  },
+  form: {
+    display: 'flex',
+    flexDirection: 'column',
+    margin: 'auto',
+    width: 'fit-content',
+  },
+  formControl: {
+    marginTop: theme.spacing(2),
+    minWidth: 120,
+
+  },
+  formControlLabel: {
+    marginTop: theme.spacing(1),
+  },
+}));
+
+// const ModalBox = styled('div')({
+//   position: "absolute",
+//   background: "#fff",
+//   top: 25,
+//   left: "10%",
+//   right: "10%",
+//   padding: 15,
+// }); 
+
+
+const MainBox = styled('div')({
+
+  //height: 'inherit',
+  //height: 'fit-content',
+  height: '90%',
+
+  // height: '60vh', 
+  // maxHeight: '60rem',
+  // minHeight: '60vh',
+
+  // width: 'inherit',
+  // width: 'fit-content',
+  width: 'fit-content(50vw)',
+  minWidth: 'inherit',
+  maxWidth: 'inherit',
+
+  //width: 'fit-content',
+  // minWidth: '32rem', //'35rem',
+  //maxWidth: '40vw', //'35rem',
+
+  /*
+  height: 'fit-content',
+  //  height: '60vh',
+  // height: '70vh',
+  // maxHeight: '70rem',
+  // minHeight: '70vh', 
+  // maxHeight: '60rem',
+  // minHeight: '60vh',
+
+  width: 'fit-content',
+  //   width: '35%',
+  minWidth: '32rem', //'35rem',
+  maxWidth: '40vw', //'35rem',
+  // minWidth: '30rem', //'35rem',
+  // maxWidth: '30rem', //'35rem',
+*/
+
+  margin: 'auto',
+  // // margin: 0,
+  // marginLeft: 5,
+  // padding: 5,
+  // paddingLeft: 10,
+
+  // borderRadius: '0.4rem',
+  // borderRadius: '0.8rem',
+  // overflowX: 'hidden',
+  // overflowY: 'scroll',
+  // boxShadow: '0 0.2rem 0.8rem DimGrey',
+
+  display: 'flex',
+  // flexDirection: 'column',
+  alignItems: 'flex-start',
+  // alignItems: 'center',
+
+  //justifyContent: 'center',
+  justifyContent: 'flex-start',
+
+});
+
+const MainBoxLabel = styled('h2')({
+  height: 'fit-content',
+  display: 'flex',
+  margin: 'auto',
+  // margin: 0,
+  padding: 0,
+});
+
+
+const FormBox = styled(Box)({
+  display: "flex",
+  justifyContent: "center",
+
+  // margin: 20,
+  /// padding: 20,
+  margin: 'auto',
+  // marginLeft: 1,
+  //paddingLeft: 1,
+
+  height: 'fit-content',
+  width: '100%',
+});
+
+
+const LocationForm = styled('form')({
+  display: 'flex',
+  flexDirection: 'column',
+  justifyContent: 'stretch',
+
+  margin: 'auto',
+  //padding: 20,
+  padding: '2rem',
+  paddingBottom: 5, //20
+  // marginTop: '1rem', //10,
+  // paddingTop: '1rem', //10,
+
+  height: 'fit-content',
+  minHeight: '50vh',
+  //width: 'fit-content',
+  width: "100%",
+
+});
+
+const CoordinatesBoxLabel = styled(InputLabel)({
+  //fontSize: 3,
+  fontWeight: 'inherit',
+  textAlign: 'center',
+  color: 'inherit',
+});
+
+const CoordinatesBox = styled(Box)({
+  display: "flex",
+  flexDirection: "column",
+  alignItems: "flex-start",
+
+  marginTop: 13,//21,    
+  paddingTop: 10,
+  paddingBottom: 3,
+  width: "100%",
+
+  //borderStyle: 'solid',
+  //borderColor:'#d1e0e0',
+
+  //font-family: "Expletus Sans";
+  textAlign: "left",
+  // color: "slategray",
+
+  // fontWeight: 400,
+});
+
+const CoordinatesInnerBox = styled(Box)({
+
+  display: 'flex',
+  //flexFlow:['noWrap','noWrap','wrap'], 
+  flexFlow: 'wrap',
+  // flexDirection: ["row", 'row', 'column'],
+  flexDirection: 'column',
+  justifyContent: 'space-evenly',
+
+  //marginTop: 12,
+  marginLeft: 20,
+
+  paddingleft: 20,
+  paddingTop: 5,
+  paddingBottom: 5,
+
+  // width: "100%",
+  width: [1, 1, 1 / 2],
+  maxWidth: "sm",
+  //font-family: "Expletus Sans";
+  textAlign: "left",
+  //color: "slategray",
+  // fontWeight: 400,
+
+
+});
+
+const CoordinatesInput = styled(Input)({
+  //marginTop: 20,
+  marginRight: 10,
+  paddingTop: 25,
+  // paddingTop: 5,
+  paddingleft: 25,
+  //paddingRight: 25,
+  //flexGrow:0,
+  // flexBasis:['40%', '40%', '100%'],
+  //width:[1/2, 1/2, 1],
+  maxWidth: "xl",
+});
+
+const CoordinatesInputLabel = styled(InputLabel)({
+  marginRight: 10,
+  paddingRight: 15,
+});
+
+
+const SubmitBox = styled('p')({
+  display: 'flex',
+  justifyContent: "center",
+  marginTop: 15, //30
+  //marginLeft: 50,
+  paddingTop: 15,
+});
+
+const ErrorText = styled('h5')({
+  display: 'flex',
+  flexWrap: 'wrap',
+  justifyContent: 'left',
+
+  margin: 'auto',
+  padding: 'auto',
+  marginTop: 3,
+  //marginLeft: 50,
+  paddingTop: 5,
+
+  color: `${main_palete_theme.palette.error.main}`,
+  //color: 'red',
+
+  textAlign: 'left',
+  wordWrap: 'break-word',
+});
+
+
+const SubmitText = styled('h5')({
+  display: 'flex',
+  justifyContent: "left",
+  marginTop: 3,
+  //marginLeft: 50,
+  paddingTop: 5,
+
+  // color: 'green',
+  color: `${main_palete_theme.palette.success.main}`,
+
+  textAlign: 'left',
+});
+
+  // const ToolbarTooltip = withStyles({
+  //   // MuiTooltip: {
+  //   tooltip: {
+  //     color: `${main_palete_theme.palette.header.text_color}`, 
+  //     //backgroundColor: "transparent",
+  //     backgroundColor: `${main_palete_theme.palette.header.main}`,
+  //     fontSize: `0.8rem`,
+  //   // }
+  //  }
+  // })(Tooltip);
+
+/*
+const useStyles = makeStyles(theme => ({
   // container: {
   //  display: 'flex',
   //    flexWrap: 'wrap',
@@ -833,16 +1109,16 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-/*
-const ModalBox = styled('div')({
-  position: "absolute",
-  background: "#fff",
-  top: 25,
-  left: "10%",
-  right: "10%",
-  padding: 15,
-});
-*/
+
+// const ModalBox = styled('div')({
+//   position: "absolute",
+//   background: "#fff",
+//   top: 25,
+//   left: "10%",
+//   right: "10%",
+//   padding: 15,
+// });
+
 
 const MainBox = styled('div')({
 
@@ -850,7 +1126,7 @@ const MainBox = styled('div')({
   //height: 'fit-content',
   height: '100%',
 
-  // height: '60vh', 
+  // height: '60vh',
   // maxHeight: '60rem',
   // minHeight: '60vh',
 
@@ -882,9 +1158,9 @@ const MainBox = styled('div')({
 
   display: 'flex',
   //flexDirection: 'column',
-  // alignItems: 'center',   //'flex-start', 
+  // alignItems: 'center',   //'flex-start',
   justifyContent: 'center',
-  // justifyContent: 'center',  
+  // justifyContent: 'center',
   // // alignItems: 'strech',
   // alignItems: 'flex-start',
 
@@ -946,7 +1222,7 @@ const CoordinatesBox = styled(Box)({
   flexDirection: "column",
   alignItems: "flex-start",
 
-  marginTop: 13,//21,    
+  marginTop: 13,//21,
   paddingTop: 10,
   paddingBottom: 3,
   width: "100%",
@@ -964,7 +1240,7 @@ const CoordinatesBox = styled(Box)({
 const CoordinatesInnerBox = styled(Box)({
 
   display: 'flex',
-  //flexFlow:['noWrap','noWrap','wrap'], 
+  //flexFlow:['noWrap','noWrap','wrap'],
   flexFlow: 'wrap',
   // flexDirection: ["row", 'row', 'column'],
   flexDirection: 'column',
@@ -1052,5 +1328,5 @@ const SubmitText = styled('h5')({
 //const CreateBot = () => <h1 className="create">Create a new Bot!</h1>;
 //export default CreateBot;
 
-
+*/
 
