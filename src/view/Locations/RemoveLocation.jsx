@@ -125,7 +125,7 @@ const RemoveLocation = () => {
       lng  ${selected_map_location.lng}      
       `);
 
-    marker.blue(`RemoveLocation ON Mount new_location.lng:  
+    marker.blue(`RemoveLocation ON Mount new_location:  
       id ${new_location.id}
       name ${new_location.name}
       address ${new_location.address}
@@ -172,9 +172,9 @@ const RemoveLocation = () => {
 
   useEffect(() => {
 
-    marker.green(`RemoveLocation useEffect on selected_map_location before\n`);
+    marker.green(`RemoveLocation useEffect on selected_location before\n`);
 
-    marker.green(`RemoveLocation useEffect selected_map_location: 
+    marker.green(`RemoveLocation useEffect selected_location: 
     id  ${selected_location.id}
     name  ${selected_location.name}
     address  ${selected_location.address}
@@ -214,6 +214,21 @@ const RemoveLocation = () => {
 
 
 
+  marker.green(`RemoveLocation selected_map_location CURRENT\n`);
+
+  marker.green(`RemoveLocation selected_map_location: 
+    address  ${selected_map_location.address}
+    lat  ${selected_map_location.lat}
+    lng  ${selected_map_location.lng}    
+  `);
+
+  marker.green(`RemoveLocation new_location CURRENT
+  address  ${new_location.address}
+  lat  ${new_location.lat}
+  lng:  ${new_location.lng}`);
+
+
+
   // Validating input after every change
   const handleChange = event => {
     try {
@@ -231,16 +246,16 @@ const RemoveLocation = () => {
   };
 
 
-  const findIfNameExists = (value) => {
-    marker.blue(`findIfNameExists value= ${value}`);
+  // const findIfNameExists = (value) => {
+  //   marker.blue(`findIfNameExists value= ${value}`);
 
-    const names_list = original_Locations_list.map(item => item.name);
-    marker.green(`handleBlur list: ${names_list}`);
-    const found1 = names_list.includes(value); //('Demo Location');
+  //   const names_list = original_Locations_list.map(item => item.name);
+  //   marker.green(`handleBlur list: ${names_list}`);
+  //   const found1 = names_list.includes(value); //('Demo Location');
 
-    marker.blue(`find result ${found1}`);
-    return found1;
-  };
+  //   marker.blue(`find result ${found1}`);
+  //   return found1;
+  // };
 
   //      Handle exit from field
   //------------------------------------
@@ -423,7 +438,6 @@ const RemoveLocation = () => {
       storeData('original_Locations_list', new_list);
 
       marker.obj(new_location, `handleSubmit Update new_location 2`);
-      marker.obj(new_location, `handleSubmit Update new_location 2`);
       marker.obj(original_Locations_list, `handleSubmit original_Locations_list 2`);
 
       // alert(`Lcation ${new_location.name} was added succesfully`);
@@ -452,7 +466,7 @@ const RemoveLocation = () => {
   //----------------------------------------------------------
   useEffect(() => {
 
-    marker.green(`AddLocation new_location.lng:  ${new_location.lng}`);
+    marker.green(`RemoveLocation new_location.lng:  ${new_location.lng}`);
     if ('IDLE' === submitting) {
       setTimeout(() => {
         set_submit_text('');
@@ -640,7 +654,7 @@ const RemoveLocation = () => {
             <Button
               variant="contained" color="primary" size="medium" margin="40px" type="submit"   >
               Remove
-                </Button>
+            </Button>
 
           </SubmitBox>
           {/* <button type="submit" >Add</button> */}

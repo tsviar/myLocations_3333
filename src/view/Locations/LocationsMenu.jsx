@@ -37,26 +37,26 @@ const LocationsMenu = () => {
 
   return (
     <Nav>
-      <li>
+      <NavLi>
         <StyledLink to="/locations">
           <IconDiv><Info /></IconDiv> <TextDiv>View</TextDiv>
         </StyledLink>
-      </li>
-      <li>
+      </NavLi>
+      <NavLi>
         <StyledLink to="/locations/add">
           <IconDiv><AddLocationSharp /></IconDiv><TextDiv>Add</TextDiv>
         </StyledLink>
-      </li>
-      <li>
+      </NavLi>
+      <NavLi>
         <StyledLink to="/locations/edit">
           <IconDiv><Edit /></IconDiv> <TextDiv>Edit</TextDiv>
         </StyledLink>
-      </li>
-      <li>
+      </NavLi>
+      <NavLi>
         <StyledLink to="/locations/remove">
           <IconDiv><DeleteOutline /></IconDiv> <TextDiv>Remove</TextDiv>
         </StyledLink>
-      </li>
+      </NavLi>
 
     </Nav>
   );
@@ -67,7 +67,7 @@ export default LocationsMenu;
 
 
 const Nav = styled.ul`
-  ${spacing} 
+  /* ${spacing}  */
   list-style-type: none;
 
   /* Partial list of types 
@@ -98,6 +98,8 @@ const Nav = styled.ul`
   /* font-family: "Yanone Kaffeesatz"; */
   /* font-family: "Expletus Sans"; */
 
+  height: inherit;
+  /* height: 40px; */
   width: inherit;
   
   margin: auto;
@@ -125,10 +127,14 @@ const Nav = styled.ul`
 
 `;
 
+const NavLi = styled.li`
+ height: inherit;
+`;
+
 //Extending React Link
 const StyledLink = styled(Link)`
 
- ${spacing} 
+ /* ${spacing}  */
   /* color: #263238;  */
   /* color: mintcream; */
   color:  ${main_palete_theme.palette.top_menu.text_color};  
@@ -141,6 +147,7 @@ const StyledLink = styled(Link)`
   
   /* font-size: 1.3rem; */
   font-size: 1.2rem;
+  line-height: 1.2rem;
 
   font-weight: bold; 
   /* font-weight: 400; */
@@ -153,10 +160,12 @@ const StyledLink = styled(Link)`
   margin-left: 0;
   margin-right: 1rem;
 
-  padding: 5rem;
+  /* padding: 5rem; */
   padding-left: 1rem;
   padding-right: 0;
    
+  height: inherit;
+
   display: flex;  
   justify-content: space-evenly;
   line-height: 20.0rem;  
@@ -181,10 +190,21 @@ const IconDiv = styled.div`
   display: flex; 
   justify-content: center;
   align-items: center;
+
+  height: inherit;
 `;
 
 const TextDiv = styled.div`
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+
+  font-size: 1.2rem;
+  line-height: 1.2rem;
+
  color: inherit;
+
+ height: inherit;
 
   @media(max-width:342px) {
     display: none;

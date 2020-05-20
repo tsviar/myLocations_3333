@@ -46,11 +46,11 @@ const EditLocation = () => {
     original_Locations_list,
     set_original_Locations_list,
     selected_map_location,
+    update_selected_map_location,
     selected_location,
+    update_selected_location,
     locations_edited_flag,
     set_locations_edited_flag,
-    update_selected_location,
-    update_selected_map_location,
     set_error_message,
   } = useContext(StateDataManager);
 
@@ -128,7 +128,7 @@ const EditLocation = () => {
       lng  ${selected_map_location.lng}      
       `);
 
-    marker.blue(`EditLocation ON Mount new_location.lng:  
+    marker.blue(`EditLocation ON Mount new_location:  
       id ${new_location.id}
       name ${new_location.name}
       address ${new_location.address}
@@ -346,6 +346,7 @@ const EditLocation = () => {
     return validName;
   }
 
+
   const validateForm = () => {
     try {
 
@@ -428,7 +429,7 @@ const EditLocation = () => {
       storeData('original_Locations_list', new_list);
 
 
-      // original_Locations_list is in the prev state yet, so increment by 2
+
       set_new_location((
         {
           ...new_location,
@@ -447,7 +448,6 @@ const EditLocation = () => {
       //  const filtered_list = new_list.filter(item =>
       //   item.first_name.toLowerCase().includes(txt.toLowerCase())  );   
 
-      marker.obj(new_location, `handleSubmit Update new_location 2`);
       marker.obj(new_location, `handleSubmit Update new_location 2`);
       marker.obj(original_Locations_list, `handleSubmit original_Locations_list 2`);
 
@@ -683,7 +683,7 @@ const EditLocation = () => {
               onClick={restoreOriginalValuses}
             >
               Restore
-                </Button>
+            </Button>
 
             <Button
               disabled={

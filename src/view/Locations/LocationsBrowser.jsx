@@ -23,6 +23,8 @@ import {
   // LocationsMap ,
 } from "../GoogleMapsApi/GoogleMapEmbed";
 
+import ManageLocation from "./ManageLocation";
+
 import AddLocation from "./AddLocation";
 import EditLocation from "./EditLocation";
 import RemoveLocation from "./RemoveLocation";
@@ -157,7 +159,16 @@ const LocationsBrowser = () => {
 
             {/* <LocationMapBox> */}
             <LocationBox>
+              {
+                ("/locations/view" === location.pathname
+                  || "/locations" === location.pathname) ? <ManageLocation action="View" />
+                  : ("/locations/add" === location.pathname) ? <ManageLocation action="Add" />
+                    : ("/locations/edit" === location.pathname) ? <ManageLocation action="Edit" />
+                      : ("/locations/remove" === location.pathname) ? <ManageLocation action="Remove" />
+                        : `location.pathname= ${location.pathname}`
 
+              }
+              {/*               
               {
                 ("/locations/view" === location.pathname
                   || "/locations" === location.pathname) ? <ViewLocation />
@@ -166,7 +177,8 @@ const LocationsBrowser = () => {
                       : ("/locations/remove" === location.pathname) ? <RemoveLocation />
                         : `location.pathname= ${location.pathname}`
 
-              }
+              } 
+*/}
             </LocationBox>
 
             <MapBox>
@@ -820,7 +832,8 @@ const MenuBox = styled('div')({
 
   gridArea: 'MenuBox',
 
-  height: '5%',
+  // height: '5%',
+  height: "40px",
   width: '100%',
   //flexBasis: '100%',
 

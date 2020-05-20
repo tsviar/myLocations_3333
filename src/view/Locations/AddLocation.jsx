@@ -58,10 +58,10 @@ const AddLocation = () => {
     original_Locations_list,
     set_original_Locations_list,
     selected_map_location,
-    //update_selected_map_location,
     selected_location,
+    update_selected_location,
+    update_selected_map_location,
     set_error_message,
-    // update_selected_location,
     selected_action,
   } = useContext(StateDataManager);
 
@@ -113,12 +113,12 @@ const AddLocation = () => {
 
   // According to:
   // https://material-ui.com/customization/palette/#example
-  const MainTheme = useMemo(
-    () => createMuiTheme({
-      main_palete_theme
-    }),
-    [],
-  );
+  // const MainTheme = useMemo(
+  //   () => createMuiTheme({
+  //     main_palete_theme
+  //   }),
+  //   [],
+  // );
 
   marker.blue(`AddLocation selected_location 
   id  ${selected_location.id}
@@ -173,7 +173,7 @@ const AddLocation = () => {
 
 
     set_new_location(({
-      ...new_location,
+      // ...new_location,
       id: selected_location.id, //original_Locations_list.length+1,
       name: selected_location.name, //'',
       address: selected_location.address, //'',
@@ -455,34 +455,6 @@ const AddLocation = () => {
   }
 
 
-  //const addLoaction = ({ match, history }) => {
-  const addLoaction = () => {
-    const new_list = [...original_Locations_list, new_location];
-    set_original_Locations_list(new_list);
-    storeData('original_Locations_list', new_list);
-
-    marker.obj(new_location, `handleSubmit Update new_location 2`);
-    marker.obj(original_Locations_list, `handleSubmit original_Locations_list 2`);
-
-    // alert(`Lcation ${new_location.name} was added succesfully`);
-    set_submitting('END');
-    marker.red('AddLocation handleSubmit completed ' + submitting);
-
-
-    // original_Locations_list is in the prev state yet, so increment by 2
-    set_new_location((
-      {
-        ...new_location,
-        id: (original_Locations_list.length + 2),
-        name: selected_location.name, //'', 
-        address: selected_location.address, // '', 
-        lat: selected_location.lat, //31.776847698411576, 
-        lng: selected_location.lng, //35.20543098449707, 
-      }));
-
-  }
-
-
   const validateNameExists = () => {
 
     marker.i(`AddLocation validateName`);
@@ -568,6 +540,42 @@ const AddLocation = () => {
   //     marker.green(`find result ${found1}`);
   //     return found1;
   //   };
+
+
+  //==========================================================================
+
+  //const addLoaction = ({ match, history }) => {
+  const addLoaction = () => {
+
+
+
+    const new_list = [...original_Locations_list, new_location];
+    set_original_Locations_list(new_list);
+    storeData('original_Locations_list', new_list);
+
+    marker.obj(new_location, `handleSubmit Update new_location 2`);
+    marker.obj(original_Locations_list, `handleSubmit original_Locations_list 2`);
+
+
+    // original_Locations_list is in the prev state yet, so increment by 2
+    set_new_location((
+      {
+        ...new_location,
+        id: (original_Locations_list.length + 2),
+        name: selected_location.name, //'', 
+        address: selected_location.address, // '', 
+        lat: selected_location.lat, //31.776847698411576, 
+        lng: selected_location.lng, //35.20543098449707, 
+      }));
+    //maybe?
+    update_selected_location(new_location);
+
+    // alert(`Lcation ${new_location.name} was added succesfully`);
+    set_submitting('END');
+    marker.red('AddLocation handleSubmit completed ' + submitting);
+
+
+  }
 
 
   //==========================================================================
