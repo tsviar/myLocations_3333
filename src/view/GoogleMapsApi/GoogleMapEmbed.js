@@ -637,7 +637,8 @@ const MapDetailsBox = styled('div')({
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'center',
-  alignItems: 'center',
+  alignItems: 'flex-start',
+  //alignItems: 'center',
   // fontFamily: 'Expletus Sans',
 
   //color: 'slategray',

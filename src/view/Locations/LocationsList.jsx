@@ -94,6 +94,7 @@ const Box = styled('div')({
   background: `${main_palete_theme.palette.table_row_style.very_light}`,
 
   height: 'inherit',
+  minHeight: 'inherit',
   //height: '70vh',
   // height: 85vh', 
   /// minWidth: '60rem',

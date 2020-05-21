@@ -25,10 +25,10 @@ import {
 
 import ManageLocation from "./ManageLocation";
 
-import AddLocation from "./AddLocation";
-import EditLocation from "./EditLocation";
-import RemoveLocation from "./RemoveLocation";
-import ViewLocation from "./ViewLocation";
+// import AddLocation from "./AddLocation";
+// import EditLocation from "./EditLocation";
+// import RemoveLocation from "./RemoveLocation";
+// import ViewLocation from "./ViewLocation";
 
 import LocationsMenu from "./LocationsMenu";
 import LocationsTopBar from "./LocationsTopBar";
@@ -161,10 +161,14 @@ const LocationsBrowser = () => {
             <LocationBox>
               {
                 ("/locations/view" === location.pathname
-                  || "/locations" === location.pathname) ? <ManageLocation action="View" />
-                  : ("/locations/add" === location.pathname) ? <ManageLocation action="Add" />
-                    : ("/locations/edit" === location.pathname) ? <ManageLocation action="Edit" />
-                      : ("/locations/remove" === location.pathname) ? <ManageLocation action="Remove" />
+                  || "/locations" === location.pathname) ?
+                  <ManageLocation action="View" />
+                  : ("/locations/add" === location.pathname) ?
+                    <ManageLocation action="Add" />
+                    : ("/locations/edit" === location.pathname) ?
+                      <ManageLocation action="Edit" />
+                      : ("/locations/remove" === location.pathname) ?
+                        <ManageLocation action="Remove" />
                         : `location.pathname= ${location.pathname}`
 
               }
@@ -231,10 +235,10 @@ const MainBox = styled('div')({
   // marginLeft: '1.6rem',
 
   // padding: '1px',
-  '@media all and (min-width: 550px)': {
-    // minWidth: '100vw',
+  // '@media all and (min-width: 550px)': {
+  //   // minWidth: '100vw',
 
-  },
+  // },
 
   '@media all and (min-width: 700px)': {
     marginTop: '1rem',
@@ -405,9 +409,9 @@ const MainContentBox = styled('div')({
 
     position: 'absolute',
     top: '-4rem',
-    left: '0.5rem',
     // top: '40rem',
-    // left: '0.5rem',
+
+    left: '0.5rem',
 
     //position: 'fixed',
     //top: 2,
@@ -465,39 +469,19 @@ const MainContentBox = styled('div')({
   // gridTemplateColumns: '2fr 4fr 2.8fr',
   //gridTemplateColumns: 'repeat(auto-fill, minmax(192px, 1fr))',
 
-  '@media all and (min-width: 270px)': {
-    marginTop: '58rem',
+  '@media all and (min-width: 215px)': {
+    marginTop: '60rem',
     // marginBottom: '3rem',
-  },
-
-  '@media all and (min-width: 375px)': {
-    marginTop: '55rem',
-    // marginBottom: '3rem',
-
   },
 
   '@media all and (min-width: 411px)': {
     //marginTop: '53rem',
-    marginTop: '20rem',
+    marginTop: '23rem',
     marginBottom: '5rem',
     // paddingBottom: "1rem",
 
     gridTemplateColumns: '1fr 1fr',
-    gridTemplateRows: '0.5fr 0.1fr 1fr 1fr',
-    gridTemplateAreas: `
-    "ListBox ListBox"
-    "MenuBox MenuBox"
-    "LocationBox MapBox"
-    "LocationBox MapBox"`,
-  },
-
-  '@media all and (min-width: 550px)': {
-    marginLeft: 0,
-    marginTop: '21rem',
-    paddingBottom: "2rem",
-
-    gridTemplateColumns: '1fr 1fr',
-    gridTemplateRows: '0.5fr 0.1fr 1fr 1fr',
+    gridTemplateRows: '0.4fr 0.1fr 1fr 1fr',
     gridTemplateAreas: `
     "ListBox ListBox"
     "MenuBox MenuBox"
@@ -508,12 +492,13 @@ const MainContentBox = styled('div')({
   '@media all and (min-width: 700px)': {
     //margin: 'auto',
     // marginTop: 0,
-    marginTop: '6rem',
+    marginTop: '2rem',
     // paddingTop: '1rem',
     marginBottom: "3rem",
     //gridTemplateColumns: '2fr 1fr 1fr',
     gridTemplateColumns: '1.5fr 2.5fr 2.5fr',
-    gridTemplateRows: '0.1fr 0.7fr 0.1fr 0.1fr',
+    // gridTemplateRows: '0.1fr 0.7fr 0.1fr 0.1fr',
+    gridTemplateRows: '0.1fr 4.5fr 0.1fr 0.1fr',
     gridTemplateAreas: `
     "ListBox MenuBox MenuBox"
     "ListBox LocationBox MapBox"
@@ -521,192 +506,13 @@ const MainContentBox = styled('div')({
     "ListBox LocationBox MapBox"`,
   },
 
-  '@media all and (min-width: 745px)': {
+  // '@media all and (min-width: 745px)': {
 
-    gridTemplateRows: '0.1fr 4.5fr 0.1fr 0.1fr',
+  //     gridTemplateRows: '0.1fr 4.5fr 0.1fr 0.1fr',
 
-  },
-
-
+  // },
 
 
-  /*
-  '@media all and (min-height: 430px)': {
-     marginTop: '0.5rem',
-
-  },
-  '@media all and (min-height: 470px)': {
-    marginTop: 320,
-
-  },
-  '@media all and (min-height: 550px)': {
-    marginTop: 240,
-
-  },
-  '@media all (min-height: 600px)': {
-    marginTop: 200,
-
-  },
-
-  '@media all and (min-height: 650px)': {
-    marginTop: 150,
-
-  },
-
-  /*
-  '@media all and (orientation: landscape) and (min-height: 320px)': {
-    marginTop: '44rem',
-
-  },
-
-  '@media all and (orientation: landscape) and (min-height: 360px)': {
-    marginTop: '42rem',
-
-  },
-
-  '@media all and (orientation: landscape) and (min-height: 411px)': {
-    marginTop: '40rem',
-
-  },
-
-  '@media all and (orientation: landscape) and (min-height: 450px)': {
-    marginTop: '36rem',
-
-  },
-
-  '@media all and (orientation: landscape) and (min-height: 480px)': {
-    marginTop: '32rem',
-
-  },
-
-  '@media all and (orientation: landscape) and (min-height: 520px)': {
-    marginTop: '30rem',
-  },
-  '@media all and (orientation: landscape) and (min-height: 550px)': {
-    marginTop: '28rem',
-  },
-
-  '@media all and (orientation: landscape) and (min-height: 600px)': {
-    marginTop: '24rem',
-  },
-  '@media all and (orientation: landscape) and (min-height: 650px)': {
-    marginTop: '20rem',
-  },
-  '@media all and (orientation: landscape) and (min-height: 700px)': {
-    marginTop: '15rem',
-  },
-  '@media all and (orientation: landscape) and (min-height: 750px)': {
-    marginTop: '13rem',
-  },
-
-  '@media all and (orientation: landscape) and (min-height: 810px)': {
-    //marginTop: '5rem',
-    marginTop: 80,
-  },
-  /*
-  
-    '@media all and (orientation: landscape)': {
-      marginLeft: 0,
-      marginTop: '63rem',
-      marginBottom: '5rem',
-  
-      gridTemplateColumns: '1fr 1fr',
-      gridTemplateRows: '0.5fr 0.1fr 1fr 1fr',
-      gridTemplateAreas: `
-      "ListBox ListBox"
-      "MenuBox MenuBox"
-      "LocationBox MapBox"wd 
-      "LocationBox MapBox"`,
-    },
-  
-  
-    '@media all and (orientation: landscape) and (min-height: 233px)': {
-      marginLeft: 0,
-      marginTop: '60rem',
-      marginBottom: '5rem',
-  
-      gridTemplateColumns: '1fr 1fr',
-      gridTemplateRows: '0.5fr 0.1fr 1fr 1fr',
-      gridTemplateAreas: `
-      "ListBox ListBox"
-      "MenuBox MenuBox"
-      "LocationBox MapBox"
-      "LocationBox MapBox"`,
-    },
-  
-    
-    '@media all and (orientation: landscape) and (min-height: 375px)': {
-      marginLeft: 0,
-      marginTop: '54rem',
-      marginBottom: '3rem',
-  
-      gridTemplateColumns: '1fr 1fr',
-      gridTemplateRows: '0.5fr 0.1fr 1fr 1fr',
-      gridTemplateAreas: `
-      "ListBox ListBox"
-      "MenuBox MenuBox"
-      "LocationBox MapBox"
-      "LocationBox MapBox"`,
-    },
-  
-    '@media all and (orientation: landscape) and (max-height: 800px) and (max-width: 812px)': {
-      marginLeft: 0,
-      marginTop: '57rem',
-      marginBottom: '5rem',
-  
-      gridTemplateColumns: '1fr 1fr',
-      gridTemplateRows: '0.5fr 0.1fr 1fr 1fr',
-      gridTemplateAreas: `
-      "ListBox ListBox"
-      "MenuBox MenuBox"
-      "LocationBox MapBox"
-      "LocationBox MapBox"`,
-    },
-  
-    '@media all and (orientation: landscape) and (max-height: 800px) and (max-width: 812px)': {
-      marginLeft: 0,
-      marginTop: '57rem',
-      marginBottom: '5rem',
-  
-      gridTemplateColumns: '1fr 1fr',
-      gridTemplateRows: '0.5fr 0.1fr 1fr 1fr',
-      gridTemplateAreas: `
-      "ListBox ListBox"
-      "MenuBox MenuBox"
-      "LocationBox MapBox"
-      "LocationBox MapBox"`,
-    },
-  
-    '@media all and (orientation: landscape) and (max-height: 500px) and (max-width: 812px)': {
-      marginLeft: 0,
-      marginTop: '44rem',
-      marginBottom: '5rem',
-  
-      gridTemplateColumns: '1fr 1fr',
-      gridTemplateRows: '0.3fr 0.1fr 1fr 1fr',
-      gridTemplateAreas: `
-      "ListBox ListBox"
-      "MenuBox MenuBox"
-      "LocationBox MapBox"
-      "LocationBox MapBox"`,
-    },
-  
-  
-    '@media all and (orientation: landscape) and (max-height: 375px)': {
-      marginLeft: 0,
-      marginTop: '54rem',
-      marginBottom: '3rem',
-  
-      gridTemplateColumns: '1fr 1fr',
-      gridTemplateRows: '0.5fr 0.1fr 1fr 1fr',
-      gridTemplateAreas: `
-      "ListBox ListBox"
-      "MenuBox MenuBox"
-      "LocationBox MapBox"
-      "LocationBox MapBox"`,
-    },
-  
-  */
 
 });
 
@@ -758,34 +564,22 @@ const ListBox = styled('div')({
   gridArea: 'ListBox',
 
   height: '100%',
-  minHeight: '25vh',
+  minHeight: '23vh',
   //height: '78vh',
   //minHeight: 'fit-content',
   //width: 'inherit',
   //minWidth: '90%',
   minWidth: '80vw',
 
-  '@media all and (min-width: 375px)': {
+
+  '@media all and (min-width: 280px)': {
     //height: '16vh',
-    minHeight: '19vh',
+    minHeight: '22vh',
     //width: '100vw',
-    minWidth: 'fit-content(80vw)',
+    // minWidth: 'fit-content(80vw)',
 
   },
-  '@media all and (min-width: 414px)': {
-    //height: '16vh',
-    minHeight: '20vh',
-    //width: '100vw',
-    minWidth: 'fit-content(80vw)',
 
-  },
-  // '@media all and (min-width: 550px)': {
-  //   //height: '16vh',
-  //   minHeight: '20vh',
-  //   //width: '100vw',
-  //   minWidth: 'fit-content(80vw)',
-
-  // },
 
   '@media all and (min-width: 700px)': {
     height: '100%',
@@ -802,28 +596,6 @@ const ListBox = styled('div')({
     minWidth: 'fit-content(80vw)',
   },
 
-  // '@media all and (min-width: 810px)': {
-  //   height: '48vh',
-  // },
-  // '@media all and (min-width: 1014px)': {
-  //   height: '78vh',
-  // },
-
-  /*
-  flexBasis: '29.5%',
-  width: '29.5vw',
-  // width: 'fit-content',
-
-  minWidth: '29vw', //'30rem'
-  maxWidth: '29.5vw', //'40vw'
-  //'35%'
-
-
-  height: '63vh',
-  //height: 'fit-content',
-  paddingRight: 0,
-  marginRight: 0,
-*/
 
 });
 
@@ -903,7 +675,7 @@ const MapBox = styled('div')({
   marginLeft: '0.3rem',
 
   // flexBasis: '40%',
-  // '@media all and (min-width: 550px)': 
+
   '@media all and (min-width: 411px)': {
     marginRight: '0.5rem',
     marginleft: 0,
