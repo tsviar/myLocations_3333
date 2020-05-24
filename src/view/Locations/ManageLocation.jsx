@@ -1151,10 +1151,10 @@ const MainBox = styled('div')({
   // minHeight: '60vh',
 
   // width: 'inherit',
-  // width: 'fit-content',
+  //width: 'fit-content',
   width: 'fit-content(50vw)',
   minWidth: 'inherit',
-  maxWidth: 'inherit',
+  ///maxWidth: 'inherit',
 
   //width: 'fit-content',
   // minWidth: '32rem', //'35rem',
@@ -1180,6 +1180,8 @@ const MainBox = styled('div')({
   margin: 'auto',
   // // margin: 0,
   // marginLeft: 5,
+
+  padding: 0,
   // padding: 5,
   // paddingLeft: 10,
 
@@ -1215,6 +1217,7 @@ const FormBox = styled(Box)({
   // margin: 20,
   /// padding: 20,
   margin: 'auto',
+  padding: 0,
   // marginLeft: 1,
   //paddingLeft: 1,
 

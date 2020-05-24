@@ -205,36 +205,6 @@ const AppBox = styled('div')({
 
   /*height: 'auto', /*if more info comes on the page, it will stretch down*/
 
-
-  /*
-    '@media (min-width:1280px)': {
-      // width: 'auto',
-      minWidth: '100rem',
-    },
-  
-    '@media (min-width:960px) and (maxWidth: 1279px) ': {//780px
-      width: '80%',
-      minWidth: '100rem',
-    },
-    '@media (min-width: 600px) and (maxWidth: 959px)': { //779px
-      width: '80%',
-      minWidth: '80vw',
-  
-    },
-    '@media (min-width: 401px) and (maxWidth: 599px)': {
-      width: '50%',
-      minWidth: '50vw',
-    },
-    '@media (max-width: 400px)': {
-      //height: '30%',
-      width: '30rem',
-      maxWidth: '30vw',
-      minWidth: '30rem',
-      // width: '50%',
-      // maxWidth: '50rem',
-      // minWidth: '50vw',
-    },
-  */
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'center',
@@ -250,17 +220,6 @@ const AppBox = styled('div')({
   //padding: '3rem 7.5rem',
   //padding: '2rem 10rem 5rem 10rem', 
   //padding: '10.5rem 1.5rem 1.5rem',
-  /*
-    '@media (max-width: 780px)': {
-      //top right bottom left
-      //padding: '20rem 0 0 0',
-      padding: '0 0 0 10rem',
-    },
-    '@media (max-width: 400px)': {
-      //top right bottom left
-      padding: '2rem 0 0 0',
-  
-},
-*/
+
 
 });

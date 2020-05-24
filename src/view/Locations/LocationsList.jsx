@@ -101,6 +101,10 @@ const Box = styled('div')({
   /// maxWidth: '56vw',
   /// width: '56%',
 
+
+  width: '100%',
+  minWidth: '10vw',
+
   //width: 'fit-content(80vw)',
   //minWidth: '30rem', //'30rem'
   // maxWidth: '40vw', //'40vw'

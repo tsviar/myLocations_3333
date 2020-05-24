@@ -98,9 +98,10 @@ const LocationsBrowser = () => {
 
 
     <MainBox >
-      {loading_lists === false ? (
+      {(loading_lists === false) ? (
+
         <MainMenuContentWrapper>
-          <Filter />
+          < Filter />
 
           <MainContentBox>
 
@@ -196,13 +197,14 @@ const LocationsBrowser = () => {
 
           </MainContentBox>
         </MainMenuContentWrapper>
+
       ) : (
+
           <h1>... Loding ...</h1>
         )
       }
 
     </MainBox >
-
 
 
     // </Router>
@@ -222,211 +224,99 @@ const MainBox = styled('div')({
   borderRadius: '0.4rem',
   boxShadow: '0 0.4rem 1.5rem DimGrey',
 
-  ///border: '1rem dashed green',
-
   fontSize: '1.5rem',
 
   height: '100%',
-  //width: '100vw',
-  width: 'fit-content',
-  minWidth: '100vw',
+  width: '100%',
+  minWidth: '90vw',
+  //width: 'inherit',
+  //minWidth: 'inherit',
 
   margin: 'auto',
   // marginLeft: '1.6rem',
 
   // padding: '1px',
-  // '@media all and (min-width: 550px)': {
-  //   // minWidth: '100vw',
-
-  // },
-
-  '@media all and (min-width: 700px)': {
-    marginTop: '1rem',
-
-  },
 
 
-
-  // '@media(orientation: portrait) and(max-device-width: 320px) and (max-device-height:600px) ': {
-
-  //   width: '200rem',
-  // },
-  // '@media(orientation: portrait) and(max-device-width: 320px) and (max-device-height:480px)': {
-
-  //   width: '100rem',
-  // },
-  /*
-    //display: 'flex',
-    //flexDirection: 'column',
-    //justifyContent: 'strech',
-    //alignItems: 'center',
-  
-    position: 'relative',
-    margin: 'auto',
-    // marginTop: '3rem', 
-    // margin-top: '10rem',' 
-  
-    // padding: '7.0rem 1.5rem 1.5rem',
-    // padding: '8.5rem 1.5rem 1.5rem','
-  
-    fontSize: '1.5rem',
-    // font-size: '3rem',' 
-  
-  
-    '@media (orientation: landscape)': {
-      height: '100%',
-      width: '100%',
-      //minWidth: '80rem',
-      maxWidth: '100vw',
-    },
-  
-    '@media (orientation: portrait)': {
-      //height: 'fit-content',
-      height: '100%',
-      width: '100%',
-      minWidth: '100rem',
-      maxWidth: '100vw',
-    },
-  
-    '@media (orientation: portrait) and (max-device-width:1024px)': {
-      height: '100%',
-      width: '90%',
-      minWidth: '90rem', //81rem
-      maxWidth: '100vw',
-  
-      //top right bottom left
-      // margin: 'auto',
-      //  padding: 'auto',
-      // padding: '1rem 0rem 1rem 4rem',
-      // paddingLeft: '6rem',
-      // paddingLeft: '16rem',
-      // paddingRight: '1rem',
-  
-    },
-  
-    '@media (orientation: landscape) and (max-device-width:768px)': {
-      height: 'auto',
-      width: '50%',
-      minWidth: '50rem', //81rem
-      maxWidth: '50vw',
-  
-      //top right bottom left
-      margin: '10rem 10rem 10 rem 0rem',
-      // padding: 'auto',
-      padding: '1rem 14rem 1rem 0rem',
-      // paddingLeft: '6rem',
-      //paddingRight: '16rem',
-      // paddingRight: '1rem',
-  
-    },
-    '@media (orientation: portrait) and (max-device-width:768px)': {
-      height: 'auto',
-      width: '50%',
-      minWidth: '50rem', //81rem
-      maxWidth: '50vw',
-  
-      //top right bottom left
-      margin: '10rem 10rem 10rem 0rem',
-      // padding: 'auto',
-      padding: '1rem 14rem 1rem 0rem',
-      // paddingLeft: '6rem',
-      //paddingRight: '16rem',
-      // paddingRight: '1rem',
-  
-    },
-    */
 });
 
 const MainMenuContentWrapper = styled('div')({
 
-  //border:red solid 2px;
+
+  backgroundColor: `${main_palete_theme.palette.surface_background.regular_medium}`,
+
+  // content: "MainMenuContentWrapper",
+
+
   borderRadius: '5px',
-  /// border: '1rem dashed black',
+
+  position: 'absolute',
+  top: 0,
+  left: 0,
+
 
   margin: 'auto',
   padding: 0,
-  //margin: 0,
 
-  // margin: '20px 1px 20px 1px',
-  //padding: '1rem 10px 10px 10px',
-  // padding: '7.0rem 0.5rem 1.5rem 0.5rem',
 
-  //display: 'flex',
-  //flexDirection: 'column',
-  //justifyContent: 'flex-start',
-  //alignItems: 'space-between',   //
-
-  /*
-    display: 'flex',
-    flexDirection: 'column',
-  
-    justifyContent: 'flex-start',
-    // justifyContent: 'strech',
-    //justifyContent: 'space-around',
-    //alignItems: 'center',
-    alignItems: 'space-between',   //
-    // alignItems: 'flex-start', 
-  
-  
-    margin: 'auto',
-    // top right bottom left
-    // padding: '7.0rem 1.5rem 1.5rem',
-    padding: '7.0rem 0.5rem 1.5rem 0.5rem',
-    // padding: 'auto',
-  
-    height: 'inherit',
-    width: 'inherit',
-  
-    '@media (orientation: landscape) and (max-device-width:768px)': {
-      height: 'auto',
-      width: '50%',
-      minWidth: '50rem', //81rem
-      maxWidth: '50vw',
-  
-      //top right bottom left
-      margin: '10rem 10rem 10rem 0rem',
-      // padding: 'auto',
-      padding: '1rem 14rem 1rem 0rem',
-      // paddingLeft: '6rem',
-      //paddingRight: '16rem',
-      // paddingRight: '1rem',
-  
-    },
-  */
 });
 
 
 const MainContentBox = styled('div')({
 
-  borderRadius: '5px',
-  /// border: '1rem dashed deeppink',
-
   position: 'relative',
+  margin: 'auto',
+  padding: 0,
+  paddingTop: 70,
+  paddingBottom: 50,
 
-  '&::before': {
-    content: ".container ccc",
-    // content: "♥",
 
-    position: 'absolute',
-    top: '-4rem',
-    // top: '40rem',
+  borderRadius: '5px',
 
-    left: '0.5rem',
 
-    //position: 'fixed',
-    //top: 2,
-    //left: 12,
+  height: '100%',
+  minHeight: '80vh',
+  //minHeight: '80%',
+  width: '100%',
+  ///minWidth: '15vw',
+  //minWidth: '100vw',
 
-    //fontSize: '2rem',
-    // fontWeight: '600',
-  },
+  //overflowY: 'auto',
+  overflowY: 'scroll',
+
+  // '&::before': {
+  //   content: "MainContentBox",
+  //   // content: "♥",
+
+  //   position: 'absolute',
+  //   // top: '-4rem',
+  //   // left: '0.5rem',
+  //   top: 30,
+  //   left: 0,
+  //   //  right: 0,
+  //   bottom: 30,
+
+
+  //   // position: 'fixed',
+  //   // top: 2,
+  //   // left: 12,
+  //   // border: '1rem dashed green',
+
+  //   // fontSize: '2rem',
+  //   // fontWeight: '600',
+  // },
 
   '& > *': {
     fontSize: '1.5rem',
     fontWeight: '600',
     //  color: 'white',
     // background: 'darkmagenta',
-    // padding: '3rem',
+
+
+    ///margin: 'auto',
+    ///padding: '3rem',
+    ///paddingTop: '3rem',
+    ///paddingBottom: '2rem',
 
     // display:'flex',
     // justifyContent: 'center',
@@ -439,26 +329,22 @@ const MainContentBox = styled('div')({
 
   },
 
+
   display: 'grid',
-  gridGap: '4px',
+  //gridGap: '4px',
+  gridGap: '1px',
 
-  height: '100%',
-  minHeight: '80vh',
-  width: '100%',
-  minWidth: '15vw',
-
-  margin: 'auto',
-  marginTop: '62rem',
-  marginBottom: '3rem',
-  //padding: '1px',
-
+  ///margin: 'auto',
+  /// marginTop: '62rem',
+  /// marginBottom: '3rem',
 
   //margin: '13rem 1px 1rem 1px',
 
   // padding: '1px',
 
-  gridTemplateColumns: '0.1fr',
-  gridTemplateRows: '0.15fr 0.05fr 0.3fr 0.3fr',
+  gridTemplateColumns: '1fr 1fr',
+  //gridTemplateRows: '0.15fr 0.05fr 0.3fr 0.3fr',
+  gridTemplateRows: '0.15fr 0.05fr 1fr 1fr',
   gridTemplateAreas: `
   "ListBox"
   "MenuBox"
@@ -469,19 +355,12 @@ const MainContentBox = styled('div')({
   // gridTemplateColumns: '2fr 4fr 2.8fr',
   //gridTemplateColumns: 'repeat(auto-fill, minmax(192px, 1fr))',
 
-  '@media all and (min-width: 215px)': {
-    marginTop: '60rem',
-    // marginBottom: '3rem',
-  },
 
-  '@media all and (min-width: 411px)': {
-    //marginTop: '53rem',
-    marginTop: '23rem',
-    marginBottom: '5rem',
-    // paddingBottom: "1rem",
+  '@media all and (min-width: 550px)': {
 
-    gridTemplateColumns: '1fr 1fr',
-    gridTemplateRows: '0.4fr 0.1fr 1fr 1fr',
+    gridTemplateColumns: '2fr 2fr',
+    gridTemplateRows: '0.4fr 0.1fr 2fr 0.1fr',
+
     gridTemplateAreas: `
     "ListBox ListBox"
     "MenuBox MenuBox"
@@ -489,16 +368,16 @@ const MainContentBox = styled('div')({
     "LocationBox MapBox"`,
   },
 
+
   '@media all and (min-width: 700px)': {
     //margin: 'auto',
-    // marginTop: 0,
-    marginTop: '2rem',
-    // paddingTop: '1rem',
-    marginBottom: "3rem",
+
     //gridTemplateColumns: '2fr 1fr 1fr',
     gridTemplateColumns: '1.5fr 2.5fr 2.5fr',
     // gridTemplateRows: '0.1fr 0.7fr 0.1fr 0.1fr',
-    gridTemplateRows: '0.1fr 4.5fr 0.1fr 0.1fr',
+    // gridTemplateRows: '0.1fr 4.5fr 0.1fr 0.1fr',
+    //gridTemplateRows: '0.1fr 0.01fr 0.8fr 0.2fr',
+    gridTemplateRows: '0.1fr 0.1fr 2fr 0.2fr',
     gridTemplateAreas: `
     "ListBox MenuBox MenuBox"
     "ListBox LocationBox MapBox"
@@ -506,95 +385,23 @@ const MainContentBox = styled('div')({
     "ListBox LocationBox MapBox"`,
   },
 
-  // '@media all and (min-width: 745px)': {
-
-  //     gridTemplateRows: '0.1fr 4.5fr 0.1fr 0.1fr',
-
-  // },
-
-
 
 });
 
-const MenuLocationMapBox = styled('div')({
-  /* 
-    // as an item
-    flexBasis: '69%',
-  
-    width: '69vw',
-    minWidth: '69vw', //'30rem'
-    maxWidth: '69vw', //'40vw'
-  
-    //height: '70vh',
-    //height: '10vh',
-    //height: 'fit-content',
-    // height: 'fit-content(70vh)',
-    // maxHeight: '80rem',
-    //minHeight: '70vh',
-  
-    // as a container
-    display: 'flex',
-    // flexDirection: 'column',
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-  
-    alignItems: 'flex-start',
-    //alignItems: 'space-evenly',
-    // alignItems: 'center',
-    //alignItems: 'space-around',
-    //justifyContent: 'space-around',  
-    justifyContent: 'flex-start',
-    // justifyContent: 'center',
-  
-  
-    marginTop: 0,
-    marginLeft: '1px',
-    paddingLeft: 0,
-    marginRight: '1px',
-    paddingRight: '10px',
-  
-    //paddingRight: '1.5rem',
-  
-  
-  */
-
-});
 
 const ListBox = styled('div')({
   gridArea: 'ListBox',
 
   height: '100%',
-  minHeight: '23vh',
+  //minHeight: '23vh',
+  minHeight: '15rem',
+
   //height: '78vh',
   //minHeight: 'fit-content',
+
   //width: 'inherit',
-  //minWidth: '90%',
-  minWidth: '80vw',
-
-
-  '@media all and (min-width: 280px)': {
-    //height: '16vh',
-    minHeight: '22vh',
-    //width: '100vw',
-    // minWidth: 'fit-content(80vw)',
-
-  },
-
-
-  '@media all and (min-width: 700px)': {
-    height: '100%',
-    minHeight: '80vh',
-    minWidth: '100%',
-
-  },
-
-
-  '@media all and (orientation: landscape) and (max-height: 800px) and (max-width: 812px)': {
-    //height: '16vh',
-    minHeight: '40vh',
-    //width: '100vw',
-    minWidth: 'fit-content(80vw)',
-  },
+  //minWidth: '90%',  
+  ///minWidth: '80vw',
 
 
 });
@@ -604,7 +411,7 @@ const MenuBox = styled('div')({
 
   gridArea: 'MenuBox',
 
-  // height: '5%',
+  ///height: '5%',
   height: "40px",
   width: '100%',
   //flexBasis: '100%',
@@ -612,57 +419,16 @@ const MenuBox = styled('div')({
 
 });
 
-const LocationMapBox = styled('div')({
-
-  // paddingLeft: '20px',
-  // paddingRight: '20px',
-
-  /*
-  flexBasis: '100%',
-  width: '100%',
-  // width: 'fit-content',
-  //width: '70vw',
-  // width: '60rem',
-
-  // maxHeight: '80vh',
-  //height: 'inherit',
-  // height: 'fit-content',
-  height: '93%',
-
-  margin: 'auto',
-  padding: 'auto',
-  // marginTop: 0,
-  // paddingTop: 0,
-  //paddingRight: '10rem',
-
-  // borderRadius: '0.8rem',
-  borderRadius: '0.4rem',
-  overflowX: 'hidden',
-  overflowY: 'scroll',
-  boxShadow: '0 0.2rem 0.8rem DimGrey',
-
-  display: 'flex',
-  flexDirection: 'row',
-  flexWrap: 'wrap',
-  justifyContent: 'space-evenly',   //'flex-start',
-  alignItems: 'flex-start',   //'strech', 
-
-
-  // alignItems: 'space-between',   //'flex-start', 
-  // justifyContent: 'space-between',   //'flex-start',  
-  */
-});
-
 
 const LocationBox = styled('div')({
 
   gridArea: 'LocationBox',
-  marginLeft: '0.1rem',
-
+  //minWidth: '25vw',
+  //marginLeft: '0.05rem',
 
   // paddingLeft: '3px',
 
-  //flexBasis: '40%',
+  width: '100%',
 
 });
 
@@ -671,15 +437,27 @@ const MapBox = styled('div')({
   gridArea: 'MapBox',
   //height: '70vh',
 
-  marginRight: 0,
+  marginRight: '1rem',
   marginLeft: '0.3rem',
+  paddingRight: '3rem',
+
+  width: '100%',
+  //minWidth: '25vw',
+
+  //height: '100%',
+  // minHeight: '40rem',
 
   // flexBasis: '40%',
 
-  '@media all and (min-width: 411px)': {
+  '@media all and (min-width: 550px)': {
     marginRight: '0.5rem',
     marginleft: 0,
+
+    paddingRight: '1rem',
+
+    // minHeight: '45rem',
   },
+
 
 });
 

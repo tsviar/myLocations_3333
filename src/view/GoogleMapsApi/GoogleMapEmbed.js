@@ -502,35 +502,15 @@ export { GoogleMapContainer, LocationsMap };
 
 const MainBox = styled(Box)({
 
-  height: 'fit-content',
+  //height: 'fit-content', //this sticks it in a fixed location, bad, bad, bad...
+  height: '100%',
   width: 'fit-content',
-
-  //width: '45vw',
-  // height: '70vh',
-
-  //height: '100%',
-  // maxHeight: '70rem',
-  // minHeight: '70vh',
-
-  // minWidth: '32rem',
-  // maxWidth: '35vw',s
-
-  //width: '30%',
-
-
-  // minWidth: '30rem', //'35rem',
-  // maxWidth: '40vw', //'35rem',
-
-  // borderRadius: '0.4rem',
-  // borderRadius: '0.8rem',
-  // overflowX: 'hidden',
-  // overflowY: 'scroll',
-  // boxShadow: '0 0.2rem 0.8rem DimGrey',
 
   display: 'flex',
   flexDirection: 'column',
   justifyContent: "center",
   alignItems: 'space-around',
+  //alignItems: 'space-evenly',
 
   margin: 'auto',
   marginLeft: 1,
@@ -563,19 +543,12 @@ const ContainerElementBox = styled('div')({
   //marginLeft: '1px', //0,
   //marginRight: '1rem',
 
-  '@media all and (min-width: 411px)': {
-    minWidth: '49vw',
+  '@media all and (min-width: 550px)': {
+    minWidth: '29vw',
 
-    padding: '10rem 0 0 2rem',
+    padding: '10rem 1rem 0 2rem',
   },
 
-  // '@media all and (min-width: 550px)': {
-  //   minWidth: '49vw',
-
-  //   margin: 'auto',
-  //   padding: '10rem 0 0 2rem',
-
-  // },
 
 
   '@media all and (min-width: 700px)': {
@@ -586,24 +559,12 @@ const ContainerElementBox = styled('div')({
 
   },
 
-  // display: 'flex',
-  // flexDirection: 'column',
-  // justifyContent: 'space-around',
-  // alignItems: 'space-around',
 
 });
 
 const MapElementBox = styled('div')({
   height: '100%',
-  minHeight: '50vh',
-  //height: '35vh',
-
-  ///width: '30vw',
-  // width: 'fit-content(48vw)',
-  ///width: `20vw`,
-
-  // maxWidth: `30rem`,
-  //minWidth: `48%`,
+  minHeight: '33rem',
 
   margin: 0.1,
   padding: 1,
@@ -615,9 +576,6 @@ const MapElementBox = styled('div')({
 //const MapBox = styled('div')({
 const MapBox = styled(Box)({
   margin: 0, //20
-  //marginLeft: '1rem',
-  // height: 'fit-content',
-  //width: 'fit-content',
 
 });
 
