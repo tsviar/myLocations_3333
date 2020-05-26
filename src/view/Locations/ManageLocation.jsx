@@ -1199,6 +1199,7 @@ const MainBox = styled('div')({
   //justifyContent: 'center',
   justifyContent: 'flex-start',
 
+
 });
 
 const MainBoxLabel = styled('h2')({
@@ -1223,6 +1224,7 @@ const FormBox = styled(Box)({
 
   height: 'fit-content',
   width: '100%',
+
 });
 
 
@@ -1243,11 +1245,12 @@ const LocationForm = styled('form')({
   //width: 'fit-content',
   width: "100%",
 
+
 });
 
 const CoordinatesBoxLabel = styled(InputLabel)({
-  //fontSize: 3,
-  fontWeight: 'inherit',
+  fontSize: '0.8rem',
+  // fontWeight: 'inherit',
   textAlign: 'center',
   color: 'inherit',
 });

@@ -202,6 +202,8 @@ const FilterLocations = () => {
   const updateFilteredList = event => {
     const txt = event.target.value;
 
+    // console.log(`Filter input = ${txt}`);
+
     // set_filter_text(txt);
     set_locations_filter_text(txt);
 
@@ -520,12 +522,14 @@ const SearchIconStyle = {
 };
 
 const Input = styled('input')({
-  height: '1.75rem',
-  // height: 3.5rem, 
+  //height: '1.75rem',
+  height: '3.0rem',
+  fontSize: '2rem',
   //minWidth: '24rem',
   // minWidth: '25vw',
   //width: '90%',
   width: '100%',
+
   outline: 'none',
   borderRadius: '0.5rem',
   border: 'white 2px solid',

@@ -535,18 +535,18 @@ const ContainerElementBox = styled('div')({
   // maxHeight: '60rem',
 
   //minWidth: '85vw',
-  minWidth: '98vw',
+  minWidth: '94vw',
 
-  padding: '1rem 0.5rem 0 0.3rem',
+  padding: '2rem 0.5rem 0 0.5rem',
 
   margin: 'auto',
   //marginLeft: '1px', //0,
   //marginRight: '1rem',
 
   '@media all and (min-width: 550px)': {
-    minWidth: '29vw',
+    minWidth: '30vw',
 
-    padding: '10rem 1rem 0 2rem',
+    padding: '10rem 2rem 0 0.5rem',
   },
 
 
@@ -555,7 +555,8 @@ const ContainerElementBox = styled('div')({
     minWidth: '39vw',
 
     margin: 'auto',
-    padding: '10rem 0 0 1rem',
+    // padding: '10rem 0 0 1rem',
+    padding: '10rem 0.5rem 0 0.5rem',
 
   },
 
@@ -588,14 +589,14 @@ const MapDetailsBox = styled('div')({
   padding: '1.5rem',
   //margin:0,
   marginTop: 4,
-  paddingTop: 0,
-  marginLeft: 20, //'10px',
-  paddingLeft: 20, // '20px',
+  paddingTop: 4,
+  marginLeft: 0, //'10px',
+  paddingLeft: 8, // '20px',
 
   display: 'flex',
   flexDirection: 'column',
-  justifyContent: 'center',
-  alignItems: 'flex-start',
+  justifyContent: 'space-evenly',
+  alignItems: 'space-evenly',
   //alignItems: 'center',
   // fontFamily: 'Expletus Sans',
 
@@ -604,9 +605,14 @@ const MapDetailsBox = styled('div')({
 });
 
 const MapDetails = styled('h5')({
-  fontSize: '1.1rem',
+  // fontSize: '1.1rem',
+  fontSize: '1.2rem',
   // font-size: '2.25rem', 
   fontWeight: 'inherit',
+
+  '@media all and (min-width: 700px)': {
+    fontSize: '1.1rem',
+  },
 
   color: `${main_palete_theme.palette.info.main}`,
   // color: 'darkslateblue',

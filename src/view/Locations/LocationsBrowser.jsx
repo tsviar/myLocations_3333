@@ -235,8 +235,10 @@ const MainBox = styled('div')({
   margin: 'auto',
   // marginLeft: '1.6rem',
 
-  // padding: '1px',
+  padding: '1px',
 
+  fontSize: '1.5rem',
+  fontWeight: '600',
 
 });
 
@@ -253,29 +255,36 @@ const MainMenuContentWrapper = styled('div')({
   position: 'absolute',
   top: 0,
   left: 0,
+  right: 0,
 
 
   margin: 'auto',
-  padding: 0,
+  padding: '1px',
 
+  fontSize: '1.5rem',
+  fontWeight: '600',
 
 });
 
 
 const MainContentBox = styled('div')({
 
+
   position: 'relative',
   margin: 'auto',
-  padding: 0,
-  paddingTop: 70,
-  paddingBottom: 50,
+  marginTop: '6rem',
+  marginBottom: '3rem',
 
+  padding: '1rem 0 8rem 0',
+  // padding: 0,
+  // paddingTop: 1,
+  // paddingBottom: 30,
 
   borderRadius: '5px',
 
 
   height: '100%',
-  minHeight: '80vh',
+  minHeight: '95vh',
   //minHeight: '80%',
   width: '100%',
   ///minWidth: '15vw',
@@ -284,31 +293,37 @@ const MainContentBox = styled('div')({
   //overflowY: 'auto',
   overflowY: 'scroll',
 
-  // '&::before': {
-  //   content: "MainContentBox",
-  //   // content: "♥",
-
-  //   position: 'absolute',
-  //   // top: '-4rem',
-  //   // left: '0.5rem',
-  //   top: 30,
-  //   left: 0,
-  //   //  right: 0,
-  //   bottom: 30,
-
-
-  //   // position: 'fixed',
-  //   // top: 2,
-  //   // left: 12,
-  //   // border: '1rem dashed green',
-
-  //   // fontSize: '2rem',
-  //   // fontWeight: '600',
-  // },
-
+  fontSize: '1.5rem',
+  fontWeight: '600',
+  /*
+    '&::before': {
+      //   content: "MainContentBox",
+      //   // content: "♥",
+  
+      //   position: 'absolute',
+      //   // top: '-4rem',
+      //   // left: '0.5rem',
+      //   top: 30,
+      //   left: 0,
+      //   //  right: 0,
+      //   bottom: 30,
+  
+      // backgroundColor: `${main_palete_theme.palette.surface_background.regular_medium}`,
+  
+      //   // position: 'fixed',
+      //   // top: 2,
+      //   // left: 12,
+      //   // border: '1rem dashed green',
+  
+      //   // fontSize: '2rem',
+      //   // fontWeight: '600',
+    },
+  */
   '& > *': {
     fontSize: '1.5rem',
     fontWeight: '600',
+
+
     //  color: 'white',
     // background: 'darkmagenta',
 
@@ -342,7 +357,7 @@ const MainContentBox = styled('div')({
 
   // padding: '1px',
 
-  gridTemplateColumns: '1fr 1fr',
+  gridTemplateColumns: '2fr 2fr 0.001fr',
   //gridTemplateRows: '0.15fr 0.05fr 0.3fr 0.3fr',
   gridTemplateRows: '0.15fr 0.05fr 1fr 1fr',
   gridTemplateAreas: `
@@ -358,14 +373,20 @@ const MainContentBox = styled('div')({
 
   '@media all and (min-width: 550px)': {
 
-    gridTemplateColumns: '2fr 2fr',
+    // gridTemplateColumns: '2fr 2fr',
+    gridTemplateColumns: '10fr 6fr 0.001fr',
     gridTemplateRows: '0.4fr 0.1fr 2fr 0.1fr',
+
 
     gridTemplateAreas: `
     "ListBox ListBox"
     "MenuBox MenuBox"
     "LocationBox MapBox"
     "LocationBox MapBox"`,
+
+    justifyContent: 'center',
+    // justifyContent: 'space-evenly',
+    // alignContent: 'space-evenly',
   },
 
 
@@ -377,12 +398,15 @@ const MainContentBox = styled('div')({
     // gridTemplateRows: '0.1fr 0.7fr 0.1fr 0.1fr',
     // gridTemplateRows: '0.1fr 4.5fr 0.1fr 0.1fr',
     //gridTemplateRows: '0.1fr 0.01fr 0.8fr 0.2fr',
-    gridTemplateRows: '0.1fr 0.1fr 2fr 0.2fr',
+    gridTemplateRows: '0.1fr 0.1fr 0.011fr 2fr',
     gridTemplateAreas: `
     "ListBox MenuBox MenuBox"
     "ListBox LocationBox MapBox"
     "ListBox LocationBox MapBox"
     "ListBox LocationBox MapBox"`,
+
+    // justifyContent: 'space-evenly',
+    alignContent: 'start',
   },
 
 
@@ -395,6 +419,7 @@ const ListBox = styled('div')({
   height: '100%',
   //minHeight: '23vh',
   minHeight: '15rem',
+
 
   //height: '78vh',
   //minHeight: 'fit-content',
@@ -439,7 +464,8 @@ const MapBox = styled('div')({
 
   marginRight: '1rem',
   marginLeft: '0.3rem',
-  paddingRight: '3rem',
+  paddingRight: '1rem',
+
 
   width: '100%',
   //minWidth: '25vw',
