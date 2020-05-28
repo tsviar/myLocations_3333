@@ -81,10 +81,24 @@ const Title2 = styled('h3')({
 });
 
 const MsgText = styled('p')({
-  color: 'darkslateblue',
+
+  color: `${main_palete_theme.palette.info.vdark}`,
+
+  //mixBlendMode: 'difference',
+  //mixBlendMode: 'hard-light',
+  // mixBlendMode: 'soft-light',
+  // mixBlendMode: 'normal',
+
+  fontSize: 'calc(1.1rem + (2.0 - 1.1) * ((100vw - 300px) / (1600 - 300)))',
+  lineHeight: 'calc(1.2rem + (1.2 - 1.0) * ((100vw - 300px) / (1600 - 300)))',
+  //fontSize: '1.0rem',
+
+
+
+
   textAlign: 'left',
   fontFamily: 'Raleway',
-  fontSize: '1.0rem',
+
   // font-size: '1.4rem',
   maxWidth: 'fit-content', //'45rem',
 

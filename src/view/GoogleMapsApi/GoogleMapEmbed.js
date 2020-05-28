@@ -606,15 +606,21 @@ const MapDetailsBox = styled('div')({
 
 const MapDetails = styled('h5')({
   // fontSize: '1.1rem',
-  fontSize: '1.2rem',
+  // fontSize: '1.2rem',
   // font-size: '2.25rem', 
-  fontWeight: 'inherit',
 
-  '@media all and (min-width: 700px)': {
-    fontSize: '1.1rem',
-  },
+  // font-size: calc([minimum size] + ([maximum size] - [minimum size]) * ((100vw - [minimum viewport width]) / ([maximum viewport width] - [minimum viewport width])));
+  fontSize: 'calc(14px + (20 - 14) * ((100vw - 300px) / (1600 - 300)))',
+  lineHeight: 'calc(1.3em + (1.2 - 1.1) * ((100vw - 300px) / (1600 - 300)))',
 
-  color: `${main_palete_theme.palette.info.main}`,
+  fontWeight: '400',
+  // fontWeight: 'inherit',
+
+  // '@media all and (min-width: 700px)': {
+  //   fontSize: '1.1rem',
+  // },
+
+  color: `${main_palete_theme.palette.info.vdark}`,
   // color: 'darkslateblue',
 
   textAlign: 'left',

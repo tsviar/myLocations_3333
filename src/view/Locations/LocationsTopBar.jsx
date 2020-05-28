@@ -40,9 +40,10 @@ const Box = styled.div`
 
   /* width: 100%; */
   /* height: 100%;  */
-  height: 40px;
-
+  /* height: 50px; */
+  height: inherit;
   /* 70px; */
+
   /* width: 70rem; */
   width: inherit;
 
@@ -64,6 +65,10 @@ const Text = styled.h1`
   position: relative;
 
   height: inherit;
+  /* font-size: 3rem;
+  line-height: 4rem; */
+  font-size: 1.5rem;
+  line-height:1.8rem; 
 `;
 
 const spin = keyframes`

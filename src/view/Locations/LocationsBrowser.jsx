@@ -237,8 +237,8 @@ const MainBox = styled('div')({
 
   padding: '1px',
 
-  fontSize: '1.5rem',
-  fontWeight: '600',
+  // fontSize: '1.5rem',
+  // fontWeight: '600',
 
 });
 
@@ -261,8 +261,8 @@ const MainMenuContentWrapper = styled('div')({
   margin: 'auto',
   padding: '1px',
 
-  fontSize: '1.5rem',
-  fontWeight: '600',
+  // fontSize: '1.5rem',
+  // fontWeight: '600',
 
 });
 
@@ -293,8 +293,18 @@ const MainContentBox = styled('div')({
   //overflowY: 'auto',
   overflowY: 'scroll',
 
-  fontSize: '1.5rem',
+
+  // font-size: calc([minimum size] + ([maximum size] - [minimum size]) * ((100vw - [minimum viewport width]) / ([maximum viewport width] - [minimum viewport width])))
+
+  //   fontSize: 'calc(14px + (26 - 14) * ((100vw - 300px) / (1600 - 300)))',
+  // lineHeight: 'calc(1.5rem + (1.5 - 1.2) * ((100vw - 300px) / (1600 - 300)))',
+
+  fontSize: 'calc(15px + (26 - 15) * ((100vw - 300px) / (1600 - 300)))',
+  lineHeight: 'calc(1.5rem + (1.5 - 1.2) * ((100vw - 300px) / (1600 - 300)))',
+
+  // fontSize: '1.5rem',
   fontWeight: '600',
+
   /*
     '&::before': {
       //   content: "MainContentBox",
@@ -318,14 +328,20 @@ const MainContentBox = styled('div')({
       //   // fontSize: '2rem',
       //   // fontWeight: '600',
     },
-  */
+  
   '& > *': {
-    fontSize: '1.5rem',
-    fontWeight: '600',
 
 
-    //  color: 'white',
-    // background: 'darkmagenta',
+    // font-size: calc([minimum size] + ([maximum size] - [minimum size]) * ((100vw - [minimum viewport width]) / ([maximum viewport width] - [minimum viewport width])))
+
+    // fontSize: 'calc(14px + (26 - 14) * ((100vw - 300px) / (1600 - 300)))',
+    // lineHeight: 'calc(1.5rem + (1.5 - 1.2) * ((100vw - 300px) / (1600 - 300)))',
+
+    //fontSize: '2.0rem',
+    // lineHeight: '2.0rem',
+    // fontSize: '1.5rem',
+    // fontWeight: '600',
+    //fontWeight: '400',
 
 
     ///margin: 'auto',
@@ -343,7 +359,7 @@ const MainContentBox = styled('div')({
 
 
   },
-
+*/
 
   display: 'grid',
   //gridGap: '4px',
@@ -359,7 +375,7 @@ const MainContentBox = styled('div')({
 
   gridTemplateColumns: '2fr 2fr 0.001fr',
   //gridTemplateRows: '0.15fr 0.05fr 0.3fr 0.3fr',
-  gridTemplateRows: '0.15fr 0.05fr 1fr 1fr',
+  gridTemplateRows: '0.20fr 0.09fr 1fr 1fr',
   gridTemplateAreas: `
   "ListBox"
   "MenuBox"
@@ -370,12 +386,16 @@ const MainContentBox = styled('div')({
   // gridTemplateColumns: '2fr 4fr 2.8fr',
   //gridTemplateColumns: 'repeat(auto-fill, minmax(192px, 1fr))',
 
-
+  //Small devices (tablets, 768px and up)
+  //----------------------------------------
   '@media all and (min-width: 550px)': {
+
+    // maxWidth: '767px',
 
     // gridTemplateColumns: '2fr 2fr',
     gridTemplateColumns: '10fr 6fr 0.001fr',
-    gridTemplateRows: '0.4fr 0.1fr 2fr 0.1fr',
+    // gridTemplateRows: '0.4fr 0.1fr 2fr 0.1fr',
+    gridTemplateRows: '0.5fr 0.18fr 2fr 0.1fr',
 
 
     gridTemplateAreas: `
@@ -389,6 +409,10 @@ const MainContentBox = styled('div')({
     // alignContent: 'space-evenly',
   },
 
+  // Large devices(large desktops, 1200px and up)
+  //--------------------------------------------------
+  // '@media all and (min-width: 850px)': {
+  // maxWidth: '1200px',
 
   '@media all and (min-width: 700px)': {
     //margin: 'auto',
@@ -398,7 +422,7 @@ const MainContentBox = styled('div')({
     // gridTemplateRows: '0.1fr 0.7fr 0.1fr 0.1fr',
     // gridTemplateRows: '0.1fr 4.5fr 0.1fr 0.1fr',
     //gridTemplateRows: '0.1fr 0.01fr 0.8fr 0.2fr',
-    gridTemplateRows: '0.1fr 0.1fr 0.011fr 2fr',
+    gridTemplateRows: '0.1fr 0.5fr 2fr 0.01fr',
     gridTemplateAreas: `
     "ListBox MenuBox MenuBox"
     "ListBox LocationBox MapBox"
@@ -406,7 +430,7 @@ const MainContentBox = styled('div')({
     "ListBox LocationBox MapBox"`,
 
     // justifyContent: 'space-evenly',
-    alignContent: 'start',
+    // alignContent: 'center',
   },
 
 
@@ -437,7 +461,7 @@ const MenuBox = styled('div')({
   gridArea: 'MenuBox',
 
   ///height: '5%',
-  height: "40px",
+  height: "50px",
   width: '100%',
   //flexBasis: '100%',
 
@@ -475,6 +499,8 @@ const MapBox = styled('div')({
 
   // flexBasis: '40%',
 
+  //Small devices (tablets, 768px and up)
+  //----------------------------------------
   '@media all and (min-width: 550px)': {
     marginRight: '0.5rem',
     marginleft: 0,

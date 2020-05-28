@@ -522,9 +522,18 @@ const SearchIconStyle = {
 };
 
 const Input = styled('input')({
-  //height: '1.75rem',
-  height: '3.0rem',
-  fontSize: '2rem',
+  // height: '1.75rem',
+  height: '2.5rem',
+
+
+  // font-size: calc([minimum size] + ([maximum size] - [minimum size]) * ((100vw - [minimum viewport width]) / ([maximum viewport width] - [minimum viewport width])));
+  fontSize: 'calc(1.4rem + (2.0 - 1.3) * ((100vw - 300px) / (1600 - 300)))',
+  lineHeight: 'calc(1.3rem + (1.5 - 1.2) * ((100vw - 300px) / (1600 - 300)))',
+
+  // fontSize: 'calc(14px + (26 - 14) * ((100vw - 300px) / (1600 - 300)))',
+  // lineHeight: 'calc(1.3em + (1.5 - 1.2) * ((100vw - 300px) / (1600 - 300)))',
+  //fontSize: '1.4rem',
+
   //minWidth: '24rem',
   // minWidth: '25vw',
   //width: '90%',

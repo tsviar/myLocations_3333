@@ -873,8 +873,8 @@ const ManageLocation = (props) => {
           {/* <h2>Add Location</h2> */}
 
           <FormControl required margin="normal" fullWidth>
-            <InputLabel htmlFor="name">Name</InputLabel>
-            <Input
+            <MyInputLabel htmlFor="name">Name</MyInputLabel>
+            <MyInput
               id="name"
               name="name"
               type="text"
@@ -891,8 +891,8 @@ const ManageLocation = (props) => {
           {errors.name && <ErrorText>{errors.name}</ErrorText>}
 
           <FormControl required margin="normal" fullWidth>
-            <InputLabel htmlFor="address">Address</InputLabel>
-            <Input
+            <MyInputLabel htmlFor="address">Address</MyInputLabel>
+            <MyInput
               id="address"
               name="address"
               type="text"
@@ -923,7 +923,7 @@ const ManageLocation = (props) => {
               {/* <fieldset width="100%"> */}
 
               <FormControl required margin="normal" width="50%">
-                <InputLabel htmlFor="lat">Latitude </InputLabel>
+                <MyInputLabel htmlFor="lat">Latitude </MyInputLabel>
                 <CoordinatesInput
                   id="lat"
                   name="lat"
@@ -942,7 +942,7 @@ const ManageLocation = (props) => {
               {errors.lat && <ErrorText>{errors.lat}</ErrorText>}
 
               <FormControl required margin="normal" width="50%">
-                <InputLabel htmlFor="lng" >Longitude</InputLabel>
+                <MyInputLabel htmlFor="lng" >Longitude</MyInputLabel>
 
                 <CoordinatesInput
                   id="lng"
@@ -968,11 +968,11 @@ const ManageLocation = (props) => {
           <Tooltip title={toolTipText} open={(("View" === action_req) || ("Remove" === action_req)) ? false : tooltip_open}   >
             <FormControl margin="normal" fullWidth required>
 
-              <InputLabel htmlFor="category" id="select-category-label">
+              <MyInputLabel htmlFor="category" id="select-category-label">
                 Category
-              </InputLabel>
+              </MyInputLabel>
 
-              <Select
+              <MySelect
                 labelId="select-category-label"
                 id='category-simple'
                 name='category'
@@ -1002,7 +1002,7 @@ const ManageLocation = (props) => {
                 {/* <MenuItem value={20}>Twenty</MenuItem>
                 <MenuItem value={30}>Thirty</MenuItem> */}
 
-              </Select>
+              </MySelect>
               <FormHelperText>required</FormHelperText>
             </FormControl>
           </Tooltip>
@@ -1119,6 +1119,7 @@ const useStyles = makeStyles(theme => ({
     flexDirection: 'column',
     margin: 'auto',
     width: 'fit-content',
+
   },
   formControl: {
     marginTop: theme.spacing(2),
@@ -1208,6 +1209,7 @@ const MainBoxLabel = styled('h2')({
   margin: 'auto',
   // margin: 0,
   padding: 0,
+  lineHeight: '2.5rem',
 });
 
 
@@ -1248,11 +1250,60 @@ const LocationForm = styled('form')({
 
 });
 
+const MyInputLabel = styled(InputLabel)({
+
+  fontSize: 'calc(1.4rem + (2.5 - 1.4) * ((100vw - 300px) / (1600 - 300)))',
+  lineHeight: 'calc(1.4rem + (1.4 - 1.1) * ((100vw - 300px) / (1600 - 300)))',
+
+  // fontWeight: '400',
+
+});
+
+const MyInput = styled(Input)({
+
+  // font-size: calc([minimum size] + ([maximum size] - [minimum size]) * ((100vw - [minimum viewport width]) / ([maximum viewport width] - [minimum viewport width])))
+
+  //   fontSize: 'calc(14px + (26 - 14) * ((100vw - 300px) / (1600 - 300)))',
+  // lineHeight: 'calc(1.5rem + (1.5 - 1.2) * ((100vw - 300px) / (1600 - 300)))',
+
+  fontSize: 'calc(1.3rem + (2.4 - 1.3) * ((100vw - 300px) / (1600 - 300)))',
+  lineHeight: 'calc(1.4rem + (1.4 - 1.0) * ((100vw - 300px) / (1600 - 300)))',
+
+
+  // fontSize: 'calc(14px + (20 - 14) * ((100vw - 300px) / (1600 - 300)))',
+  // lineHeight: 'calc(1.3em + (1.2 - 1.1) * ((100vw - 300px) / (1600 - 300)))',
+
+  //fontSize: '4.5rem',
+  // fontWeight: '400',
+
+});
+
+
+
+const MySelect = styled(Select)({
+
+  // fontSize: 'calc(15px + (26 - 15) * ((100vw - 300px) / (1600 - 300)))',
+  // lineHeight: 'calc(1.5rem + (1.5 - 1.2) * ((100vw - 300px) / (1600 - 300)))',
+  fontSize: 'calc(1.2rem + (2.4 - 1.2) * ((100vw - 300px) / (1600 - 300)))',
+  lineHeight: 'calc(1.35rem + (1.3 - 1.0) * ((100vw - 300px) / (1600 - 300)))',
+
+  //fontSize: '4.5rem',
+  //fontWeight: '400',
+
+});
+
 const CoordinatesBoxLabel = styled(InputLabel)({
-  fontSize: '0.8rem',
+  //fontSize: '0.8rem',
   // fontWeight: 'inherit',
   textAlign: 'center',
-  color: 'inherit',
+  //color: 'inherit',
+  color: 'gray',
+
+  fontSize: 'calc(1.1rem + (2.1 - 1.1) * ((100vw - 300px) / (1600 - 300)))',
+  lineHeight: 'calc(1.2rem + (1.1 - 0.9) * ((100vw - 300px) / (1600 - 300)))',
+
+  //fontWeight: '400',
+
 });
 
 const CoordinatesBox = styled(Box)({
@@ -1302,6 +1353,21 @@ const CoordinatesInnerBox = styled(Box)({
 
 });
 
+const CoordinatesInputLabel = styled(InputLabel)({
+  marginRight: 10,
+  paddingRight: 15,
+
+  // fontSize: 'calc(13px + (23 - 13) * ((100vw - 300px) / (1600 - 300)))',
+  // lineHeight: 'calc(1.3rem + (1.3 - 1.0) * ((100vw - 300px) / (1600 - 300)))',
+
+  fontSize: 'calc(14px + (20 - 14) * ((100vw - 300px) / (1600 - 300)))',
+  lineHeight: 'calc(1.3em + (1.2 - 1.1) * ((100vw - 300px) / (1600 - 300)))',
+
+
+
+  //fontWeight: '400',
+});
+
 const CoordinatesInput = styled(Input)({
   //marginTop: 20,
   marginRight: 10,
@@ -1312,22 +1378,37 @@ const CoordinatesInput = styled(Input)({
   //flexGrow:0,
   // flexBasis:['40%', '40%', '100%'],
   //width:[1/2, 1/2, 1],
-  maxWidth: "xl",
+  ///maxWidth: "xl",
+
+  // fontSize: 'calc(1.1rem + (2.4 - 1.2) * ((100vw - 300px) / (1600 - 300)))',
+  // lineHeight: 'calc(1.35rem + (1.3 - 1.0) * ((100vw - 300px) / (1600 - 300)))',
+  // fontSize: 'calc(13px + (20 - 13) * ((100vw - 300px) / (1600 - 300)))',
+  // lineHeight: 'calc(1.3em + (1.2 - 1.1) * ((100vw - 300px) / (1600 - 300)))',
+
+  fontSize: 'calc(1.3rem + (2.4 - 1.3) * ((100vw - 300px) / (1600 - 300)))',
+  lineHeight: 'calc(1.4rem + (1.4 - 1.0) * ((100vw - 300px) / (1600 - 300)))',
+
+
+  //fontWeight: '400',
+
 });
 
-const CoordinatesInputLabel = styled(InputLabel)({
-  marginRight: 10,
-  paddingRight: 15,
-});
 
 
 //const SubmitBox = styled('p')({
-const SubmitBox = styled(({ action, ...other }) => <p {...other} />)({
+const SubmitBox = styled(({ action, ...other }) => <div {...other} />)({
   display: 'flex',
   justifyContent: props => props.action === "Edit" ? "space-evenly" : "center",
   marginTop: 15, //30
   //marginLeft: 50,
   paddingTop: 15,
+
+  '& > *': {
+    fontSize: 'calc(1.2rem + (2.3 - 1.3) * ((100vw - 300px) / (1600 - 300)))',
+    lineHeight: 'calc(1.4rem + (1.4 - 1.2) * ((100vw - 300px) / (1600 - 300)))',
+
+  },
+
 });
 
 const ErrorText = styled('h5')({

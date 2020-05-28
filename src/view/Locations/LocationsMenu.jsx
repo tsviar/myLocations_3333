@@ -39,22 +39,22 @@ const LocationsMenu = () => {
     <Nav>
       <NavLi>
         <StyledLink to="/locations">
-          <IconDiv><Info /></IconDiv> <TextDiv>View</TextDiv>
+          <IconDiv><Info style={MenuIconStyle} /></IconDiv> <TextDiv>View</TextDiv>
         </StyledLink>
       </NavLi>
       <NavLi>
         <StyledLink to="/locations/add">
-          <IconDiv><AddLocationSharp /></IconDiv><TextDiv>Add</TextDiv>
+          <IconDiv><AddLocationSharp style={MenuIconStyle} /></IconDiv><TextDiv>Add</TextDiv>
         </StyledLink>
       </NavLi>
       <NavLi>
         <StyledLink to="/locations/edit">
-          <IconDiv><Edit /></IconDiv> <TextDiv>Edit</TextDiv>
+          <IconDiv><Edit style={MenuIconStyle} /></IconDiv> <TextDiv>Edit</TextDiv>
         </StyledLink>
       </NavLi>
       <NavLi>
         <StyledLink to="/locations/remove">
-          <IconDiv><DeleteOutline /></IconDiv> <TextDiv>Remove</TextDiv>
+          <IconDiv><DeleteOutline style={MenuIconStyle} /></IconDiv> <TextDiv>Remove</TextDiv>
         </StyledLink>
       </NavLi>
 
@@ -88,7 +88,6 @@ const Nav = styled.ul`
 
   /* font-size: 1.3rem;  */
   /* font-size: 2.8rem; */
-  /* font-size: 1.2rem;  */
 
   /* font-weight: normal; */
   /* font-weight: 400; */
@@ -99,9 +98,9 @@ const Nav = styled.ul`
   /* font-family: "Expletus Sans"; */
 
   height: inherit;
-  /* height: 40px; */
+  /* height: 50px; */
   width: inherit;
-  
+
   margin: auto;
   padding: 0.5rem;
   padding-left: 0;
@@ -111,7 +110,7 @@ const Nav = styled.ul`
   align-items: center;
 
 
-      /* minWidth: 80vw; */
+    /* minWidth: 80vw; */
     /* width: 25rem; */
     /* width: 18rem; */
     /* width: 15rem; */
@@ -129,6 +128,7 @@ const Nav = styled.ul`
 
 const NavLi = styled.li`
  height: inherit;
+ 
 `;
 
 //Extending React Link
@@ -140,21 +140,11 @@ const StyledLink = styled(Link)`
   color:  ${main_palete_theme.palette.top_menu.text_color};  
   /* color:  ${main_palete_theme.palette.top_menu.text_color_light};  */
   /* color:${main_palete_theme.palette.top_menu.text_color_dark}; */
-  
-  font-family: "Expletus Sans";
-  /* font-family: "Yanone Kaffeesatz";  */
-  /* font-family: "Griffy", cursive; */
-  
-  /* font-size: 1.3rem; */
-  font-size: 1.2rem;
-  line-height: 1.2rem;
 
-  font-weight: bold; 
-  /* font-weight: 400; */
-  /* font-weight: normal; */ 
-  /* font-weight: 500; */
+  /* line-height: 20.0rem;   */
+  /* line-height: 1.8rem; */
 
-  letter-spacing: 1px;
+  /* letter-spacing: 1px; */
 
   margin: auto;
   margin-left: 0;
@@ -168,7 +158,7 @@ const StyledLink = styled(Link)`
 
   display: flex;  
   justify-content: space-evenly;
-  line-height: 20.0rem;  
+ 
   
 
   @media all and (min-width:343px) {  
@@ -192,15 +182,37 @@ const IconDiv = styled.div`
   align-items: center;
 
   height: inherit;
+
 `;
+
+const MenuIconStyle = {
+  fontSize: "1.6rem",
+  lineHeight: '1.8rem',
+
+};
 
 const TextDiv = styled.div`
   display: flex; 
   justify-content: center;
   align-items: center;
 
+    
+  font-family: "Expletus Sans";
+  /* font-family: "Yanone Kaffeesatz";  */
+  /* font-family: "Griffy", cursive; */
+  
+/* 
   font-size: 1.2rem;
-  line-height: 1.2rem;
+  line-height: 1.2rem; */
+  font-size: 1.5rem;
+  line-height:1.8rem; 
+
+  font-weight: bold; 
+  /* font-weight: 400; */
+  /* font-weight: normal; */ 
+  /* font-weight: 500; */
+
+  letter-spacing: 1.5px;
 
  color: inherit;
 
