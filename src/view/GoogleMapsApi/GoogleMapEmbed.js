@@ -33,6 +33,12 @@ const GOOGLE_MAPS_URL =
 // and hiding it in .env file
 // You must remember to add to it REACT_APP_ prefix, and refresh the webbrowser 
 // so that webpack will be updated with the added key.
+// 
+// withGoogleMap is the function for react component creation, 
+// intended for the map displaying
+//
+// GoogleMap – the map component itself, 
+//             to which the necessary parameters are transferred
 //============================================================================
 
 const Map = withScriptjs(withGoogleMap((props) => {
@@ -240,6 +246,8 @@ const Map = withScriptjs(withGoogleMap((props) => {
 
 
   // using React refs to create a reference object to the GoogleMap
+  // GoogleMap – the map component itself, 
+  //             to which the necessary parameters are transferred
 
   return (
     <GoogleMap
@@ -318,6 +326,10 @@ class LocationsMap extends Component {
 
   //==============================================================
   // get the GoogleMap ref
+  //
+  // To use some data from the map it’s necessary to get the map object 
+  // using the onMapLoad parameter and bring it to a state 
+  // or a component variable
   //==============================================================
 
   onMapLoad = map => {
@@ -372,9 +384,13 @@ class LocationsMap extends Component {
           loadingElement={<LoadingElementBox
           // style={{ height: `100%`, width:`80%` }} 
           />}
+
+          //containerElement is the block, in which the map will be inserted
           containerElement={<ContainerElementBox
           // style={{ height: `30rem`, width:`20rem` }}
           />}
+
+          //mapElement – the map’s block.
           mapElement={<MapElementBox id='googlemap' ref="myMap"
           // style={{  height: `30rem`, width:`20rem` } }
           />}
@@ -493,7 +509,10 @@ const GoogleMapContainer = () => {
 }
 
 
-export { GoogleMapContainer, LocationsMap };
+export {
+  GoogleMapContainer as default,
+  LocationsMap
+};
 
 
 //=============================================================================================

@@ -1,5 +1,6 @@
 //import React, { Component } from "react";
-import React, { useContext } from "react";
+import React, { useContext, lazy, Suspense } from "react";
+
 // import { Route, Switch } from "react-router";
 import {
   BrowserRouter as Router,
@@ -17,11 +18,6 @@ import { createBrowserHistory } from "history";
 import { StateDataManager } from "../../stateProvider/DataManager";
 import * as api from "../../services/StorageService";
 import marker from '@ajar/marker';
-
-import {
-  GoogleMapContainer,
-  // LocationsMap ,
-} from "../GoogleMapsApi/GoogleMapEmbed";
 
 import ManageLocation from "./ManageLocation";
 
@@ -44,6 +40,17 @@ import main_palete_theme from '../../style.lib/PalleteStyles';
 import { makeStyles, styled } from '@material-ui/core/styles';
 //import marker from '@ajar/marker'; 
 
+import ErrorBoundary from "../ErrorsHandling/ErrorBoundary";
+
+// import {
+//   GoogleMapContainer,
+//   // LocationsMap ,
+// } from "../GoogleMapsApi/GoogleMapEmbed";
+
+// lazy loading: Expected the result of a dynamic import() call
+// const GoogleMapContainer = lazy(() => import("./MyComponent.js"));
+//const MyComponent = lazy(() => import('./MyComponent'))
+const GoogleMapContainer = lazy(() => import("../GoogleMapsApi/GoogleMapEmbed.js"));
 
 
 
@@ -187,7 +194,11 @@ const LocationsBrowser = () => {
             </LocationBox>
 
             <MapBox>
-              <GoogleMapContainer />
+              <ErrorBoundary>
+                <Suspense fallback={<EmptyMapBox>Loading Map...</EmptyMapBox>}>
+                  <GoogleMapContainer />
+                </Suspense>
+              </ErrorBoundary>
             </MapBox>
 
             {/* </LocationMapBox> */}
@@ -513,6 +524,24 @@ const MapBox = styled('div')({
 
 });
 
+const EmptyMapBox = styled('div')({
+
+  //height: 'fit-content', //this sticks it in a fixed location, bad, bad, bad...
+  height: '100%',
+  width: 'fit-content',
+
+  display: 'flex',
+  flexDirection: 'column',
+  justifyContent: "center",
+  alignItems: 'space-around',
+  //alignItems: 'space-evenly',
+
+  margin: 'auto',
+  marginLeft: 1,
+
+  //padding: '40rem 0 10 0',
+
+});
 
 
 
