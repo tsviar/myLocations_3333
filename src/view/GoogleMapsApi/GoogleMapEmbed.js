@@ -510,7 +510,7 @@ const GoogleMapContainer = () => {
 
 
 export {
-  GoogleMapContainer as default,
+  GoogleMapContainer,
   LocationsMap
 };
 
