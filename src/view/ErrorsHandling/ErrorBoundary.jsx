@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import main_palete_theme from '../../style.lib/PalleteStyles';
+import { makeStyles, styled } from '@material-ui/core/styles';
 
 class ErrorBoundary extends Component {
     constructor(props) {
@@ -33,17 +35,25 @@ class ErrorBoundary extends Component {
         if (this.state.error) {
             // You can render any custom fallback UI
             return (
-                <div>
-                    <h2>Something went wrong.</h2>
+                <MainBox>
+                    <h3 style={{
+                        whiteSpace: 'pre-wrap',
+                        color: `${main_palete_theme.palette.error.main}`,
+                    }} >
+
+                        Something went wrong.</h3>
                     <br />
-                    <details style={{ whiteSpace: 'pre-wrap' }}>
+                    <details style={{
+                        whiteSpace: 'pre-wrap',
+                        color: `${main_palete_theme.palette.error.main}`,
+                    }}>
                         {this.state.error && this.state.error.toString()}
                         <br />
                         ComponentStack:
                         {(this.state.errorInfo) ?
                             this.state.errorInfo.componentStack : "componentStack not available"}
                     </details>
-                </div>
+                </MainBox >
                 // <div>
                 //     Some page not working
                 // </div>
@@ -60,3 +70,33 @@ class ErrorBoundary extends Component {
 
 export default ErrorBoundary;
 
+const MainBox = styled('div')({
+
+    height: '100%',
+    minHeight: '33rem',
+
+    minWidth: '94vw',
+
+    padding: '2rem 0.5rem 0 0.5rem',
+
+    margin: 'auto',
+    //marginLeft: '1px', //0,
+    //marginRight: '1rem',
+
+    '@media all and (min-width: 550px)': {
+        minWidth: '30vw',
+
+        padding: '10rem 2rem 0 0.5rem',
+    },
+
+
+
+    '@media all and (min-width: 700px)': {
+        minWidth: '39vw',
+
+        margin: 'auto',
+        // padding: '10rem 0 0 1rem',
+        padding: '10rem 0.5rem 0 0.5rem',
+
+    },
+});
