@@ -1,6 +1,6 @@
 {
   "name": "my_locations",
-  "version": "0.1.0",
+  "version": "1.1.0",
   "author": "Tsvia-Hellen Rubin",
   "description": "An application for managing favorite locations  and categories, using GoogleMaps, local storage, context managers, React hooks and router and material-ui and a bit of styled-components",
   "private": true,
