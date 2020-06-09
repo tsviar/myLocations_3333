@@ -67,10 +67,10 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
 
-# MyLocations1ReactRouteLocalStorage
-MyLocations1ReactRouteLocalStorage myLocations allows the user to maintain a list of categorized name locations. The domain model contains two main entities: a Category and a Location. A Category has a single property: Name. A Location has the following properties: Name, Address, Coordinates, and Category. All data is saved to the locale storage of the browser (an HTML5 feature) for simplicity. It also uses StateDataManager using React Context Provider and Consumer (createContext, useState, useContext, useEffect hooks). The application uses the react-router module.
+# MyLocations (dev env : Visual Studio Code, Chrome, create-react-app, npm)
+myLocations app allows the user to maintain a list of categorized name locations. The domain model contains two main entities: a Category and a Location. A Category has a single property: Name. A Location has the following properties: Name, Address, Coordinates, and Category. All data is saved to the locale storage of the browser (an HTML5 feature) for simplicity. It also uses StateDataManager using React Context Provider and Consumer (createContext, useState, useContext, useEffect hooks). The application uses the react-router module.
 
-Use babel and webpack to support es2015 style jsx syntax and module loading.
+Use babel and create-react-app (over webpack) to support es2015 style jsx syntax and module loading.
 
 Use Cases: The user can manage (view, add, remove and edit) the list of Categories. The user can manage (view, add, remove and edit) the list of Locations. The user must fill all properties when saving an item. The user must choose a category from a list of existing categories when defining a Location.
 
@@ -82,4 +82,7 @@ The user can view all Locations sorted by alphabetical order, either grouped by 
 
 When clicking a location on the list, the user can see the properties of the item and also view it on an actual map (using google maps api: { withScriptjs, withGoogleMap, GoogleMap, Marker } from "react-google-maps") The Add and Edit menu options allow selecting the coordinates and address from the map service and not entering by hand.
 
-The application uses material-ui look & feel : https://material-ui.com/ and also MaterialTable: https://material-table.com/#/
+The application uses material-ui look & feel : https://material-ui.com/ and also MaterialTable: https://material-table.com/#/,
+CSS-Drid, Flexbox, styled-components (animations)
+react-google-maps, etc.
+
