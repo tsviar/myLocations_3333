@@ -17,11 +17,12 @@
 .env.development.locals
 .env.test.local
 .env.production.local
-.env
+
 screenshot.png
 instructions.md
 settings.js
 
 npm-debug.log*
+npm-error.log*
 yarn-debug.log*
 yarn-error.log*
