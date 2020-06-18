@@ -868,8 +868,8 @@ const TableStyle = {
   flexDirection: 'column',
   justifyContent: 'center',
 
-  //overflow: 'auto', 
-  overflow: 'scroll', 
+  overflow: 'auto', 
+   //overflow: 'scroll', 
   //overflow: 'none',
 
   width: 'auto',
