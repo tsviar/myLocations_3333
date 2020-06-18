@@ -104,13 +104,28 @@ const LocationsBrowser = () => {
     // </div>
 
 
-    <MainBox >
+    <MainBox 
+      aria-label="Locations Main Box"
+      id="Locations_Main_Box"
+      name="Locations_Main_Box"
+      role="article"
+      >
       {(loading_lists === false) ? (
 
-        <MainMenuContentWrapper>
+        <MainMenuContentWrapper
+          aria-label="Locations Wrapper Div"
+          id="Locations_Wrapper_Div"
+          name="Locations_Wrapper_Div"
+          role="application"
+          >
           < Filter />
 
-          <MainContentBox>
+          <MainContentBox
+            aria-label="Locations Content Box"
+            id="Locations_Content_Box"
+            name="Locations_Content_Box"
+            role="directory"
+            >
 
             <ListBox>
               <List />
@@ -238,10 +253,11 @@ const MainBox = styled('div')({
   fontSize: '1.5rem',
 
   height: '100%',
+  minHeight: '100rem',
   width: '100%',
-  minWidth: '90vw',
+  //minWidth: '90vw',
   //width: 'inherit',
-  //minWidth: 'inherit',
+  minWidth: 'inherit',
 
   margin: 'auto',
   // marginLeft: '1.6rem',

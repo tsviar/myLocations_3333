@@ -196,9 +196,22 @@ const AppBox = styled('div')({
   maxHeight: '80vh',
   minHeight: '30rem',
 */
+
+
+  // height: '100%',
+  // minHeight: '100rem',
+  // width: '100%',
+  // //minWidth: '90vw',
+  // minWidth: '100vw',
+
+
   height: '100%',
+  minHeight: '100rem',
   width: '100%',
-  minWidth: '90vw',
+  //minWidth: '90vw',
+  minWidth: '100vw',
+  //minWidth: '25rem',
+
 
   //maxWidth: '100%',
   // maxWidth: '35rem',

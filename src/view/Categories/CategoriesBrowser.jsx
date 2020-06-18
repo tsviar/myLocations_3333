@@ -386,27 +386,25 @@ const CategoriesBrowser = () => {
 
       {loading_lists === false ? (
 
-        <div
-          aria-label="Categories Table Div"
-          id="Categories_Table_Div"
-          name="Categories_Table_Div"
+        <MainMenuContentWrapper
+          aria-label="Categories Content Wrapper"
+          id="Categories_Content_Wrapper"
+          name="Categories_Content_Wrapper"
           role="application"
         >
-          < ContentBox
-            aria-label="Categories Content Box"
-            id="Categories_Content_Box"
-            name="Categories_Content_Box"
+            <ContentBox
+            aria-label="Categories Content Table Box"
+            id="Categories_Content_Table_Box"
+            name="Categories_Content_Table_Box"
             role="directory"
           >
-
-            < MaterialTable
-              style={TableStyle}
-
+            <MaterialTable
               aria-label="Categories Material Table"
               id="Categories_Material_Table"
               name="Categories_Material_Table"
-              //role="tree"
-              role="table"
+              role="table"              
+              
+              style={TableStyle}
 
 
               //title ="Categories list"
@@ -549,7 +547,7 @@ const CategoriesBrowser = () => {
             {/* </MuiThemeProvider> */}
 
           </ContentBox>
-        </div>
+        </MainMenuContentWrapper>
 
 
       ) : (
@@ -593,240 +591,226 @@ export default CategoriesBrowser;
 // });
 
 
+
 const MainBox = styled('div')({
-  display: 'flex',
-  flexDirection: 'column',
-  justifyContent: 'center',
-  alignItems: 'center',
+  backgroundColor: `${main_palete_theme.palette.surface_background.regular_medium}`,
+  // background: 'Cornsilk',
 
   borderRadius: '0.4rem',
   boxShadow: '0 0.4rem 1.5rem DimGrey',
 
-  //fontSize: '1.5rem',
+  fontSize: '1.5rem',
 
-  // Desktop 1st
-
-  //  What is the max width for mobile? 480px
-  //  Most mobile phones have a device-width of 480px or lower, including the popular iPhone 4 (with 
-  //  device- width: 320px), despite it technically having a 640 x 960 
-
-  // tablet and up
-  //--------------------------
-
-  //height: 'auto',
   height: '100%',
-  //maxHeight: '100rem',
-  minHeight: '100vh',
+  //minHeight: '100vh',
+  minHeight: '120rem',
 
-  width: '100%',
   //width: 'auto',
-  //maxWidth: '100vw',
-  minWidth: '100vw',
+  //minWidth: '100em',
+  // width: '100%',
+  width: 'inherit',
+ 
+  minWidth: 'inherit', 
+  //minWidth: '90vw',
 
-  //top right bottom left
-  margin: '20px 10px 20px 10px',
-  // padding: '1px 10px 50px 10px',
-  padding: '30rem 10rem 30rem 10rem',
-
-  // marginBottom: 40,
-  //top right bottom left
-  // margin: '0px 0px 40px 0px',
-  // margin: 'auto',
-  //padding: 'auto',
-
-
-  //background: `${main_palete_theme.palette.surface_background.regular_medium} center / cover no-repeat url(${Image}) `,
-
-  '@media (orientation: landscape)': {
-    background: `${main_palete_theme.palette.surface_background.regular_medium} center / cover no-repeat url(${ImageLarge}) `,
-
-    //top right bottom left
-    margin: '20px 10px 20px 10px',
-    // padding: '1px 10px 50px 10px',
-    padding: '30rem 10rem 30rem 11rem',
-  },
-
-  // Pixel 2
-  '@media (orientation: landscape) and (max-device-width:823px)': {
-    background: `${main_palete_theme.palette.surface_background.regular_medium} center / scale-down no-repeat url(${ImageHighLarge}) `,
-
-    //top right bottom left
-    margin: '20rem 0px 0rem 0px',
-    // padding: '1px 10px 50px 10px',
-    padding: '15rem 0px 5rem 0rem',
-
-    height: '100%',
-    minHeight: '150vh',
-    mixWidth: '100vw',
-  },
-
-  // Glaxy S5
-  '@media (orientation: landscape) and (max-device-width:640px)': {
-    background: `${main_palete_theme.palette.surface_background.regular_medium} center / fill no-repeat url(${ImageLarge}) `,
-
-    //top right bottom left
-    margin: '25rem 0px 10px 25px',
-    // padding: '1px 10px 50px 10px',
-    padding: '20rem 0px 35px 10rem',
-
-    height: '100%',
-    minHeight: '130vh',
-    width: 'auto',
-    maxWidth: '120rem',
-    minWidth: '140vw',
-  },
-
-  // IPhone4
-  '@media (orientation: landscape) and (max-device-width:480px)': {
-    background: `${main_palete_theme.palette.surface_background.regular_medium} center / scale-down no-repeat url(${ImageLarge}) `,
-
-    //top right bottom left
-    margin: '25rem 0px 10px 0px',
-    // padding: '1px 10px 50px 10px',
-    padding: '20rem 4rem 3rem 7rem',
-
-    height: '100%',
-    minHeight: '100vh',
-
+ '@media all and (min-width: 280px)': {
     width: '100%',
-    //width: 'auto',
-    //maxWidth: '100rem',
     minWidth: '100vw',
-  },
+   },
 
-  '@media (orientation: portrait) and (max-device-width:3000px)': {
-    background: `${main_palete_theme.palette.surface_background.regular_medium} center / cover no-repeat url(${ImageHighLarge}) `,
-  },
+  margin: 'auto',
+  // marginLeft: '1.6rem',
 
-  //Pixel 2 , 2 XL (411px)
-  '@media (orientation: portrait) and (max-device-width:800px)': {
-    background: `${main_palete_theme.palette.surface_background.regular_medium} center / cover no-repeat url(${ImageHighMed}) `,
-    marginTop: '10px',
-    marginBottom: '5px',
-    paddingTop: '15rem',
-    paddingBottom: '6rem',
+  padding: '1px',
 
-  },
-
-
-  /*
-    //LG Optimus L70
-    '@media (orientation: portrait) and (device-height: 640px) and (max-device-width:384px)': {
-      background: `${main_palete_theme.palette.surface_background.regular_medium} center / cover no-repeat url(${ImageHighSmall}) `,
+  // fontSize: '1.5rem',
+  // fontWeight: '600',
   
-      //top right bottom left
-      margin: '3rem 2px 10px 2px',
-      // padding: '1px 10px 50px 10px',
-      padding: '10rem 1rem 3rem 1.5rem',
+
+ overflow: 'auto',
+ // overflow: 'scroll',
+ //overflow: 'hidden',
+
+
+
+});
+
+const MainMenuContentWrapper = styled('div')({
+
+
+  // content: "MainMenuContentWrapper",
+
+  borderRadius: '5px',
+
+  // '&::before': {
+   
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    right: 0,
+   // bottom:0, 
+   
+  // },
   
-      height: 'auto',
-      width: '100%',
-      maxWidth: '60rem',
-      minWidth: '100vw',
-    },
-  */
-  //IPhone 6/7/8 / 8Plus / Iphone X / LG Optimus L70
-  //  '@media (orientation: portrait) and (max-device-width:384px)': {
-  '@media (orientation: portrait) and (max-device-width:414px)': {
-    background: `${main_palete_theme.palette.surface_background.regular_medium} center / cover no-repeat url(${ImageHighSmall}) `,
+  margin: 'auto',
+  padding: '1px',
 
-    //top right bottom left
-    margin: '3px 1px 10px 1px',
-    // padding: '1px 10px 50px 10px',
-    padding: '10rem 7rem 3rem 7rem',
 
-    height: '100%',
-    width: '80%',
-    maxWidth: '10rem',
+
+  // Background image
+  //---------------------------------------------------------------
+
+   height: '100%',
+   //minHeight: '100%',
+    
+  minHeight: 'calc(38em + 20vh)',
+
+  //'@media all and (min-height: 320px)': {
+    
+    //minHeight: 'calc(35em + 20vh)',
+  //},
+
+  '@media all and (min-height: 550px)': {
+    
+   // minHeight: '30em',
+   minHeight: 'calc(35em + 20vh)',
+  },
+
+  '@media all and (min-height: 700px)': {
+    
+    minHeight: 'calc(5em +2vh)',
+    
+  },
+   //minHeight: '50em',
+   
+   // width: 'auto',
+    width: '120%', 
     minWidth: '100vw',
-    /*
-    background: `${main_palete_theme.palette.surface_background.regular_medium} center / fill no-repeat url(${ImageHighSmall}) `,
-
-    //top right bottom left
-    margin: '3rem 2px 10px 2px',
-    // padding: '1px 10px 50px 10px',
-    padding: '10rem 4rem 3rem 5.5rem',
-
-    height: 'auto',
-    width: '90%',
-    maxWidth: '50rem',
-    minWidth: '105vw',
-     */
-  },
-
-
-
-  //IPhone 6/7/8 / 8Plus / Iphone X 
-  '@media (orientation: portrait) and (max-device-width:375px)': {
-    background: `${main_palete_theme.palette.surface_background.regular_medium} center / cover no-repeat url(${ImageHighSmall}) `,
-
-    //top right bottom left
-    margin: '3px 1px 10px 1px',
-    // padding: '1px 10px 50px 10px',
-    padding: '20rem 10rem 4rem 10rem',
-
-    height: '100%',
-    width: '10%',
-    //maxWidth: '10rem',
-    //minWidth: '110vw',
-  },
-
-
-  // Glaxy S5
-  '@media (orientation: portrait) and (max-device-width:360px)': {
-    background: `${main_palete_theme.palette.surface_background.regular_medium} center / cover no-repeat url(${ImageHighSmall}) `,
-
-    //top right bottom left
-    margin: '3rem 1px 20px 1px',
-    // padding: '1px 10px 50px 10px',
-    padding: '13rem 5rem 4rem 12rem',
-
-    //height: 'auto',
-    height: '100%',
-    //maxHeight: '190vh',
-    minHeight: '104vh',
-
+    
+  '@media all and (min-width: 280px)': {
+    
     width: '100%',
-    // width: 'auto',
-    maxWidth: '150rem',
-    minWidth: '135vw',
-
+    minWidth: 'inherit',
+    
   },
 
-  //IPhone 5/SE IPhone 4
-  '@media (orientation: portrait) and (max-device-width:320px)': {
-    // background: `${main_palete_theme.palette.surface_background.regular_medium} center /cover no-repeat url(${ImageHighSmall}) `,
-
-    //top right bottom left
-    //margin: '10rem 0px 10px 7.5rem',
-    //padding: '18rem 1rem 50px 3rem',
-    margin: '10px 1px 10px 2px',
-    padding: '28rem 12rem 4rem 23rem',
-
-    //height: 'auto',
-    height: '100%',
-    //  maxHeight: '250rem',
-    //minHeight: '130vh',
-
-    width: '150%',
-    //width: 'auto',
-    //maxWidth: '150rem',
-    //minWidth: '100vw',
-
-  },
-
-  //moto 360 (max-device-width:218px) not supported
 
 
-  // background: `${main_palete_theme.palette.surface_background.regular_medium}  center / 100% no-repeat url(${Image}) `,
 
-  //background: `${main_palete_theme.palette.surface_background.regular_medium}  center / cover no-repeat url(${Image}) `,
+  // format
+  //[ <bg-layer> , ]* <final-bg-layer>
+  // where 
+  //<bg-layer> = <bg-image> || <bg-position> [ / <bg-size> ]? || <repeat-style> || <attachment> 
+  //             || /<box> || <box>
+  //<final-bg-layer> = <'background-color'> || <bg-image> 
+  //        || <bg-position> [ / <bg-size> ]? || <repeat-style> || <attachment> || <box> || <box>
 
-  //background: 'Cornsilk',
-  // backgroundImage: `url(${Image})`,
-  // backgroundSize: 'cover',
-  //backgroundPosition: 'strech', //'center',
-  //backgroundRepeat: `no-repeat`,
+  //where 
+  // <bg-image> = none | <image>
+  // <bg-position> = [ [ left | center | right | top | bottom | <length-percentage> ] 
+  //                  | [ left | center | right | <length-percentage> ] 
+  //                      [ top | center | bottom | <length-percentage> ] 
+  //                  | [ center | [ left | right ] <length-percentage>? ] 
+  //                      && [ center | [ top |  bottom ] <length-percentage>? ] ]
+  // <bg-size> = [ <length-percentage> | auto ]{1,2} | cover | contain
+  // <repeat-style> = repeat-x | repeat-y | [ repeat | space | round | no-repeat ]{1,2}
+  // <attachment> = scroll | fixed | local
+  // <box> = border-box | padding-box | content-box
+
+
+
+
+  background: `url(${ImageHighLarge}) center  center / 100% 100% no-repeat scroll content-box ${main_palete_theme.palette.surface_background.regular_medium}`,
+ 
+  
+  // Initial value	as each of the properties of the shorthand:
+  //  background-image: none
+  //  background-position: 0% 0%
+  //  background-size: auto auto
+  //  background-repeat: repeat
+  //  background-origin: padding-box
+  //  background-clip: border-box
+  //  background-attachment: scroll
+  //  background-color: transparent
+
+  //backgroundImage: `url(${ImageLarge})`,
+
+  //Background image doesn't tile
+    //backgroundRepeat: 'no-repeat',
+
+ //Background image is centered vertically and horizontally at all times
+ // backgroundPosition: 'center center',
+   ///ackgroundPosition: 'top 0 left 0 right 0 bottom 0',
+   /// backgroundPosition: 'top 0 left 0 ',
+
+/// backgroundAttachment: 'unset',
+// The background is fixed relative to the viewport. 
+// it doesn't move when the content's height is greater than the image's height
+// Even if an element has a scrolling mechanism, the background doesn't move with the element
+// or else we’ll either run out of image at the bottom
+
+//backgroundAttachment: 'fixed',
+
+ //The background is fixed relative to the element's contents. 
+ // If the element has a scrolling mechanism, 
+ // the background scrolls with the element's contents, 
+ // and the background painting area and background positioning area 
+ // are relative to the scrollable area 
+ // of the element rather than to the border framing them.
+
+ // backgroundAttachment: 'local',
+
+ // The background is fixed relative to the element itself and does not scroll with its contents. 
+ // (It is effectively attached to the element's border.)
+
+ //backgroundAttachment: 'scroll',
+
+// The cover value tells the browser to 
+// automatically and proportionally scale the background image’s width and height 
+// so that they are always equal to, or greater than, the viewport’s width/height.
+// Use a media query to serve a smaller background image for mobile devices
+// This is what makes the background image rescale based on the container's size
+// This tells the browser to scale the background image proportionally 
+// so that its width and height are equal to, or greater than, the width/height of the element. 
+// (In our case, that’s body element.)
+// "cover" value keeps the aspect ratio, and some part of the background image may be clipped:
+
+ // backgroundSize: 'cover',
+ //  backgroundSize: 'stretch',
+/// backgroundSize: 'fill',
+///backgroundSize: '100%',
+
+//Set a background color that will be displayed while the background image is loading
+  //backgroundColor: `${main_palete_theme.palette.surface_background.regular_medium}`,
+  
+  
+    // background: `${main_palete_theme.palette.surface_background.regular_medium} center / contain  no-repeat url(${ImageLarge}) `, 
+    // background: `${main_palete_theme.palette.surface_background.regular_medium} center / cover  no-repeat url(${ImageLarge}) `, 
+
+
+    // background: `${main_palete_theme.palette.surface_background.regular_medium} center / cover no-repeat url(${ImageSmall}) `,
+    // background: `url(${ImageLarge}) no-repeat center center/ cover fixed`,
+     //background: `url(${ImageLarge}) no-repeat center center/ contain fixed`,
+    
+    //  background: `url(${ImageSmall}) center center / cover no-repeat  ${main_palete_theme.palette.surface_background.regular_medium}`,
+
+   //   background: `url(${ImageSmall}) center  center  / 100% 120% no-repeat scroll content-box ${main_palete_theme.palette.surface_background.regular_medium}`,
+
+    // background: `url(${ImageSmall}) center  center / 100% 100% no-repeat scroll content-box ${main_palete_theme.palette.surface_background.regular_medium}`,
+
+
+// object-fit can be set with one of these five values:
+
+// fill: this is the default value which stretches the image to fit the content box, 
+//       regardless of its aspect-ratio.
+// contain: increases or decreases the size of the image to fill the box 
+//           whilst preserving its aspect-ratio.
+// cover: the image will fill the height and width of its box, 
+//        once again maintaining its aspect ratio but often cropping the image in the process.
+// none:  image will ignore the height and width of the parent and retain its original size.
+// scale-down: the image will compare the difference between none and contain 
+//             in order to find the smallest concrete object size.
+
 
 
 });
@@ -834,7 +818,10 @@ const MainBox = styled('div')({
 
 const ContentBox = styled('div')({
 
+position: 'relative',
+
   display: 'flex',
+  flexDirection: 'column',
   alignItems: 'center',
   ///alignItems: 'space-between',   
   ///alignItems: 'flex-start', 
@@ -843,10 +830,27 @@ const ContentBox = styled('div')({
 
   margin: 'auto',
   padding: 'auto',
-  //top right bottom left
-  //padding: '0 0 2 0',
 
+  '@media all and (min-height: 1000px)': {
+    
+   paddingTop: 150,
+    
+  },
 
+  '@media all and (min-height: 1200px)': {
+    
+    paddingTop: 200,
+    
+  },
+
+  '@media all and (min-height: 1300px)': {
+    
+   paddingTop: 280,
+    
+  },
+
+   //top right bottom left
+  //padding: 'auto auto 90 auto',
 
 });
 
@@ -855,21 +859,24 @@ const ContentBox = styled('div')({
 const TableStyle = {
 
   margin: 'auto',
+  marginTop: 28,
+  marginBottom: 180, // for 5 and 10 rows and add row
   padding: 'auto',
+
 
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'center',
 
   //overflow: 'auto', 
-  overflow: 'none',
+  overflow: 'scroll', 
+  //overflow: 'none',
 
   width: 'auto',
-  maxWidth: 'inherit',
+  minWidth: 'inherit',
 
   height: '100%',
-  maxHeight: 'inherit',
-
+  minHeight: 'inherit',
 
 
 }
@@ -887,29 +894,32 @@ const MTableToolbarStyle = {
   display: 'flex',
   //flexDirection: 'column',
   alignItems: 'space-around',
-  justifyContent: 'center',
-  //justifyContent: 'space-around',
+  //justifyContent: 'center',
+  justifyContent: 'space-evenly',
   flexWrap: 'wrap',
 
 }
 
+
 const TableTitleDivStyle = {
+
+   //visibility: 'visible',
   display: 'flex',
   //flexWrap: 'wrap',
-  flexBasis: '31%',
+  flexBasis: '0%',
   flexGrow: 1,
+   
+ '@media all and (min-width: 320px)': {
+      display: 'flex',
+      flexBasis: '41%',
+      margin: 0,        
+      marginRight: 10,
+      padding: 0,
+      paddingRight: 10,
+       flexGrow: 3,
+    },
 
-  margin: 0,
-  marginRight: 10,
-  paddingRight: 10,
-
-  '@media (maxWidth: 320px)': {
-    display: 'none',
-    width: 0,
-    margin: 0,
-    padding: 0,
-  },
-}
+ }
 
 const TableTitleStyled = styled('h4')({
 
@@ -918,15 +928,26 @@ const TableTitleStyled = styled('h4')({
     color: `${main_palete_theme.palette.header.text_hoover_color}`,
   },
 
-  fontSize: '1.2rem',
+    fontSize: '1.2rem',
 
-  display: 'flex',
-  flexWrap: 'wrap',
-  flexBasis: '30%',
-  flexGrow: 1.5,
-  flexShrink: 1,
+    //visibility: 'hidden',
+    display: 'none',
+    //width: 0,
+    margin: 0,
+    padding: 0,
+    //width: '2rem',
 
-  '@media (maxWidth: 650px)': {
+
+  '@media all and (min-width: 370px)': {
+
+    display: 'flex',
+    flexWrap: 'wrap',
+    flexBasis: '31%',
+    flexGrow: 1.5,
+    flexShrink: 1,
+  },
+
+  '@media all and (min-width: 650px)': {
     //fontSize: '1.1rem',
     marginRight: '20',
     //paddingRight: '20',
@@ -936,13 +957,7 @@ const TableTitleStyled = styled('h4')({
   },
 
 
-  '@media (maxWidth: 320px)': {
-    display: 'none',
-    width: 0,
-    margin: 0,
-    padding: 0,
-    //width: '2rem',
-  },
+
 });
 
 const TableSearchFieldStyle =
@@ -951,25 +966,53 @@ const TableSearchFieldStyle =
   background: `${main_palete_theme.palette.table_search_field.main}`,
   borderRadius: '0.5rem',
 
+ 
   display: 'flex',
-  flexBasis: '50%',
-  flexGrow: 2,
+  flexGrow: 5,
   flexShrink: 1,
 
-  '@media (maxWidth: 650px)': {
-    //width: '3em',
+  '@media all and (min-width: 320px)': {
+   //width: '3em',
     display: 'flex',
     flexGrow: 1,
     flexShrink: 2,
+
   },
 
-  '@media (maxWidth: 320px)': {
+  '@media all and (min-width: 650px)': {
     display: 'flex',
-    flexGrow: 5,
+    flexBasis: '50%',
+    flexGrow: 2,
     flexShrink: 1,
+
   },
 
+}
 
+// TActions Category
+const TableHeaderStyle =
+{
+  backgroundColor: `${main_palete_theme.palette.top_menu.main}`,
+  // backgroundColor: '#01579b',
+  // backgroundColor: '#039be5',
+  color: `${main_palete_theme.palette.top_menu.text_color}`, //'#FFF',
+  fontSize: `1.2rem`,
+
+  width: 20,
+  maxWidth: 20,
+}
+
+const TableRowStyle = {
+  height: 40,
+  textAlign: 'left',
+  //fontFamily: `Roboto Condensed`, 
+  fontFamily: 'Expletus Sans',
+  fontSize: `3rem`,//'1.4rem',
+}
+
+const TableCellStyle = {
+  width: 20,
+  maxWidth: 20,
 }
 
 /*
@@ -1009,7 +1052,7 @@ const TableAddLocationIconStyle = {
   flexGrow: 1,
   flexShrink: 1,
 
-  '@media (maxWidth: 650px)': {
+  '@media (max-width: 650px)': {
     fontSize: '1px',
     display: 'flex',
     flexGrow: 1,
@@ -1018,37 +1061,4 @@ const TableAddLocationIconStyle = {
 }
 
 */
-// TActions Category
-const TableHeaderStyle =
-{
-  backgroundColor: `${main_palete_theme.palette.top_menu.main}`,
-  // backgroundColor: '#01579b',
-  // backgroundColor: '#039be5',
-  color: `${main_palete_theme.palette.top_menu.text_color}`, //'#FFF',
-  fontSize: `1.2rem`,
 
-  width: 20,
-  maxWidth: 20,
-}
-
-const TableRowStyle = {
-  height: 40,
-  textAlign: 'left',
-  //fontFamily: `Roboto Condensed`, 
-  fontFamily: 'Expletus Sans',
-  fontSize: `3rem`,//'1.4rem',
-}
-
-const TableCellStyle = {
-  width: 20,
-  maxWidth: 20,
-}
-/*
-object-fit can be set with one of these five values:
-
-fill: this is the default value which stretches the image to fit the content box, regardless of its aspect-ratio.
-contain: increases or decreases the size of the image to fill the box whilst preserving its aspect-ratio.
-cover: the image will fill the height and width of its box, once again maintaining its aspect ratio but often cropping the image in the process.
-none: image will ignore the height and width of the parent and retain its original size.
-scale-down: the image will compare the difference between none and contain in order to find the smallest concrete object size.
-*/

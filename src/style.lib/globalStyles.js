@@ -43,6 +43,7 @@ const GlobalStyles = createGlobalStyle`
       box-sizing: border-box;
       /*border:aqua dashed 3px; */
       /*color:papayawhip*/
+      overflow: 'auto';
     }
     li {
       list-style-type: none;

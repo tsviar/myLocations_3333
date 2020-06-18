@@ -272,8 +272,20 @@ const FilterLocations = () => {
 
   return (
 
-    <Header>
-      <Title>{items_count} items filtered</Title>
+    <Header
+      aria-label="Filter Header Box"
+      id="Filter_Header_Box"
+      name="Filter_Header_Box"
+      role="heading"
+    >
+      <Title
+        aria-label="Filter Title"
+        id="Filter_Title"
+        name="Filter_Title"
+        role="note"
+      >
+        {items_count} items filtered
+      </Title>
 
       {/* <ToolbarTooltip title="Filter list"  */}
       <Tooltip title="Filter list by category"
@@ -292,7 +304,12 @@ const FilterLocations = () => {
           },
         }}
       >
-        <SearchBar >
+        <SearchBar 
+        aria-label="Filter Search Bar"
+        id="Filter_Search_Bar"
+        name="FFilter_Search_Bar"
+        role="search"
+        >
           <Search style={SearchIconStyle} />
           {/* <FilterList style={{fontSize: 30,}} /> */}
           <Input onChange={updateFilteredList} />
@@ -308,7 +325,12 @@ const FilterLocations = () => {
       </Tooltip>
       {/* </ToolbarTooltip>  */}
 
-      <ActionsBar>
+      <ActionsBar        
+        aria-label="Filter Action Bar"
+        id="Filter_Action_Bar"
+        name="FFilter_Action_Bar"
+        role="group"
+        >
 
         <Tooltip title="Sort list alphabetically"  >
           <Fab
