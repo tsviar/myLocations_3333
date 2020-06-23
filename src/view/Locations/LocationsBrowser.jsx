@@ -317,8 +317,9 @@ const MainContentBox = styled('div')({
   ///minWidth: '15vw',
   //minWidth: '100vw',
 
+  overflow: 'auto',
   //overflowY: 'auto',
-  overflowY: 'scroll',
+  //overflowY: 'scroll',
 
 
   // font-size: calc([minimum size] + ([maximum size] - [minimum size]) * ((100vw - [minimum viewport width]) / ([maximum viewport width] - [minimum viewport width])))

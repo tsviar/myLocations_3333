@@ -10,7 +10,6 @@ import GlobalStyles from "../style.lib/globalStyles";
 import main_palete_theme from '../style.lib/PalleteStyles';
 
 
-
 // Material-UI
 import { createMuiTheme, MuiThemeProvider } from '@material-ui/core/styles';
 import { makeStyles, styled } from '@material-ui/core/styles';
