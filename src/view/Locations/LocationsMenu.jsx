@@ -36,23 +36,48 @@ import {
 const LocationsMenu = () => {
 
   return (
-    <Nav>
-      <NavLi>
+    <Nav
+      aria-label="Locations Menu"
+      id="Locations_Menu"
+      name="Locations_Menu"
+      role="menu"
+    >
+      <NavLi
+        aria-label="Locations Menu Link"
+        id="Locations_Menu_Link"
+        name="Locations_Menu_Link"
+        role="link"
+      >
         <StyledLink to="/locations">
           <IconDiv><Info style={MenuIconStyle} /></IconDiv> <TextDiv>View</TextDiv>
         </StyledLink>
       </NavLi>
-      <NavLi>
+      <NavLi
+        aria-label="Locations Menu Link"
+        id="Locations_Menu_Link"
+        name="Locations_Menu_Link"
+        role="link"
+      >
         <StyledLink to="/locations/add">
           <IconDiv><AddLocationSharp style={MenuIconStyle} /></IconDiv><TextDiv>Add</TextDiv>
         </StyledLink>
       </NavLi>
-      <NavLi>
+      <NavLi        
+        aria-label="Locations Menu Link"
+        id="Locations_Menu_Link"
+        name="Locations_Menu_Link"
+        role="link"
+      >
         <StyledLink to="/locations/edit">
           <IconDiv><Edit style={MenuIconStyle} /></IconDiv> <TextDiv>Edit</TextDiv>
         </StyledLink>
       </NavLi>
-      <NavLi>
+      <NavLi        
+        aria-label="Locations Menu Link"
+        id="Locations_Menu_Link"
+        name="Locations_Menu_Link"
+        role="link"
+      >
         <StyledLink to="/locations/remove">
           <IconDiv><DeleteOutline style={MenuIconStyle} /></IconDiv> <TextDiv>Remove</TextDiv>
         </StyledLink>
@@ -98,8 +123,8 @@ const Nav = styled.ul`
   /* font-family: "Expletus Sans"; */
 
   height: inherit;
-  /* height: 50px; */
-  width: inherit;
+  height: 50px;
+  /* width: inherit; */
 
   margin: auto;
   padding: 0.5rem;
