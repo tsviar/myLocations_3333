@@ -83,6 +83,6 @@ The user can view all Locations sorted by alphabetical order, either grouped by 
 When clicking a location on the list, the user can see the properties of the item and also view it on an actual map (using google maps api: { withScriptjs, withGoogleMap, GoogleMap, Marker } from "react-google-maps") The Add and Edit menu options allow selecting the coordinates and address from the map service and not entering by hand.
 
 The application uses material-ui look & feel : https://material-ui.com/ and also MaterialTable: https://material-table.com/#/,
-CSS-Drid, Flexbox, styled-components (animations)
+CSS-Grid, Flexbox, styled-components (animations)
 react-google-maps, etc.
 
